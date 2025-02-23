@@ -23,4 +23,4 @@ I am currently a Bachelors student at IIT Indore, constantly seeking challenging
 Let’s connect and build something groundbreaking!  
 
 <!-- [https://www.linkedin.com/in/jasmer-singh-sanjotra-a05b95250/](Linkedin) -->
-[LinkedIn](https://www.linkedin.com/in/jasmer-singh-sanjotra-a05b95250/)   , [GitHub](https://github.com/TheAlphaJas), [Scholar](https://scholar.google.com/citations?user=NUCuUbIAAAAJ)  
+[LinkedIn](https://www.linkedin.com/in/jasmer-singh-sanjotra-a05b95250/) [GitHub](https://github.com/TheAlphaJas) [Scholar](https://scholar.google.com/citations?user=NUCuUbIAAAAJ)  

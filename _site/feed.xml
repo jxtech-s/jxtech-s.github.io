@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T14:00:05+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h3 id="problem-statement"><strong>Problem Statement</strong></h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T16:59:04+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h3 id="problem-statement"><strong>Problem Statement</strong></h3>
+
+<p>A chess tournament has 128 players, each with a <strong>distinct</strong> rating. Assume that the player with the <strong>higher rating always wins</strong> against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will <strong>meet in the final</strong>?</p>
+
+<p><strong>Original Problem Link:</strong> <a href="https://www.quantguide.io/questions/chess-tournament-i">Click here</a></p>
+
+<hr />
+
+<h3 id="solution"><strong>Solution</strong></h3>
+
+<p>Before proceeding to the question, let’s think of the following situation -<br />
+Initially, 128 people are divided into 2 groups of 64 people each.<br />
+In every round, each group will play within itself (say each guy plays with the guy beside him). How will a group play within itself?</p>
+
+<p>Consider group A with \(A_1, A_2, A_3, A_4, \dots, A_{63}, A_{64}\).<br />
+Let’s say that adjacent people play chess with each other. Then the games will be:</p>
+
+\[(A_1 - A_2), (A_3 - A_4), \dots, (A_{63} - A_{64})\]
+
+<p>From each game, <strong>one person (with the higher skill) will win</strong>.<br />
+Thus, after the first round, we will have <strong>32 players remaining</strong>.</p>
+
+<p>This process will go on until only <strong>one guy remains in each group</strong>, and that person will play with the person from another group to decide the <strong>final winner</strong>.</p>
+
+<p>Now, try to convince yourself that this model is <strong>exactly the same</strong> as the situation given in the question.<br />
+How?</p>
+
+<ul>
+  <li>If the <strong>initial distribution</strong> of people among <strong>Group A and B</strong>, and the <strong>arrangement of people within both groups</strong> are all <strong>random</strong>, it will consider all possible plays between every player.</li>
+  <li>Each <strong>unique initial arrangement corresponds to a unique gameplay</strong>.</li>
+  <li>Since by <strong>randomizing the initial group allotment</strong>, all possible distributions of people in Group A and B are considered, it means <strong>all possible gameplays</strong> are also considered.</li>
+  <li>Which <strong>exactly models the question’s situation</strong>.</li>
+</ul>
+
+<hr />
+
+<h3 id="key-observation">Key Observation</h3>
+
+<p>In our model of the gameplay, the <strong>highest-rated and second-highest-rated player</strong> will <strong>face off against each other</strong> <strong>only when they are in different groups initially</strong>.</p>
+
+<p>This problem is now much simpler, effectively reducing it to:</p>
+
+<blockquote>
+  <p><strong>“In how many ways can I arrange 128 people in 2 groups (their position within the group is unique), such that 2 particular people are always in different groups?”</strong></p>
+</blockquote>
+
+<hr />
+
+<h3 id="solving-the-sub-problem">Solving the Sub-Problem</h3>
+
+<p>First, let’s <strong>allot the highest player and second-highest player</strong> to each group.<br />
+There are <strong>2 ways</strong> of doing this:</p>
+<ul>
+  <li><strong>Highest -&gt; Group A, Second-Highest -&gt; Group B</strong></li>
+  <li><strong>Highest -&gt; Group B, Second-Highest -&gt; Group A</strong></li>
+</ul>
+
+<p>Now, once this is done:</p>
+<ul>
+  <li>Out of the remaining <strong>126 people</strong>, select <strong>63</strong> people for Group A.</li>
+  <li>The remaining <strong>63</strong> go to Group B.</li>
+  <li>Now, we must <strong>arrange the people within each group itself</strong>, thus another  \((64!) \times (64!)\) (one for each group).</li>
+</ul>
+
+<p>Our final expression for the <strong>favorable cases</strong> becomes:</p>
+
+\[n(A) = 2 \times \binom{126}{63} \times (64!) \times (64!)\]
+
+<p>where  \(A\) is the event described above.</p>
+
+<hr />
+
+<h3 id="computing-the-probability">Computing the Probability</h3>
+
+<p>To find the probability of this arrangement, we must compute the <strong>total number of possible arrangements</strong>.<br />
+Clearly, this is  \(128!\) because:</p>
+
+<ul>
+  <li>We can linearly arrange all 128 people in \(128!\) ways.</li>
+  <li>Assuming a <strong>partition after  \(P_{64}\)</strong> (representing the end of Group A and the beginning of Group B), all possible distributions are covered.</li>
+</ul>
+
+<p>Thus,</p>
+
+\[n(S) = 128!\]
+
+<p>The required probability is:</p>
+
+\[P(A) = \frac{n(A)}{n(S)}\]
+
+<p>Substituting values:</p>
+
+\[P(A) = \frac{2 \times \binom{126}{63} \times (64!)^2}{128!}\]
+
+<p>Expanding the combination formula:</p>
+
+\[\binom{126}{63} = \frac{126!}{63! \times 63!}\]
+
+<p>Thus:</p>
+
+\[P(A) = \frac{2 \times 126! \times (64!)^2}{63! \times 63! \times 128!}\]
+
+<p>Expanding \(128!\) as \(128 \times 127 \times 126!\):</p>
+
+\[P(A) = \frac{2 \times 126! \times 64! \times 64!}{63! \times 63! \times 128 \times 127 \times 126!}\]
+
+<p>Canceling \(126!\):</p>
+
+\[P(A) = \frac{2 \times 64! \times 64!}{63! \times 63! \times 128 \times 127}\]
+
+<p>Using:</p>
+
+\[\frac{64!}{63!} = 64\]
+
+\[P(A) = \frac{2 \times 64 \times 64}{128 \times 127}\]
+
+<p>Simplifying:</p>
+
+\[P(A) = \frac{64}{127}\]
+
+<hr />
+
+<h3 id="final-answer">Final Answer</h3>
+
+\[\boxed{\frac{64}{127}}\]
+
+<p>Thus, the probability that the <strong>highest-rated and second-highest-rated players meet in the final</strong> is  \(\frac{64}{127}\).</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h3 id="problem-statement"><strong>Problem Statement</strong></h3>
 <p>A right triangle is being formed with legs labeled <strong>A</strong> and <strong>B</strong>. The random lengths of legs<br />
 <strong>A</strong> and <strong>B</strong> are both IID <strong>Uniform(0,1)</strong> random variables.</p>
 

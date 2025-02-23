@@ -8,7 +8,7 @@ permalink: /problems/
 
 <ul>
 {% for post in site.posts %}
-  {% if post.categories contains "problems" %}
+  {% if post.categories contains "Problems" %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endif %}
 {% endfor %}

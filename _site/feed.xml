@@ -1,19 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T13:35:09+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Probability of Three Consecutive Heads</title><link href="http://localhost:4000/problems/2023/03/23/three-consecutive-heads.html" rel="alternate" type="text/html" title="Probability of Three Consecutive Heads" /><published>2023-03-23T00:00:00+05:30</published><updated>2023-03-23T00:00:00+05:30</updated><id>http://localhost:4000/problems/2023/03/23/three-consecutive-heads</id><content type="html" xml:base="http://localhost:4000/problems/2023/03/23/three-consecutive-heads.html"><![CDATA[<p>What is the probability of getting three consecutive heads when flipping a fair coin 5 times?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T14:00:05+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h3 id="problem-statement"><strong>Problem Statement</strong></h3>
+<p>A right triangle is being formed with legs labeled <strong>A</strong> and <strong>B</strong>. The random lengths of legs<br />
+<strong>A</strong> and <strong>B</strong> are both IID <strong>Uniform(0,1)</strong> random variables.</p>
 
-<h2 id="solution">Solution</h2>
+<p>Let <strong>θ</strong> be the angle (in radians) opposite to side <strong>A</strong>. Find the probability that:</p>
 
-<p>Let’s solve this step by step:</p>
+\[P(\theta &gt; \pi/3)\]
 
-<p>1) First, let’s understand what we’re looking for:</p>
+<p><strong>Original Problem Link:</strong> <a href="https://www.quantguide.io/questions/random-angle-ii">Click here</a></p>
+
+<hr />
+
+<h3 id="solution"><strong>Solution</strong></h3>
+<p>Now we must find \(P(\theta &gt; \pi/3)\).</p>
+
+<p>Note that,</p>
+
+\[\tan(\theta) = \frac{A}{B}\]
+
+<p>where <strong>A</strong> and <strong>B</strong> both are IID <strong>Uniform(0,1)</strong> random variables.</p>
+
+<p>For convenience, let’s fix <strong>B</strong> for now. Then, this problem becomes much simpler. It reduces to:</p>
+
+<p><strong>Given</strong> \(\tan(\theta) = A/B\), where <strong>A</strong> is <strong>Uniform(0,1)</strong>, <strong>B</strong> is a given constant,<br />
+find \(P(\theta &gt; \pi/3)\).</p>
+
+<p>Let’s try and solve this sub-problem:</p>
+
+\[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(A/B &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
+
+<p>Now, since <strong>A</strong> is a <strong>Uniform(0,1)</strong> random variable, clearly:</p>
+
+\[P(A &gt; x) = \max(0, 1-x)\]
+
+<p><strong>(How? 🤔)</strong></p>
 <ul>
-  <li>We need sequences of 5 flips that contain HHH somewhere</li>
-  <li>The coin is fair, so P(H) = P(T) = \(\frac{1}{2}\)</li>
+  <li>If \(x\) is between <strong>0</strong> and <strong>1</strong>, well and good.</li>
+  <li>If \(x &gt; 1\), since <strong>A</strong> cannot be greater than 1, \(P(A &gt; x) = 0\).</li>
+  <li>Still confused? Try intuitively finding \(P(A&gt;0)\), \(P(A&gt;1/2)\), and \(P(A&gt;1)\). You will see the essence of the above expression.</li>
+  <li>Still confused? Read up on <strong>PDF (Probability Density Function)</strong> and <strong>CDF (Cumulative Density Function)</strong><br />
+of the <strong>continuous Uniform distribution</strong>.</li>
 </ul>
 
-<p>2) The probability can be calculated using:</p>
+<p>Therefore, for the smaller sub-problem above:</p>
 
-\[P(\text{3 consecutive heads}) = 1 - P(\text{no 3 consecutive heads})\]
+\[P(A &gt; B\sqrt{3}) = 1 - B\sqrt{3}\]
 
-<p>3) For a fair coin, each specific sequence has probability:</p>
+<p>for all <strong>\(1 - B\sqrt{3} \geq 0 \Rightarrow B \leq 1/\sqrt{3}\)</strong>.</p>
 
-\[P(\text{HHHHH}) = \left(\frac{1}{2}\right)^5 = \frac{1}{32}\]]]></content><author><name>JXTech</name></author><category term="problems" /><category term="Coin Flips" /><category term="Consecutive Events" /><summary type="html"><![CDATA[What is the probability of getting three consecutive heads when flipping a fair coin 5 times?]]></summary></entry></feed>
+<p>Essentially, this is equivalent to writing:</p>
+
+\[P(\theta &gt; \pi/3 \mid B) = 1 - B\sqrt{3}\]
+
+<p><strong>Why? 🤔</strong><br />
+Because <strong>\(P(\theta &gt; \pi/3 \mid B)\)</strong> represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
+<strong>given some B / conditioned on some B</strong>.</p>
+
+<p>This is exactly what we calculated above! By fixing <strong>B</strong>, we found <strong>\(P(\theta &gt; \pi/3)\)</strong><br />
+in terms of some <strong>B</strong>, for a given <strong>B</strong>.</p>
+
+<p>But of course, as the question states, <strong>B</strong> is also a <strong>Uniform(0,1)</strong> random variable.</p>
+
+<p>We shall now use the <strong>fundamental law of total probability</strong> here.</p>
+
+<hr />
+
+<h3 id="step-2-using-the-law-of-total-probability"><strong>Step 2: Using the Law of Total Probability</strong></h3>
+<p>Note that we can say:</p>
+
+\[P(\theta &gt; \pi/3) = \sum P(\theta &gt; \pi/3 \mid B) P(B)\]
+
+<p>for all <strong>B</strong>.</p>
+
+<p>Now, we must compute <strong>\(P(B)\)</strong>.</p>
+
+<p>What exactly does this represent? 🤔</p>
+
+<p>It basically asks:<br />
+<em>“What is the probability of choosing a particular \(B\) from \([0,1]\)?”</em></p>
+
+<p>Very small, right?</p>
+
+<p>How do we quantify this? <strong>Using calculus!</strong></p>
+
+<p>We can say that the probability of choosing a particular \(B\) from \([0,1]\) is essentially:</p>
+
+\[\frac{dB}{1} = dB\]
+
+<p>where <strong>dB</strong> is a very small term.</p>
+
+<p>Notice that now our summation actually <strong>reduces to a simple integration</strong>, due to our usage of<br />
+<strong>“elemental B” or “dB”</strong> to model \(P(B)\).</p>
+
+<p>Ideally, we should vary <strong>B</strong> from <strong>0 to 1</strong>, but note that <strong>B must be ≤ 1/√3</strong>,<br />
+otherwise <strong>\(P(\theta &gt; \pi/3 \mid B) = 0\)</strong>.</p>
+
+<p>Therefore, we rewrite the above expression as a definite integral:</p>
+
+\[P(\theta &gt; \pi/3) = \int_{0}^{1/\sqrt{3}} (1 - B\sqrt{3}) dB\]
+
+<hr />
+
+<h3 id="step-3-solving-the-integral"><strong>Step 3: Solving the Integral</strong></h3>
+<p>Expanding the integral:</p>
+
+\[\int_{0}^{1/\sqrt{3}} (1 - B\sqrt{3}) dB\]
+
+<p>We solve separately:</p>
+
+\[\int 1 \, dB = B\]
+
+\[\int B\sqrt{3} \, dB = \frac{\sqrt{3} B^2}{2}\]
+
+<p>Evaluating from <strong>0</strong> to <strong>1/√3</strong>:</p>
+
+\[P(\theta &gt; \pi/3) = \left[ B - \frac{\sqrt{3} B^2}{2} \right]_{0}^{1/\sqrt{3}}\]
+
+<p>Substituting <strong>B = 1/√3</strong>:</p>
+
+\[P(\theta &gt; \pi/3) = \frac{1}{\sqrt{3}} - \frac{\sqrt{3} (1/3)}{2}\]
+
+\[= \frac{1}{\sqrt{3}} - \frac{\sqrt{3}}{6}\]
+
+\[= \frac{2}{2\sqrt{3}} - \frac{1}{2\sqrt{3}}\]
+
+\[= \frac{1}{2\sqrt{3}}\]
+
+<p>Thus,</p>
+
+\[\boxed{P(\theta &gt; \pi/3) = \frac{1}{2\sqrt{3}}}\]
+
+<hr />
+
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>Using a combination of <strong>probability concepts, the law of total probability, and calculus</strong>,<br />
+we found that the probability of <strong>θ exceeding π/3</strong> is <strong>1/2√3</strong>.</p>
+
+<p>This problem highlights how fundamental probability techniques can be used to analyze <strong>geometric randomness</strong>.</p>
+
+<hr />
+
+<p>💡 <strong>Did you enjoy this problem? Check out more puzzles in the Probability and Statistics section!</strong></p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A right triangle is being formed with legs labeled A and B. The random lengths of legs A and B are both IID Uniform(0,1) random variables.]]></summary></entry></feed>

@@ -1,7 +1,7 @@
 var store = [{
-        "title": "Probability of Three Consecutive Heads",
-        "excerpt":"What is the probability of getting three consecutive heads when flipping a fair coin 5 times? Solution Let’s solve this step by step: 1) First, let’s understand what we’re looking for: We need sequences of 5 flips that contain HHH somewhere The coin is fair, so P(H) = P(T) =...","categories": ["problems"],
-        "tags": ["Coin Flips","Consecutive Events"],
-        "url": "/problems/2023/03/23/three-consecutive-heads.html",
+        "title": "Random Angle II",
+        "excerpt":"Problem Statement A right triangle is being formed with legs labeled A and B. The random lengths of legs A and B are both IID Uniform(0,1) random variables. Let θ be the angle (in radians) opposite to side A. Find the probability that: \\[P(\\theta &gt; \\pi/3)\\] Original Problem Link: Click...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Uniform Distribution","Triangle","Integration"],
+        "url": "/probability/statistics/problems/2025/02/23/Random-Angle-II.html",
         "teaser": null
       }]

@@ -12,7 +12,7 @@ This is just the beginning. JXTech aims to grow into a platform that fosters res
 
 ---
 
-# **About Me**  
+# **Who am I?**  
 
 I’m **Jasmer Singh Sanjotra**, the guy behind JXTech. A research-driven technologist with a passion for machine learning, high-performance computing, and algorithmic problem-solving. I’m exploring domains like deep learning, parallel computing, and reinforcement learning, with the aim of figuring out how we can make computation faster, smarter, and more efficient.  
 

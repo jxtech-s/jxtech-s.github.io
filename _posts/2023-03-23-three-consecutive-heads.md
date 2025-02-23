@@ -1,7 +1,7 @@
 ---
 title: "Probability of Three Consecutive Heads"
 categories:
-  - Problems
+  - problems
 tags:
   - Coin Flips
   - Consecutive Events
@@ -19,11 +19,11 @@ Let's solve this step by step:
 
 1) First, let's understand what we're looking for:
    - We need sequences of 5 flips that contain HHH somewhere
-   - The coin is fair, so P(H) = P(T) = $\frac{1}{2}$
+   - The coin is fair, so P(H) = P(T) = $$\frac{1}{2}$$
 
 2) The probability can be calculated using:
 
-   $P(\text{3 consecutive heads}) = 1 - P(\text{no 3 consecutive heads})$
+   $$P(\text{3 consecutive heads}) = 1 - P(\text{no 3 consecutive heads})$$
 
 3) For a fair coin, each specific sequence has probability:
 

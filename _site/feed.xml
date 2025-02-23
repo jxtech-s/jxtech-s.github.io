@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T11:50:58+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Probability of Three Consecutive Heads</title><link href="http://localhost:4000/problems/2023/02/23/three-consecutive-heads.html" rel="alternate" type="text/html" title="Probability of Three Consecutive Heads" /><published>2023-02-23T00:00:00+05:30</published><updated>2023-02-23T00:00:00+05:30</updated><id>http://localhost:4000/problems/2023/02/23/three-consecutive-heads</id><content type="html" xml:base="http://localhost:4000/problems/2023/02/23/three-consecutive-heads.html"><![CDATA[<p>What is the probability of getting three consecutive heads when flipping a fair coin 5 times?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T13:18:00+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Probability of Three Consecutive Heads</title><link href="http://localhost:4000/problems/2023/03/23/three-consecutive-heads.html" rel="alternate" type="text/html" title="Probability of Three Consecutive Heads" /><published>2023-03-23T00:00:00+05:30</published><updated>2023-03-23T00:00:00+05:30</updated><id>http://localhost:4000/problems/2023/03/23/three-consecutive-heads</id><content type="html" xml:base="http://localhost:4000/problems/2023/03/23/three-consecutive-heads.html"><![CDATA[<p>What is the probability of getting three consecutive heads when flipping a fair coin 5 times?</p>
 
 <h2 id="solution">Solution</h2>
 
@@ -7,13 +7,13 @@
 <p>1) First, let’s understand what we’re looking for:</p>
 <ul>
   <li>We need sequences of 5 flips that contain HHH somewhere</li>
-  <li>The coin is fair, so P(H) = P(T) = $\frac{1}{2}$</li>
+  <li>The coin is fair, so P(H) = P(T) = \(\frac{1}{2}\)</li>
 </ul>
 
 <p>2) The probability can be calculated using:</p>
 
-<p>$P(\text{3 consecutive heads}) = 1 - P(\text{no 3 consecutive heads})$</p>
+\[P(\text{3 consecutive heads}) = 1 - P(\text{no 3 consecutive heads})\]
 
 <p>3) For a fair coin, each specific sequence has probability:</p>
 
-\[P(\text{HHHHH}) = \left(\frac{1}{2}\right)^5 = \frac{1}{32}\]]]></content><author><name>JXTech</name></author><category term="Problems" /><category term="Coin Flips" /><category term="Consecutive Events" /><summary type="html"><![CDATA[What is the probability of getting three consecutive heads when flipping a fair coin 5 times?]]></summary></entry></feed>
+\[P(\text{HHHHH}) = \left(\frac{1}{2}\right)^5 = \frac{1}{32}\]]]></content><author><name>JXTech</name></author><category term="problems" /><category term="Coin Flips" /><category term="Consecutive Events" /><summary type="html"><![CDATA[What is the probability of getting three consecutive heads when flipping a fair coin 5 times?]]></summary></entry></feed>

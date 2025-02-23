@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: home
 title: "JXTech"
 header:
   overlay_color: "#000"

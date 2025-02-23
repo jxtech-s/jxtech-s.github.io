@@ -4,7 +4,7 @@ title: "Problems Archive"
 permalink: /problems/
 ---
 
-## 📌 Problems Archive
+## Problems Archive
 
 <ul>
 {% for post in site.posts %}

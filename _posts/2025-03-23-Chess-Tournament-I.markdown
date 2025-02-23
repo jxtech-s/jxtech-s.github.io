@@ -6,15 +6,15 @@ categories: [Probability, Statistics, Problems]
 tags: [Probability, Uniform Distribution, Triangle, Integration]
 math: true
 ---
-### **Problem Statement**  
+###  Problem Statement   
 
-A chess tournament has 128 players, each with a **distinct** rating. Assume that the player with the **higher rating always wins** against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will **meet in the final**?
+A chess tournament has 128 players, each with a  distinct  rating. Assume that the player with the  higher rating always wins  against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will  meet in the final ?
 
-**Original Problem Link:** [Click here](https://www.quantguide.io/questions/chess-tournament-i)  
+ Original Problem Link:  [Click here](https://www.quantguide.io/questions/chess-tournament-i)  
 
 ---
 
-### **Solution**
+###  Solution 
 
 Before proceeding to the question, let's think of the following situation -  
 Initially, 128 people are divided into 2 groups of 64 people each.  
@@ -25,60 +25,59 @@ Let's say that adjacent people play chess with each other. Then the games will b
 
  $$ (A_1 - A_2), (A_3 - A_4), \dots, (A_{63} - A_{64}) $$
 
-From each game, **one person (with the higher skill) will win**.  
-Thus, after the first round, we will have **32 players remaining**.  
+From each game,  one person (with the higher skill) will win .  
+Thus, after the first round, we will have  32 players remaining .  
 
-This process will go on until only **one guy remains in each group**, and that person will play with the person from another group to decide the **final winner**.
+This process will go on until only  one guy remains in each group , and that person will play with the person from another group to decide the  final winner .
 
-Now, try to convince yourself that this model is **exactly the same** as the situation given in the question.  
-How?  
+Now, try to convince yourself that this model is  exactly the same  as the situation given in the question.  
+How? 🤔 
 
-- If the **initial distribution** of people among **Group A and B**, and the **arrangement of people within both groups** are all **random**, it will consider all possible plays between every player.
-- Each **unique initial arrangement corresponds to a unique gameplay**.
-- Since by **randomizing the initial group allotment**, all possible distributions of people in Group A and B are considered, it means **all possible gameplays** are also considered.  
-- Which **exactly models the question's situation**.
+- If the  initial distribution  of people among  Group A and B , and the  arrangement of people within both groups  are all  random , it will consider all possible plays between every player.
+- Each  unique initial arrangement corresponds to a unique gameplay .
+- Since by  randomizing the initial group allotment , all possible distributions of people in Group A and B are considered, it means  all possible gameplays  are also considered. This exactly models the given problem.
 
 ---
 
 ### Key Observation  
 
-In our model of the gameplay, the **highest-rated and second-highest-rated player** will **face off against each other** **only when they are in different groups initially**.  
+In our model of the gameplay, the  highest-rated and second-highest-rated player  will  face off against each other   only when they are in different groups initially .  
 
 This problem is now much simpler, effectively reducing it to:  
 
-> **"In how many ways can I arrange 128 people in 2 groups (their position within the group is unique), such that 2 particular people are always in different groups?"**
+>  In how many ways can I arrange 128 people in 2 groups (their position within the group is unique), such that 2 particular people are always in different groups?
 
 ---
 
 ### Solving the Sub-Problem  
 
-First, let's **allot the highest player and second-highest player** to each group.  
-There are **2 ways** of doing this:  
-- **Highest -> Group A, Second-Highest -> Group B**  
-- **Highest -> Group B, Second-Highest -> Group A**  
+First, let's allot the highest player and second-highest player to each group.  
+There are  2 ways  of doing this:  
+-  Highest -> Group A, Second-Highest -> Group B   
+-  Highest -> Group B, Second-Highest -> Group A   
 
 Now, once this is done:  
-- Out of the remaining **126 people**, select **63** people for Group A.  
-- The remaining **63** go to Group B.  
-- Now, we must **arrange the people within each group itself**, thus another  $$ (64!) \times (64!)  $$ (one for each group).
+- Out of the remaining  126 people , select  63  people for Group A.  
+- The remaining  63  go to Group B.  
+- Now, we must  arrange the people within each group itself , thus another  $$ (64!) \times (64!)  $$ (one for each group).
 
-Our final expression for the **favorable cases** becomes:
+Our final expression for the  favorable cases  becomes:
 
  $$
 n(A) = 2 \times \binom{126}{63} \times (64!) \times (64!)
  $$
 
-where  $$ A  $$ is the event described above.
+where  $$ A $$ is the event described above.
 
 ---
 
 ### Computing the Probability  
 
-To find the probability of this arrangement, we must compute the **total number of possible arrangements**.  
-Clearly, this is  $$ 128! $$ because:  
+To find the probability of this arrangement, we must compute the  total number of possible arrangements .  
+Clearly, this is  $$ 128! $$ How 🤔 ?  
 
-- We can linearly arrange all 128 people in $$128!$$ ways.
-- Assuming a **partition after  $$ P_{64}  $$** (representing the end of Group A and the beginning of Group B), all possible distributions are covered.
+- Assume a partition after $$ P_{64}  $$  (representing the end of Group A and the beginning of Group B) exists, to seperate groups A and B.
+- We can linearly arrange all 128 people in $$128!$$ ways. Thus each combination will represent a unique gameplay.
 
 Thus,  
 
@@ -146,4 +145,7 @@ P(A) = \frac{64}{127}
 \boxed{\frac{64}{127}}
  $$
 
-Thus, the probability that the **highest-rated and second-highest-rated players meet in the final** is  $$ \frac{64}{127}  $$.
+Thus, the probability that the  highest-rated and second-highest-rated players meet in the final  is  $$ \frac{64}{127}  $$.
+---
+
+💡  Did you enjoy this problem? Check out more puzzles in the Problems section! 

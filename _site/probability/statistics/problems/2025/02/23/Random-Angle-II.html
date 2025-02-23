@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Random Angle II - JXTech</title>
-<meta name="description" content="Problem Statement A right triangle is being formed with legs labeled A and B. The random lengths of legs A and B are both IID Uniform(0,1) random variables.">
+<meta name="description" content="Problem Statement A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs  A  and  B  are both IID  Uniform(0,1)  random variables.">
 
 
   <meta name="author" content="JXTech">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html">
 
 
-  <meta property="og:description" content="Problem Statement A right triangle is being formed with legs labeled A and B. The random lengths of legs A and B are both IID Uniform(0,1) random variables.">
+  <meta property="og:description" content="Problem Statement A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs  A  and  B  are both IID  Uniform(0,1)  random variables.">
 
 
 
@@ -145,85 +145,87 @@
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Random Angle II">
-    <meta itemprop="description" content="Problem StatementA right triangle is being formed with legs labeled A and B. The random lengths of legsA and B are both IID Uniform(0,1) random variables.">
+    <meta itemprop="description" content="Problem StatementA right triangle is being formed with legs labeled  A  and  B . The random lengths of legs A  and  B  are both IID  Uniform(0,1)  random variables.">
     <meta itemprop="datePublished" content="2025-02-23T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
-      <h3 id="problem-statement"><strong>Problem Statement</strong></h3>
-<p>A right triangle is being formed with legs labeled <strong>A</strong> and <strong>B</strong>. The random lengths of legs<br />
-<strong>A</strong> and <strong>B</strong> are both IID <strong>Uniform(0,1)</strong> random variables.</p>
+      <h3 id="problem-statement">Problem Statement</h3>
+<p>A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs<br />
+ A  and  B  are both IID  Uniform(0,1)  random variables.</p>
 
-<p>Let <strong>θ</strong> be the angle (in radians) opposite to side <strong>A</strong>. Find the probability that:</p>
+<p>Let  θ  be the angle (in radians) opposite to side  A . Find the probability that:</p>
 
 \[P(\theta &gt; \pi/3)\]
 
-<p><strong>Original Problem Link:</strong> <a href="https://www.quantguide.io/questions/random-angle-ii">Click here</a></p>
+<p>Original Problem Link:  <a href="https://www.quantguide.io/questions/random-angle-ii">Click here</a></p>
 
 <hr />
 
-<h3 id="solution"><strong>Solution</strong></h3>
+<h3 id="solution">Solution</h3>
 <p>Now we must find \(P(\theta &gt; \pi/3)\).</p>
 
 <p>Note that,</p>
 
 \[\tan(\theta) = \frac{A}{B}\]
 
-<p>where <strong>A</strong> and <strong>B</strong> both are IID <strong>Uniform(0,1)</strong> random variables.</p>
+<p>where  A  and  B  both are IID  Uniform(0,1)  random variables.</p>
 
-<p>For convenience, let’s fix <strong>B</strong> for now. Then, this problem becomes much simpler. It reduces to:</p>
+<p>For convenience, let’s fix  B  for now. Then, this problem becomes much simpler. It reduces to:</p>
 
-<p><strong>Given</strong> \(\tan(\theta) = A/B\), where <strong>A</strong> is <strong>Uniform(0,1)</strong>, <strong>B</strong> is a given constant,<br />
+<blockquote>
+  <p>Given  \(\tan(\theta) = A/B\), where  A  is  Uniform(0,1) ,  B  is a given constant,<br />
 find \(P(\theta &gt; \pi/3)\).</p>
+</blockquote>
 
 <p>Let’s try and solve this sub-problem:</p>
 
 \[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(A/B &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
 
-<p>Now, since <strong>A</strong> is a <strong>Uniform(0,1)</strong> random variable, clearly:</p>
+<p>Now, since  A  is a  Uniform(0,1)  random variable, clearly:</p>
 
 \[P(A &gt; x) = \max(0, 1-x)\]
 
-<p><strong>(How? 🤔)</strong></p>
+<p>(How? 🤔)</p>
 <ul>
-  <li>If \(x\) is between <strong>0</strong> and <strong>1</strong>, well and good.</li>
-  <li>If \(x &gt; 1\), since <strong>A</strong> cannot be greater than 1, \(P(A &gt; x) = 0\).</li>
+  <li>If \(x\) is between  0  and  1 , well and good.</li>
+  <li>If \(x &gt; 1\), since  A  cannot be greater than 1, \(P(A &gt; x) = 0\).</li>
   <li>Still confused? Try intuitively finding \(P(A&gt;0)\), \(P(A&gt;1/2)\), and \(P(A&gt;1)\). You will see the essence of the above expression.</li>
-  <li>Still confused? Read up on <strong>PDF (Probability Density Function)</strong> and <strong>CDF (Cumulative Density Function)</strong><br />
-of the <strong>continuous Uniform distribution</strong>.</li>
+  <li>Still confused? Read up on  PDF (Probability Density Function)  and  CDF (Cumulative Density Function) <br />
+of the  continuous Uniform distribution .</li>
 </ul>
 
 <p>Therefore, for the smaller sub-problem above:</p>
 
 \[P(A &gt; B\sqrt{3}) = 1 - B\sqrt{3}\]
 
-<p>for all <strong>\(1 - B\sqrt{3} \geq 0 \Rightarrow B \leq 1/\sqrt{3}\)</strong>.</p>
+<p>for all  \(1 - B\sqrt{3} \geq 0 \Rightarrow B \leq 1/\sqrt{3}\) .</p>
 
 <p>Essentially, this is equivalent to writing:</p>
 
 \[P(\theta &gt; \pi/3 \mid B) = 1 - B\sqrt{3}\]
 
-<p><strong>Why? 🤔</strong><br />
-Because <strong>\(P(\theta &gt; \pi/3 \mid B)\)</strong> represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
-<strong>given some B / conditioned on some B</strong>.</p>
+<p>Why? 🤔 <br />
+Because  \(P(\theta &gt; \pi/3 \mid B)\)  represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
+ given some B / conditioned on some B .</p>
 
-<p>This is exactly what we calculated above! By fixing <strong>B</strong>, we found <strong>\(P(\theta &gt; \pi/3)\)</strong><br />
-in terms of some <strong>B</strong>, for a given <strong>B</strong>.</p>
+<p>This is exactly what we calculated above! By fixing  B , we found  \(P(\theta &gt; \pi/3)\) <br />
+in terms of some  B , for a given  B .</p>
 
-<p>But of course, as the question states, <strong>B</strong> is also a <strong>Uniform(0,1)</strong> random variable.</p>
+<p>But of course, as the question states,  B  is also a  Uniform(0,1)  random variable.</p>
 
-<p>We shall now use the <strong>fundamental law of total probability</strong> here.</p>
+<p>We shall now use the  fundamental law of total probability  here.</p>
 
 <hr />
 
-<h3 id="step-2-using-the-law-of-total-probability"><strong>Step 2: Using the Law of Total Probability</strong></h3>
+<h3 id="step-2-using-the-law-of-total-probability">Step 2: Using the Law of Total Probability</h3>
 <p>Note that we can say:</p>
 
 \[P(\theta &gt; \pi/3) = \sum P(\theta &gt; \pi/3 \mid B) P(B)\]
 
-<p>for all <strong>B</strong>.</p>
+<p>for all  B .</p>
 
-<p>Now, we must compute <strong>\(P(B)\)</strong>.</p>
+<p>Now, we must compute  \(P(B)\) .</p>
 
 <p>What exactly does this represent? 🤔</p>
 
@@ -232,19 +234,19 @@ in terms of some <strong>B</strong>, for a given <strong>B</strong>.</p>
 
 <p>Very small, right?</p>
 
-<p>How do we quantify this? <strong>Using calculus!</strong></p>
+<p>How do we quantify this?  Using calculus!</p>
 
 <p>We can say that the probability of choosing a particular \(B\) from \([0,1]\) is essentially:</p>
 
 \[\frac{dB}{1} = dB\]
 
-<p>where <strong>dB</strong> is a very small term.</p>
+<p>where  dB  is a very small term.</p>
 
-<p>Notice that now our summation actually <strong>reduces to a simple integration</strong>, due to our usage of<br />
-<strong>“elemental B” or “dB”</strong> to model \(P(B)\).</p>
+<p>Notice that now our summation actually  reduces to a simple integration , due to our usage of<br />
+ “elemental B” or “dB”  to model \(P(B)\).</p>
 
-<p>Ideally, we should vary <strong>B</strong> from <strong>0 to 1</strong>, but note that <strong>B must be ≤ 1/√3</strong>,<br />
-otherwise <strong>\(P(\theta &gt; \pi/3 \mid B) = 0\)</strong>.</p>
+<p>Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ 1/√3 ,<br />
+otherwise  \(P(\theta &gt; \pi/3 \mid B) = 0\) .</p>
 
 <p>Therefore, we rewrite the above expression as a definite integral:</p>
 
@@ -252,7 +254,7 @@ otherwise <strong>\(P(\theta &gt; \pi/3 \mid B) = 0\)</strong>.</p>
 
 <hr />
 
-<h3 id="step-3-solving-the-integral"><strong>Step 3: Solving the Integral</strong></h3>
+<h3 id="step-3-solving-the-integral">Step 3: Solving the Integral</h3>
 <p>Expanding the integral:</p>
 
 \[\int_{0}^{1/\sqrt{3}} (1 - B\sqrt{3}) dB\]
@@ -263,11 +265,11 @@ otherwise <strong>\(P(\theta &gt; \pi/3 \mid B) = 0\)</strong>.</p>
 
 \[\int B\sqrt{3} \, dB = \frac{\sqrt{3} B^2}{2}\]
 
-<p>Evaluating from <strong>0</strong> to <strong>1/√3</strong>:</p>
+<p>Evaluating from  0  to  1/√3 :</p>
 
 \[P(\theta &gt; \pi/3) = \left[ B - \frac{\sqrt{3} B^2}{2} \right]_{0}^{1/\sqrt{3}}\]
 
-<p>Substituting <strong>B = 1/√3</strong>:</p>
+<p>Substituting  B = 1/√3 :</p>
 
 \[P(\theta &gt; \pi/3) = \frac{1}{\sqrt{3}} - \frac{\sqrt{3} (1/3)}{2}\]
 
@@ -283,15 +285,15 @@ otherwise <strong>\(P(\theta &gt; \pi/3 \mid B) = 0\)</strong>.</p>
 
 <hr />
 
-<h3 id="conclusion"><strong>Conclusion</strong></h3>
-<p>Using a combination of <strong>probability concepts, the law of total probability, and calculus</strong>,<br />
-we found that the probability of <strong>θ exceeding π/3</strong> is <strong>1/2√3</strong>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Using a combination of  probability concepts, the law of total probability, and calculus ,<br />
+we found that the probability of  θ exceeding π/3  is  1/2√3 .</p>
 
-<p>This problem highlights how fundamental probability techniques can be used to analyze <strong>geometric randomness</strong>.</p>
+<p>This problem highlights how fundamental probability techniques can be used to analyze  geometric randomness .</p>
 
 <hr />
 
-<p>💡 <strong>Did you enjoy this problem? Check out more puzzles in the Probability and Statistics section!</strong></p>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>
 
     </section>
   </article>

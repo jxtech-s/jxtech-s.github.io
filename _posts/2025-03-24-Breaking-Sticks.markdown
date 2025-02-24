@@ -11,6 +11,8 @@ math: true
 A stick of length L drops and breaks at a random point distributed uniformly across the length.  
 What is the expected length of the smaller part?  
 
+Original Problem Link:  [Click here](https://brainstellar.com/puzzles/medium/119)  
+
 ---
 
 ### Solution  

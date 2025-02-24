@@ -9,25 +9,24 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Problems Archive - JXTech</title>
-<meta name="description" content="Advanced probability problems and detailed solutions">
+<!-- begin _includes/seo.html --><title>Breaking Stick - JXTech</title>
+<meta name="description" content="Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?">
 
 
   <meta name="author" content="JXTech">
   
+  <meta property="article:author" content="JXTech">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="JXTech">
-<meta property="og:title" content="Problems Archive">
-<meta property="og:url" content="http://localhost:4000/problems/">
+<meta property="og:title" content="Breaking Stick">
+<meta property="og:url" content="http://localhost:4000/probability/statistics/problems/2025/02/23/Breaking-Sticks.html">
 
 
-  <meta property="og:description" content="Advanced probability problems and detailed solutions">
-
-
-
+  <meta property="og:description" content="Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?">
 
 
 
@@ -35,9 +34,14 @@
 
 
 
+  <meta property="article:published_time" content="2025-02-23T00:00:00+05:30">
 
 
-<link rel="canonical" href="http://localhost:4000/problems/">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/probability/statistics/problems/2025/02/23/Breaking-Sticks.html">
 
 
 
@@ -92,7 +96,7 @@
 
   </head>
 
-  <body class="layout--splash">
+  <body class="layout--splash wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -140,29 +144,80 @@
 
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Problems Archive">
-    
-    
+    <meta itemprop="headline" content="Breaking Stick">
+    <meta itemprop="description" content="Problem StatementA stick of length L drops and breaks at a random point distributed uniformly across the length.What is the expected length of the smaller part?">
+    <meta itemprop="datePublished" content="2025-02-23T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
-      <h2 id="problems-archive">Problems Archive</h2>
+      <h3 id="problem-statement">Problem Statement</h3>
+<p>A stick of length L drops and breaks at a random point distributed uniformly across the length.<br />
+What is the expected length of the smaller part?</p>
 
-<ul>
+<hr />
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Breaking-Sticks.html">Breaking Stick</a></li>
-  
+<h3 id="solution">Solution</h3>
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Random-Angle-II.html">Random Angle II</a></li>
-  
+<p>As given in the question, the point where the stick will break is uniformly random.</p>
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html">Chess Tournament I</a></li>
-  
+<p>Now, lets consider, what is the probability, that a particular element (very small) point will be chosen (which is at a distance \(x\) from one end)?</p>
 
-</ul>
+<p>Very small, right? Yes!</p>
+
+<p>We must quantify this using calculus.</p>
+
+<p>We can say that the probability will be:</p>
+
+\[\frac{dx}{L}\]
+
+<p>where \(L\) is the length of the rod.</p>
+
+<p>Now, if this is the case, then the rod will break into 2 parts, one with length \(x\), other with \(L-x\).</p>
+
+<p>Using the fundamental definition of Expectation, we can say that</p>
+
+\[E[l] = \sum (l.P(l)), \quad l \text{ varies from } 0 \text{ to } \frac{L}{2}\]
+
+<p>(as we are looking at the smaller edge)</p>
+
+<p>Here, \(P(l)\) is:</p>
+
+\[\frac{dl}{L}, \quad \text{right? No!}\]
+
+<p>\(P(l)\) means what’s the probability that the smaller part will have a length \(l\).</p>
+
+<p>Note that there are 2 points where a rod can break, for the smaller length to be a particular \(l\)<br />
+(One is at \(l\) distance from one end, the other is at \(l\) distance from the other end).</p>
+
+<p>Thus,</p>
+
+\[P(l) = \frac{2 \, dl}{L}\]
+
+<p>Now, the sigma becomes an integration as we have elemental quantities involved.</p>
+
+<p>Evaluating the integral, we get</p>
+
+\[E[l] = \int_0^{L/2} l \cdot \frac{2 \, dl}{L}\]
+
+\[= \frac{2}{L} \int_0^{L/2} l \, dl\]
+
+\[= \frac{2}{L} \times \left[ \frac{l^2}{2} \right]_0^{L/2}\]
+
+\[= \frac{2}{L} \times \frac{(L/2)^2}{2}\]
+
+\[= \frac{2}{L} \times \frac{L^2}{8}\]
+
+\[= \frac{L}{4}\]
+
+<h3 id="final-answer">Final Answer</h3>
+
+<p>Thus, the expected length of the smaller part is:</p>
+
+\[\boxed{\frac{L}{4}}\]
+
+<hr />
+
+<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>
 
     </section>
   </article>

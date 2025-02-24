@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-23T18:52:15+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h3 id="problem-statement">Problem Statement</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-25T00:41:47+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h3 id="problem-statement">Problem Statement</h3>
 
 <p>A chess tournament has 128 players, each with a  distinct  rating. Assume that the player with the  higher rating always wins  against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will  meet in the final ?</p>
 
@@ -268,4 +268,71 @@ we found that the probability of  θ exceeding π/3  is  1/2√3 .</p>
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A right triangle is being formed with legs labeled A and B . The random lengths of legs A and B are both IID Uniform(0,1) random variables.]]></summary></entry></feed>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A right triangle is being formed with legs labeled A and B . The random lengths of legs A and B are both IID Uniform(0,1) random variables.]]></summary></entry><entry><title type="html">Breaking Stick</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Breaking-Sticks.html" rel="alternate" type="text/html" title="Breaking Stick" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Breaking-Sticks</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Breaking-Sticks.html"><![CDATA[<h3 id="problem-statement">Problem Statement</h3>
+<p>A stick of length L drops and breaks at a random point distributed uniformly across the length.<br />
+What is the expected length of the smaller part?</p>
+
+<hr />
+
+<h3 id="solution">Solution</h3>
+
+<p>As given in the question, the point where the stick will break is uniformly random.</p>
+
+<p>Now, lets consider, what is the probability, that a particular element (very small) point will be chosen (which is at a distance \(x\) from one end)?</p>
+
+<p>Very small, right? Yes!</p>
+
+<p>We must quantify this using calculus.</p>
+
+<p>We can say that the probability will be:</p>
+
+\[\frac{dx}{L}\]
+
+<p>where \(L\) is the length of the rod.</p>
+
+<p>Now, if this is the case, then the rod will break into 2 parts, one with length \(x\), other with \(L-x\).</p>
+
+<p>Using the fundamental definition of Expectation, we can say that</p>
+
+\[E[l] = \sum (l.P(l)), \quad l \text{ varies from } 0 \text{ to } \frac{L}{2}\]
+
+<p>(as we are looking at the smaller edge)</p>
+
+<p>Here, \(P(l)\) is:</p>
+
+\[\frac{dl}{L}, \quad \text{right? No!}\]
+
+<p>\(P(l)\) means what’s the probability that the smaller part will have a length \(l\).</p>
+
+<p>Note that there are 2 points where a rod can break, for the smaller length to be a particular \(l\)<br />
+(One is at \(l\) distance from one end, the other is at \(l\) distance from the other end).</p>
+
+<p>Thus,</p>
+
+\[P(l) = \frac{2 \, dl}{L}\]
+
+<p>Now, the sigma becomes an integration as we have elemental quantities involved.</p>
+
+<p>Evaluating the integral, we get</p>
+
+\[E[l] = \int_0^{L/2} l \cdot \frac{2 \, dl}{L}\]
+
+\[= \frac{2}{L} \int_0^{L/2} l \, dl\]
+
+\[= \frac{2}{L} \times \left[ \frac{l^2}{2} \right]_0^{L/2}\]
+
+\[= \frac{2}{L} \times \frac{(L/2)^2}{2}\]
+
+\[= \frac{2}{L} \times \frac{L^2}{8}\]
+
+\[= \frac{L}{4}\]
+
+<h3 id="final-answer">Final Answer</h3>
+
+<p>Thus, the expected length of the smaller part is:</p>
+
+\[\boxed{\frac{L}{4}}\]
+
+<hr />
+
+<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?]]></summary></entry></feed>

@@ -10,4 +10,10 @@ var store = [{
         "tags": ["Probability","Uniform Distribution","Triangle","Integration"],
         "url": "/probability/statistics/problems/2025/02/23/Random-Angle-II.html",
         "teaser": null
+      },{
+        "title": "Breaking Stick",
+        "excerpt":"Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part? Solution As given in the question, the point where the stick will break is uniformly random. Now, lets consider, what is the...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Uniform Distribution","Triangle","Integration"],
+        "url": "/probability/statistics/problems/2025/02/23/Breaking-Sticks.html",
+        "teaser": null
       }]

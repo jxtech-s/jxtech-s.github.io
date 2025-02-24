@@ -32,6 +32,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-include-cache
+  - jekyll-feed
 
 # Defaults for posts
 defaults:

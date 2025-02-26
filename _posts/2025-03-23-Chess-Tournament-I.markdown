@@ -3,10 +3,10 @@ layout: splash
 title: "Chess Tournament I"
 date: 2025-02-23
 categories: [Probability, Statistics, Problems]
-tags: [Probability, Uniform Distribution, Triangle, Integration]
+tags: [Probability, Combinatorics, Counting Principle]
 math: true
 ---
-###  Problem Statement   
+##  Problem Statement   
 
 A chess tournament has 128 players, each with a  distinct  rating. Assume that the player with the  higher rating always wins  against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will  meet in the final ?
 
@@ -14,7 +14,7 @@ A chess tournament has 128 players, each with a  distinct  rating. Assume that t
 
 ---
 
-###  Solution 
+##  Solution 
 
 Before proceeding to the question, let's think of the following situation -  
 Initially, 128 people are divided into 2 groups of 64 people each.  

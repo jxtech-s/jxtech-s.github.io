@@ -1,13 +1,13 @@
 ---
 layout: splash
 title: "Breaking Stick"
-date: 2025-02-23
+date: 2025-02-24
 categories: [Probability, Statistics, Problems]
-tags: [Probability, Uniform Distribution, Triangle, Integration]
+tags: [Probability, Uniform Distribution, Integration]
 math: true
 ---
 
-### Problem Statement  
+## Problem Statement  
 A stick of length L drops and breaks at a random point distributed uniformly across the length.  
 What is the expected length of the smaller part?  
 
@@ -15,7 +15,7 @@ Original Problem Link:  [Click here](https://brainstellar.com/puzzles/medium/119
 
 ---
 
-### Solution  
+## Solution  
 
 As given in the question, the point where the stick will break is uniformly random.  
 

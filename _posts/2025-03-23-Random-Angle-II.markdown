@@ -7,7 +7,8 @@ tags: [Probability, Uniform Distribution, Triangle, Integration]
 math: true
 ---
 
-###  Problem Statement   
+##  Problem Statement  
+
 A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs  
  A  and  B  are both IID  Uniform(0,1)  random variables.  
 
@@ -19,7 +20,7 @@ $$  P(\theta > \pi/3)$$
 
 ---
 
-###  Solution   
+##  Solution   
 Now we must find $$ P(\theta > \pi/3)$$.  
 
 Note that,  

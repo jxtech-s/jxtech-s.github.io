@@ -148,4 +148,4 @@ P(A) = \frac{64}{127}
 Thus, the probability that the  highest-rated and second-highest-rated players meet in the final  is  $$ \frac{64}{127}  $$.
 ---
 
-💡  Did you enjoy this problem? Check out more puzzles in the Problems section! 
+💡  Did you enjoy this problem? Check out more puzzles in the [Problems](https://jxtech-s.github.io/problems/) section! 

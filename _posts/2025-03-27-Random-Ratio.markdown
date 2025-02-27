@@ -132,4 +132,4 @@ PS - A similar integration is involved in the problem [Random-Angle-II](https://
 
 ---
 
-💡  Did you enjoy this problem? Check out more puzzles in the Problems section! 
+💡  Did you enjoy this problem? Check out more puzzles in the [Problems](https://jxtech-s.github.io/problems/) section! 

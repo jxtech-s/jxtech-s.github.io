@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-27T16:51:56+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Random Ratio</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/26/Chess-Tournament-I-copy.html" rel="alternate" type="text/html" title="Random Ratio" /><published>2025-02-26T00:00:00+05:30</published><updated>2025-02-26T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/26/Chess-Tournament-I%20copy</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/26/Chess-Tournament-I-copy.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-17T22:14:29+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Confused Ant II</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html" rel="alternate" type="text/html" title="Confused Ant II" /><published>2025-03-17T00:00:00+05:30</published><updated>2025-03-17T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>An ant walks the corner of a 3D cube and moves to one of the three adjacent vertices with equal probability at each step. Find the expected number of steps needed for the ant to return to the vertex it started at.</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/confused-ant-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Here from each corner, the ant can take any path with an equal probability of \(1/3\).
+We must realize that if we compute the probability of each possible path, and multiply it by the number of steps its taking, and take its summation over all possible cases, that would yes lead to our answer, but it is very tedious to compute.</p>
+
+<p>A better alternative is to use the concept of Conditional Expectations.
+It essentially states that</p>
+
+\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
+
+<h3 id="step-1-identifying-states">Step 1: Identifying States</h3>
+
+<p>In the described problem, the ant can be uniquely at 4 possible positions.</p>
+<ol>
+  <li>At the starting point itself (call this \(A\)).</li>
+  <li>At a point only 1 edge away from \(A\) (call this \(B\)).</li>
+  <li>At a point 2 edges away from \(A\) (call this \(C\)).</li>
+  <li>At a point 3 edges away from \(A\) (call this \(D\). Note that there is only 1 such point, the one diagonally opposite to \(A\)).</li>
+</ol>
+
+<p>This reduces our problem to a Markov Chain analysis, with transition probablities as follows -</p>
+
+<p>State \(A\) to State \(B\) = 1 
+(How? -&gt; Note that from \(A\), you have 3 options to move, all symmetric and 1 edge away from \(A\). This means you will definitely move to state \(B\))</p>
+
+<p>State \(B\) to State \(A\) = 1/3
+(How? -&gt; When you are at point \(B\) (which is 1 edge away from \(A\)), you can move back to point \(A\) with probability 1/3 (since at each point, all edges are equiprobable))</p>
+
+<p>State \(B\) to State \(C\) = 2/3
+(How? From State \(B\), you either move back to \(A\), or the other 2 edges lead to a point which is 2 edges away from \(A\), this point \(C\))</p>
+
+<p>State \(C\) to State \(B\) = 2/3
+(How? When at State \(C\), 2 paths will lead to State \(B\), and 1 will lead to \(D\). Try to visualize this on a cube, with State \(C\) being just adjacent to the opposite corner to \(A\))</p>
+
+<p>State \(C\) to State \(D\) = 1/3
+(How? When at State \(C\), 2 paths will lead to State \(B\), and 1 will lead to \(D\))</p>
+
+<p>Thus, we can reduce the problem to</p>
+
+<blockquote>
+  <p>“Given the above State Transition Probabilities, find E[A], where A is the event of returning to point A after moving atleast once”</p>
+</blockquote>
+
+<h3 id="step-2-forming-the-set-of-expectation-equations">Step 2: Forming the set of Expectation equations</h3>
+
+<p>For any State X, using the Conditional Expectation Equation described above</p>
+
+\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
+
+<p>Where the states \(Y_i\) represent points just adjacent to state \(X\).</p>
+
+<p>Solving for State A, we get</p>
+
+<p>\(E[A] = 1\)(for the 1 step we take) \(+3*1/3E[B]\)
+Where \(E(B)\) represents the expected value to reach state \(A\) from \(B\).</p>
+
+<p>Simplifying, we get</p>
+
+\[E[A] = 1 + E[B]\]
+
+<p>Similarly, for State \(B\), we have,</p>
+
+<p>Neighbouring States = A, C, C. Thus,</p>
+
+\[E[B] = 1 +  1/3(E'[A]) + 2/3(E[C])\]
+
+<p>Note that here, \(E'[A]\) is NOT \(E[A]\).</p>
+
+<p>\(E[A]\) is the expected number of states to reach \(A\) from \(A\), given that we haven’t moved before.</p>
+
+<p>\(E'[A]\) is the expected number of states to reach \(A\) from \(A\), given that we HAVE moved (since we went to \(B\)!). This is obviously 0, as you have already reached \(A\)!</p>
+
+<p>Thus, we get</p>
+
+\[E[B] = 1 + 2/3 (E[C])\]
+
+<p>For states \(C\) and \(D\), following a similar analysis, we will get</p>
+
+\[E[C] = 1 + 1/3 (E[D]) + 2/3 (E[B])\]
+
+<p>(Note - for \(C\), we are surrounded by 2 \(B\)’s and 1 \(D\)); and</p>
+
+\[E[D] = 1 + E[C]\]
+
+<p>(When at \(D\), we are only surrounded by \(C\)’s. Just a reminder, \(D\) is the opposite diagonal to \(A\)(our starting point), so this becomes trivial)</p>
+
+<p>Therefore, we have a set of 4 equations and four variables (\(E[A]\), \(E[B]\), \(E[C]\), \(E[D]\))! These can be solved easily using backsubstitution.</p>
+
+<h3 id="step-3-solving-the-equations">Step 3: Solving the Equations</h3>
+
+<p>We have the following system of equations:</p>
+
+<ol>
+  <li>
+\[E[A] = 1 + E[B]\]
+  </li>
+  <li>
+\[E[B] = 1 + \frac{2}{3} E[C]\]
+  </li>
+  <li>
+\[E[C] = 1 + \frac{1}{3} E[D] + \frac{2}{3} E[B]\]
+  </li>
+  <li>
+\[E[D] = 1 + E[C]\]
+  </li>
+</ol>
+
+<p>Now,</p>
+
+<p>From Equation (4):</p>
+
+\[E[D] = 1 + E[C]\]
+
+<p>Substituting this into Equation (3):</p>
+
+\[E[C] = 1 + \frac{1}{3} (1 + E[C]) + \frac{2}{3} E[B]\]
+
+<p>Expanding:</p>
+
+\[E[C] = 1 + \frac{1}{3} + \frac{1}{3}E[C] + \frac{2}{3}E[B]\]
+
+<p>Rearrange:</p>
+
+\[E[C] - \frac{1}{3} E[C] = \frac{4}{3} + \frac{2}{3}E[B]\]
+
+\[\frac{2}{3}E[C] = \frac{4}{3} + \frac{2}{3}E[B]\]
+
+<p>Multiplying both sides by \(\frac{3}{2}\):</p>
+
+\[E[C] = 2 + E[B]\]
+
+<p>From Equation (2):</p>
+
+\[E[B] = 1 + \frac{2}{3} E[C]\]
+
+<p>Substituting \(E[C] = 2 + E[B]\):</p>
+
+\[E[B] = 1 + \frac{2}{3} (2 + E[B])\]
+
+\[E[B] = 1 + \frac{4}{3} + \frac{2}{3}E[B]\]
+
+\[E[B] - \frac{2}{3}E[B] = \frac{7}{3}\]
+
+\[\frac{1}{3}E[B] = \frac{7}{3}\]
+
+\[E[B] = 7\]
+
+<p>Thus, finally we get,</p>
+
+\[E[A] = 1 + E[B] = 1 + 7 = 8\]
+
+<h3 id="therefore-the-the-expected-number-of-moves-required-for-the-ant-to-reach-back-to-its-starting-point-is-8">Therefore, the the expected number of moves required for the ant to reach back to its starting point is 8.</h3>
+
+<hr />
+
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Random Ratio</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/27/Random-Ratio.html" rel="alternate" type="text/html" title="Random Ratio" /><published>2025-02-27T00:00:00+05:30</published><updated>2025-02-27T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/27/Random-Ratio</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/27/Random-Ratio.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>\(p\) and \(q\) are two points chosen at random between 0 \(\&amp;\) 1. What is the probability that the ratio \(p/q\) lies between 1 \(\&amp;\) 2?</p>
 
@@ -99,7 +260,7 @@
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Intersecting Chords</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html" rel="alternate" type="text/html" title="Intersecting Chords" /><published>2025-02-26T00:00:00+05:30</published><updated>2025-02-26T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Intersecting Chords</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html" rel="alternate" type="text/html" title="Intersecting Chords" /><published>2025-02-26T00:00:00+05:30</published><updated>2025-02-26T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>10 chords with uniformly randomly chosen endpoints are drawn on a circle. What is the expected number of intersections?</p>
 
@@ -175,7 +336,7 @@ Given a chord, to make another intersecting chord, I can choose any random point
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Breaking Stick</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks.html" rel="alternate" type="text/html" title="Breaking Stick" /><published>2025-02-24T00:00:00+05:30</published><updated>2025-02-24T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Breaking Stick</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks.html" rel="alternate" type="text/html" title="Breaking Stick" /><published>2025-02-24T00:00:00+05:30</published><updated>2025-02-24T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/24/Breaking-Sticks.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 <p>A stick of length L drops and breaks at a random point distributed uniformly across the length.<br />
 What is the expected length of the smaller part?</p>
 
@@ -244,7 +405,7 @@ What is the expected length of the smaller part?</p>
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?]]></summary></entry><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?]]></summary></entry><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>A chess tournament has 128 players, each with a  distinct  rating. Assume that the player with the  higher rating always wins  against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will  meet in the final ?</p>
 
@@ -371,7 +532,7 @@ Clearly, this is  \(128!\) How 🤔 ?</p>
 
 <h2 id="thus-the-probability-that-the--highest-rated-and-second-highest-rated-players-meet-in-the-final--is--frac64127">Thus, the probability that the  highest-rated and second-highest-rated players meet in the final  is  \(\frac{64}{127}\).</h2>
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs<br />
  A  and  B  are both IID  Uniform(0,1)  random variables.</p>
@@ -515,4 +676,4 @@ we found that the probability of  θ exceeding π/3  is  1/2√3 .</p>
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the Problems section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

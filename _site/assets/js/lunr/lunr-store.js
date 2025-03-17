@@ -17,15 +17,21 @@ var store = [{
         "url": "/probability/statistics/problems/2025/02/24/Breaking-Sticks.html",
         "teaser": null
       },{
-        "title": "Random Ratio",
-        "excerpt":"Problem Statement \\(p\\) and \\(q\\) are two points chosen at random between 0 \\(\\&amp;\\) 1. What is the probability that the ratio \\(p/q\\) lies between 1 \\(\\&amp;\\) 2? Original Problem Link: Click here Solution We have 2 random variables (RVs) \\(p \\&amp; q\\) here. Let’s try to fix one for...","categories": ["Probability","Statistics","Problems"],
-        "tags": ["Probability","Integration"],
-        "url": "/probability/statistics/problems/2025/02/26/Chess-Tournament-I-copy.html",
-        "teaser": null
-      },{
         "title": "Intersecting Chords",
         "excerpt":"Problem Statement 10 chords with uniformly randomly chosen endpoints are drawn on a circle. What is the expected number of intersections? Original Problem Link: Click here Solution Let us consider the simpler case of 2 chords intersecting. Once we have that, perhaps we can use it to formulate something for...","categories": ["Probability","Statistics","Problems"],
         "tags": ["Probability","Combinatorics","Counting Principle"],
         "url": "/probability/statistics/problems/2025/02/26/Intersecting-Chords.html",
+        "teaser": null
+      },{
+        "title": "Random Ratio",
+        "excerpt":"Problem Statement \\(p\\) and \\(q\\) are two points chosen at random between 0 \\(\\&amp;\\) 1. What is the probability that the ratio \\(p/q\\) lies between 1 \\(\\&amp;\\) 2? Original Problem Link: Click here Solution We have 2 random variables (RVs) \\(p \\&amp; q\\) here. Let’s try to fix one for...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Integration"],
+        "url": "/probability/statistics/problems/2025/02/27/Random-Ratio.html",
+        "teaser": null
+      },{
+        "title": "Confused Ant II",
+        "excerpt":"Problem Statement An ant walks the corner of a 3D cube and moves to one of the three adjacent vertices with equal probability at each step. Find the expected number of steps needed for the ant to return to the vertex it started at. Original Problem Link: Click here Solution...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Expectations"],
+        "url": "/probability/statistics/problems/2025/03/17/Confused-Ant-II.html",
         "teaser": null
       }]

@@ -1,7 +1,7 @@
 ---
 layout: splash
 title: "Random Ratio"
-date: 2025-02-26
+date: 2025-02-27
 categories: [Probability, Statistics, Problems]
 tags: [Probability, Integration]
 math: true

@@ -34,4 +34,10 @@ var store = [{
         "tags": ["Probability","Expectations"],
         "url": "/probability/statistics/problems/2025/03/17/Confused-Ant-II.html",
         "teaser": null
+      },{
+        "title": "Differ by 2",
+        "excerpt":"Problem Statement How many times do we have to roll a fair 6-sided die till we roll two numbers in a row that differ by 2? Original Problem Link: Click here Solution Here, starting from the first roll, ofcourse each number is equally likely to show, with a probability of...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Expectations"],
+        "url": "/probability/statistics/problems/2025/03/18/Differ-by-2.html",
+        "teaser": null
       }]

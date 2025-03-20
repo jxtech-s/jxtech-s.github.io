@@ -132,7 +132,7 @@ E[X] = \frac{17}{3}
 $$
 
 
-### Therefore, the the expected number of moves required for the ant to reach back to its starting point is $$\frac{17}{3}$$
+### Therefore, the expected number of moves required for the ant to reach back to its starting point is $$\frac{17}{3}$$
 
 ---
 

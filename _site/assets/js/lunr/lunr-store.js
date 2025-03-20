@@ -40,4 +40,10 @@ var store = [{
         "tags": ["Probability","Expectations"],
         "url": "/probability/statistics/problems/2025/03/18/Differ-by-2.html",
         "teaser": null
+      },{
+        "title": "Pass the ball",
+        "excerpt":"Problem Statement You and 4 other people are sitting in a circle. You are given a ball to start the game. Every second of this game, the person with the ball has three choices they can make. They can either pass the ball to the left, pass the ball to...","categories": ["Probability","Statistics","Problems"],
+        "tags": ["Probability","Conditional Probability"],
+        "url": "/probability/statistics/problems/2025/03/18/Pass-the-Ball.html",
+        "teaser": null
       }]

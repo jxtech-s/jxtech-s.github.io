@@ -46,4 +46,10 @@ var store = [{
         "tags": ["Probability","Conditional Probability"],
         "url": "/probability/statistics/problems/2025/03/18/Pass-the-Ball.html",
         "teaser": null
+      },{
+        "title": "Mean babysitter",
+        "excerpt":"Problem Statement 10 kids are really hungry! Their babysitter has 12 units of food to give. However, she decides she only wants to give 4 of the children food. How many ways can she distribute the food units such that 6 of the children are hungry (receive no food), and...","categories": ["Combinatorics","Statistics","Problems"],
+        "tags": ["Combinatorics","Counting"],
+        "url": "/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html",
+        "teaser": null
       }]

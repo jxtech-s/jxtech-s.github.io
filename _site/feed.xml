@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-20T19:18:06+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-21T18:15:58+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Mean babysitter</title><link href="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html" rel="alternate" type="text/html" title="Mean babysitter" /><published>2025-03-21T00:00:00+05:30</published><updated>2025-03-21T00:00:00+05:30</updated><id>http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter</id><content type="html" xml:base="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>10 kids are really hungry! Their babysitter has 12 units of food to give. However, she decides she only wants to give 4 of the children food. How many ways can she distribute the food units such that 6 of the children are hungry (receive no food), and the other 4 children receive at least 1 unit of food each?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/mean-babysitter">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1-understanding-the-required-tasks">Step 1: Understanding the Required Tasks</h3>
+
+<p>To distribute the food, we need to:</p>
+
+<ol>
+  <li>Choose 4 children who will receive food (equivalently, choose 6 children who won’t).</li>
+  <li>Distribute 12 units of food among these 4 children, ensuring that each child gets at least 1 unit.</li>
+</ol>
+
+<h3 id="step-2-calculating-the-number-of-ways">Step 2: Calculating the Number of Ways</h3>
+
+<h4 id="step-1-choosing-4-children"><strong>Step 1: Choosing 4 Children</strong></h4>
+<p>Since we need to select 4 children out of 10, the number of ways to do this is:</p>
+
+\[\binom{10}{4} = \binom{10}{6} = 210\]
+
+<p>(since choosing 4 to receive food is the same as choosing 6 to not receive food).</p>
+
+<h4 id="step-2-distributing-the-food"><strong>Step 2: Distributing the Food</strong></h4>
+<p>Let the food received by the four chosen children be represented as:</p>
+
+\[f_{a} + f_{b} + f_{c} + f_{d} = 12\]
+
+<p>where \(f_{a}, f_{b}, f_{c}, f_{d}\) represent the food units received by each of the 4 children.</p>
+
+<p>Since each child must get at least 1 unit, we make the substitution:</p>
+
+\[f_{a} = 1 + x_{a}, \quad f_{b} = 1 + x_{b}, \quad f_{c} = 1 + x_{c}, \quad f_{d} = 1 + x_{d}\]
+
+<p>Rewriting the equation:</p>
+
+\[(1 + x_{a}) + (1 + x_{b}) + (1 + x_{c}) + (1 + x_{d}) = 12\]
+
+<p>which simplifies to:</p>
+
+\[x_{a} + x_{b} + x_{c} + x_{d} = 8\]
+
+<p>This is now a classic “stars and bars” problem, where we distribute 8 extra food units among 4 children. The number of ways to do this is:</p>
+
+\[\binom{8 + 4 - 1}{4 - 1} = \binom{11}{3} = 165\]
+
+<h3 id="step-3-computing-the-final-answer">Step 3: Computing the Final Answer</h3>
+
+<p>The total number of valid distributions is:</p>
+
+\[\binom{10}{4} \times \binom{11}{3} = 210 \times 165 = 34,650\]
+
+<p>Thus, the final answer is:</p>
+
+\[\mathbf{34,650}\]
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many times do we have to roll a fair 6-sided die till we roll two numbers in a row that differ by 2?</p>
 

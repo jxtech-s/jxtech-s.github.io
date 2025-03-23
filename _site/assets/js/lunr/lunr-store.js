@@ -52,4 +52,22 @@ var store = [{
         "tags": ["Combinatorics","Counting"],
         "url": "/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html",
         "teaser": null
+      },{
+        "title": "Graph Search I",
+        "excerpt":"Problem Statement You are given an undirected graph with \\(10\\) nodes. From every node, you are able to access any other node (including itself), all with an equal probability of \\(\\frac{1}{10}\\). What is the expected number of steps to reach all nodes at least once (rounded to the nearest step)?...","categories": ["Expectations","Probability","Problems"],
+        "tags": ["Expectations","Probability"],
+        "url": "/expectations/probability/problems/2025/03/23/Graph-Search-I.html",
+        "teaser": null
+      },{
+        "title": "Graph Search II",
+        "excerpt":"Problem Statement You are given an undirected graph with \\(11\\) nodes. From every node, you are able to access any other node (not including itself), all with an equal probability of \\(\\frac{1}{10}\\). What is the expected number of steps to reach all nodes at least once (rounded to the nearest...","categories": ["Expectations","Probability","Problems"],
+        "tags": ["Expectations","Probability"],
+        "url": "/expectations/probability/problems/2025/03/23/Graph-Search-II.html",
+        "teaser": null
+      },{
+        "title": "Particle Reach",
+        "excerpt":"Problem Statement Consider a particle that performs a random walk on the integers starting at position \\(0\\). At each step, the particle moves from position \\(i\\) to position \\(i+1\\) with probability \\(p\\), while the probability it moves from \\(i\\) to \\(i−1\\) is \\(1−p\\). If \\(p=\\frac{1}{3}\\), find the probability the particle...","categories": ["Probability","Problems"],
+        "tags": ["Random Walks","Probability"],
+        "url": "/probability/problems/2025/03/23/Particle-Reach.html",
+        "teaser": null
       }]

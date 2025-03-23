@@ -142,7 +142,7 @@ $$  \boxed{P(\theta > \pi/3) = \frac{1}{2\sqrt{3}}}$$
 
 ###  Conclusion   
 Using a combination of  probability concepts, the law of total probability, and calculus ,  
-we found that the probability of  θ exceeding π/3  is  1/2√3 .  
+we found that the probability of  $$θ$$ exceeding $$\frac{\pi}{3}$$  is  $$\frac{1}{2√3}$$ .  
 
 This problem highlights how fundamental probability techniques can be used to analyze  geometric randomness .  
 

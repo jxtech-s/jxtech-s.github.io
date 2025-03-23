@@ -73,12 +73,8 @@ $$
 \binom{10}{4} \times \binom{11}{3} = 210 \times 165 = 34,650
 $$
 
-Thus, the final answer is:
 
-$$
-\mathbf{34,650}
-$$
-
+### Therefore, the total number of ways is $$\mathbf{34650}$$
 ---
 
 💡 Did you enjoy this problem? Check out more puzzles in the [Problems](https://jxtech-s.github.io/problems/) section!  

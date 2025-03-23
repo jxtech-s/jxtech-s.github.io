@@ -1,4 +1,271 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-21T18:15:58+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Mean babysitter</title><link href="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html" rel="alternate" type="text/html" title="Mean babysitter" /><published>2025-03-21T00:00:00+05:30</published><updated>2025-03-21T00:00:00+05:30</updated><id>http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter</id><content type="html" xml:base="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-23T12:21:12+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Graph Search I</title><link href="http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-I.html" rel="alternate" type="text/html" title="Graph Search I" /><published>2025-03-23T00:00:00+05:30</published><updated>2025-03-23T00:00:00+05:30</updated><id>http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-I</id><content type="html" xml:base="http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You are given an undirected graph with \(10\) nodes. From every node, you are able to access any other node (including itself), all with an equal probability of \(\frac{1}{10}\). What is the expected number of steps to reach all nodes at least once (rounded to the nearest step)?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/graph-search">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>It is clear that we must deal with conditional expectations in the given problem. As a recap, using conditional expectations, we get</p>
+
+\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
+
+<h3 id="step-1-formulating-recursive-relation">Step 1: Formulating Recursive Relation</h3>
+
+<p>Lets denote \(E_{i}\) as the expected number of steps required to  visit \(i\) un-visited nodes. Note that this does not count our current node.</p>
+
+<p>Now, when the simulation starts, you will take 1 step and enter the first node. After this, 9 nodes remain to be visited. Now, when you take the next path, either you end up on the same node (with probability \(\frac{1}{10}\)) or you end up on a new node (with probability \(\frac{9}{10}\)). Note that, when you enter a new node, now the remaining expected number of steps will be \(E_{8}\), as you have already visited 2 nodes.</p>
+
+<p>Therefore, for our first iteration, we could write
+\(E_{9} = (\frac{1}{10} \times (1 + E_{9})) + (\frac{9}{10} \times (1 + E_{8}))\)</p>
+
+<p>Note that the + 1 is added in each term as you take one step to reach there.</p>
+
+<h3 id="step-2-generalizing-the-relation">Step 2: Generalizing the Relation</h3>
+
+<p>After a few iterations, it will be clear that the relation can be generalized as follows -</p>
+<blockquote>
+  <p>“If you must visit n nodes more, then with probability \(\frac{10 - n}{10}\) you will reach an already visited node (where you will take \(E_{n}\) steps), and with probability \(\frac{n}{10}\) you will visit a new node (where you will take \(E_{n-1}\) steps).”</p>
+</blockquote>
+
+<p>Therefore,</p>
+
+\[E_{n} = (\frac{10 - n}{10} \times (1 + E_{n})) + (\frac{n}{10} \times (1 + E_{n-1}))\]
+
+<p>On simplification, we get</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1}\]
+
+<h3 id="step-3-solving-recursion">Step 3: Solving Recursion</h3>
+
+<p>Now that we have established the recurrence relation</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1},\]
+
+<p>we can solve it iteratively to find a general expression for \(E_{9}\), which is the expected number of steps to visit 9 new nodes. Note that we will need to add one more step, which is to “start” the simulation, i.e. enter the graph in the first place, and visit our first node.</p>
+
+<p>First, note that the recurrence starts with \(E_{0} = 0\) since when no nodes are unvisited, no more steps are required.</p>
+
+<p>Now, let’s compute the values step by step:</p>
+
+<ul>
+  <li>
+    <p>For \(E_1\):
+\(E_1 = \frac{10}{1} + E_0 = 10 + 0 = 10.\)</p>
+  </li>
+  <li>
+    <p>For \(E_2\):
+\(E_2 = \frac{10}{2} + E_1 = 5 + 10 = 15.\)</p>
+  </li>
+  <li>
+    <p>For \(E_3\):
+\(E_3 = \frac{10}{3} + E_2 = \frac{10}{3} + 15 \approx 3.33 + 15 = 18.33.\)</p>
+  </li>
+  <li>
+    <p>For \(E_4\):
+\(E_4 = \frac{10}{4} + E_3 = 2.5 + 18.33 \approx 20.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_5\):
+\(E_5 = \frac{10}{5} + E_4 = 2 + 20.83 \approx 22.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_6\):
+\(E_6 = \frac{10}{6} + E_5 = \frac{5}{3} + 22.83 \approx 1.67 + 22.83 = 24.5.\)</p>
+  </li>
+  <li>
+    <p>For \(E_7\):
+\(E_7 = \frac{10}{7} + E_6 = \frac{10}{7} + 24.5 \approx 1.43 + 24.5 = 25.93.\)</p>
+  </li>
+  <li>
+    <p>For \(E_8\):
+\(E_8 = \frac{10}{8} + E_7 = \frac{5}{4} + 25.93 \approx 1.25 + 25.93 = 27.18.\)</p>
+  </li>
+  <li>
+    <p>For \(E_9\):
+\(E_9 = \frac{10}{9} + E_8 = \frac{10}{9} + 27.18 \approx 1.11 + 27.18 = 28.29.\)</p>
+  </li>
+</ul>
+
+<p>Finally, for our final answer, as discussed above, we have:</p>
+
+\[Ans = 1 + E_9 = 1 + 28.29 \approx 29.29\]
+
+<h3 id="thus-the-expected-number-of-steps-to-visit-all-10-nodes-at-least-once-is-approximately-2929-which-rounds-to-29-steps">Thus, the expected number of steps to visit all 10 nodes at least once is approximately <strong>29.29</strong>, which rounds to <strong>29</strong> steps.</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Expectations" /><category term="Probability" /><category term="Problems" /><category term="Expectations" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Particle Reach</title><link href="http://localhost:4000/probability/problems/2025/03/23/Particle-Reach.html" rel="alternate" type="text/html" title="Particle Reach" /><published>2025-03-23T00:00:00+05:30</published><updated>2025-03-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/23/Particle-Reach</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/23/Particle-Reach.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Consider a particle that performs a random walk on the integers starting at position \(0\). At each step, the particle moves from position \(i\) to position \(i+1\) with probability \(p\), while the probability it moves from \(i\) to \(i−1\) is \(1−p\). If \(p=\frac{1}{3}\), find the probability the particle ever reaches position \(1\)</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/particle-reach-i">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>It is obvious that counting cases is not feasible here. Clearly there are infinitely many cases, with no clear pattern leading to a solvable series summation. Instead, lets deal with conditional probabilities.</p>
+
+<p>To recall,</p>
+
+\[P(X) = \sum_{Y_i} P(X | Y_i) \times P(Y_i)\]
+
+<h3 id="step-1-basic-observations">Step 1: Basic Observations</h3>
+
+<p>There is a key observation here. I pose the following question</p>
+<blockquote>
+  <p>“If the particle started at position -1, what will be the probability of it ever reaching 0? How about 1?”</p>
+</blockquote>
+
+<p>Note that, the particle’s probability of reaching 0 is the same as that of a particle’s probability of reach 1 when it starts at 0. This is because this random walk does not depend on your current position, just relative distances.</p>
+
+<p>Now, what about the second part? Say I denote the probability of particle reaching the position to its just right as \(p_1\).
+Note that in this case, the</p>
+
+<p>probability of particle reaching 2 steps to the right = P(Particle reaching 1 step right) * P(Particle reaching 1 step right)</p>
+
+<p>How? Positional independence! As stated earlier, in this random walk, the probabilities are independent of your current position! This is essentially the product of 2 independent events, which are</p>
+<ul>
+  <li>Particle Reaching 1 step to the right</li>
+  <li>Particle reaching another step to the right from this new position (making total distance 2)</li>
+</ul>
+
+<p>Thus, \(p_2 = p_1^{2}\)</p>
+
+<h3 id="step-2-equation-formation-and-solution">Step 2: Equation Formation and Solution</h3>
+
+<p>Now, lets use the law of total probability to form an equation in \(p_1\).</p>
+
+<p>We know,</p>
+
+\[P(X) = \sum_{Y_i} P(X | Y_i) \times P(Y_i)\]
+
+<p>Here, from the origin, 2 events are possible</p>
+
+<ul>
+  <li>The particle moves one step right to 1, with probability \(p\)</li>
+  <li>The particle moves one step left to -1, with probability \(1-p\)</li>
+</ul>
+
+<p>Lets denote our event “particle reaching position 1” as \(X\)
+Also, \(Y_i\) would represent the particle moving either left or right.
+Let \(Y_1\) be particle moving left. This \(P(Y_1) = 1 - p\). Similarly, let \(Y_2\) be particle moving right. This \(P(Y_2) = p\).</p>
+
+<p>Also, from our discussion earlier, \(P(X \mid Y_1) = p_2 = p_1^{2}\), and \(P(X \mid Y_2) = 1\). Ofcourse, \(P(X) = p_1\), and \(p = \frac{1}{3}\), as given in the question.</p>
+
+<p>Plugging the values and simplifying, we get the equation</p>
+
+\[2p_1^{2} - 3p_1 + 1 = 0\]
+
+<p>Solving, we get \(p_1 = 1, \frac{1}{2}\)</p>
+
+<p>Clearly, \(p_1 != 1\).</p>
+
+<h3 id="thus-the-required-probability-is-frac12">Thus, the required probability is \(\frac{1}{2}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Random Walks" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Graph Search II</title><link href="http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-II.html" rel="alternate" type="text/html" title="Graph Search II" /><published>2025-03-23T00:00:00+05:30</published><updated>2025-03-23T00:00:00+05:30</updated><id>http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-II</id><content type="html" xml:base="http://localhost:4000/expectations/probability/problems/2025/03/23/Graph-Search-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You are given an undirected graph with \(11\) nodes. From every node, you are able to access any other node (not including itself), all with an equal probability of \(\frac{1}{10}\). What is the expected number of steps to reach all nodes at least once (rounded to the nearest step)?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/graph-search-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>It is clear that we must deal with conditional expectations in the given problem. As a recap, using conditional expectations, we get</p>
+
+\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
+
+<h3 id="step-1-formulating-recursive-relation">Step 1: Formulating Recursive Relation</h3>
+
+<p>Lets denote \(E_{i}\) as the expected number of steps required to  visit \(i\) un-visited nodes. Note that this does not count our current node.</p>
+
+<p>Now, when the simulation starts, you will take 1 step and enter the first node. After this, 10 nodes remain to be visited. Now, when you take the next path, you will definitely end up on a new node (as all other nodes are unvisited). Lets say this step is done. Now, you are on your 2nd node, with 9 unvisited, and 1 visited. Now, with probability \(\frac{1}{10}\), you may end up on an already visited note, and with probability \(\frac{9}{10}\), you may end up on a new un-visited node.</p>
+
+<p>Therefore, for our second iteration, we could write
+\(E_{9} = (\frac{1}{10} \times (1 + E_{9})) + (\frac{9}{10} \times (1 + E_{8}))\)</p>
+
+<p>Note that the + 1 is added in each term as you take one step to reach there.</p>
+
+<h3 id="step-2-generalizing-the-relation">Step 2: Generalizing the Relation</h3>
+
+<p>After a few iterations, it will be clear that the relation can be generalized as follows -</p>
+<blockquote>
+  <p>“If you must visit n nodes more, then with probability \(\frac{10 - n}{10}\) you will reach an already visited node (where you will take \(E_{n}\) steps), and with probability \(\frac{n}{10}\) you will visit a new node (where you will take \(E_{n-1}\) steps).”</p>
+</blockquote>
+
+<p>Therefore,</p>
+
+\[E_{n} = (\frac{10 - n}{10} \times (1 + E_{n})) + (\frac{n}{10} \times (1 + E_{n-1}))\]
+
+<p>On simplification, we get</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1}\]
+
+<h3 id="step-3-solving-recursion">Step 3: Solving Recursion</h3>
+
+<p>Now that we have established the recurrence relation</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1},\]
+
+<p>we can solve it iteratively to find a general expression for \(E_{10}\), which is the expected number of steps to visit all 10 new nodes at least once. Note that we will also need to add 1 to this, as that will mark our “first” step into the graph (because its only on our first node we need to walk \(E_{10}\) steps more. We must include that first step to our first node as well).</p>
+
+<p>First, note that the recurrence starts with \(E_{0} = 0\) since when no nodes are unvisited, no more steps are required.</p>
+
+<p>Now, let’s compute the values step by step:</p>
+
+<ul>
+  <li>
+    <p>For \(E_1\):
+\(E_1 = \frac{10}{1} + E_0 = 10 + 0 = 10.\)</p>
+  </li>
+  <li>
+    <p>For \(E_2\):
+\(E_2 = \frac{10}{2} + E_1 = 5 + 10 = 15.\)</p>
+  </li>
+  <li>
+    <p>For \(E_3\):
+\(E_3 = \frac{10}{3} + E_2 = \frac{10}{3} + 15 \approx 3.33 + 15 = 18.33.\)</p>
+  </li>
+  <li>
+    <p>For \(E_4\):
+\(E_4 = \frac{10}{4} + E_3 = 2.5 + 18.33 \approx 20.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_5\):
+\(E_5 = \frac{10}{5} + E_4 = 2 + 20.83 \approx 22.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_6\):
+\(E_6 = \frac{10}{6} + E_5 = \frac{5}{3} + 22.83 \approx 1.67 + 22.83 = 24.5.\)</p>
+  </li>
+  <li>
+    <p>For \(E_7\):
+\(E_7 = \frac{10}{7} + E_6 = \frac{10}{7} + 24.5 \approx 1.43 + 24.5 = 25.93.\)</p>
+  </li>
+  <li>
+    <p>For \(E_8\):
+\(E_8 = \frac{10}{8} + E_7 = \frac{5}{4} + 25.93 \approx 1.25 + 25.93 = 27.18.\)</p>
+  </li>
+  <li>
+    <p>For \(E_9\):
+\(E_9 = \frac{10}{9} + E_8 = \frac{10}{9} + 27.18 \approx 1.11 + 27.18 = 28.29.\)</p>
+  </li>
+  <li>
+    <p>Finally, for \(E_{10}\):
+\(E_{10} = \frac{10}{10} + E_9 = 1 + 28.29 \approx 29.29.\)</p>
+  </li>
+</ul>
+
+<p>As discussed earlier, we must add 1 to account for our first step on the 11th node (from where we start exploring the remaining 10 nodes). Therefore,</p>
+
+\[Ans = 1 + E_10 = 1 + 29.29 \approx 30.29.\]
+
+<h3 id="thus-the-expected-number-of-steps-to-visit-all-11-nodes-at-least-once-is-approximately-3029-which-rounds-to-30-steps">Thus, the expected number of steps to visit all 11 nodes at least once is approximately <strong>30.29</strong>, which rounds to <strong>30</strong> steps.</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Expectations" /><category term="Probability" /><category term="Problems" /><category term="Expectations" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Mean babysitter</title><link href="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html" rel="alternate" type="text/html" title="Mean babysitter" /><published>2025-03-21T00:00:00+05:30</published><updated>2025-03-21T00:00:00+05:30</updated><id>http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter</id><content type="html" xml:base="http://localhost:4000/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>10 kids are really hungry! Their babysitter has 12 units of food to give. However, she decides she only wants to give 4 of the children food. How many ways can she distribute the food units such that 6 of the children are hungry (receive no food), and the other 4 children receive at least 1 unit of food each?</p>
 
@@ -53,10 +320,7 @@
 
 \[\binom{10}{4} \times \binom{11}{3} = 210 \times 165 = 34,650\]
 
-<p>Thus, the final answer is:</p>
-
-\[\mathbf{34,650}\]
-
+<h3 id="therefore-the-total-number-of-ways-is-mathbf34650">Therefore, the total number of ways is \(\mathbf{34650}\)</h3>
 <hr />
 
 <p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
@@ -670,275 +934,4 @@ What is the expected length of the smaller part?</p>
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?]]></summary></entry><entry><title type="html">Chess Tournament I</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html" rel="alternate" type="text/html" title="Chess Tournament I" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>A chess tournament has 128 players, each with a  distinct  rating. Assume that the player with the  higher rating always wins  against a lower rated opponent and that the winner proceeds to the subsequent round. What is the probability that the highest rated and second-highest rated players will  meet in the final ?</p>
-
-<p>Original Problem Link:  <a href="https://www.quantguide.io/questions/chess-tournament-i">Click here</a></p>
-
-<hr />
-
-<h2 id="solution">Solution</h2>
-
-<p>Before proceeding to the question, let’s think of the following situation -<br />
-Initially, 128 people are divided into 2 groups of 64 people each.<br />
-In every round, each group will play within itself (say each guy plays with the guy beside him). How will a group play within itself?</p>
-
-<p>Consider group A with \(A_1, A_2, A_3, A_4, \dots, A_{63}, A_{64}\).<br />
-Let’s say that adjacent people play chess with each other. Then the games will be:</p>
-
-\[(A_1 - A_2), (A_3 - A_4), \dots, (A_{63} - A_{64})\]
-
-<p>From each game,  one person (with the higher skill) will win .<br />
-Thus, after the first round, we will have  32 players remaining .</p>
-
-<p>This process will go on until only  one guy remains in each group , and that person will play with the person from another group to decide the  final winner .</p>
-
-<p>Now, try to convince yourself that this model is  exactly the same  as the situation given in the question.<br />
-How? 🤔</p>
-
-<ul>
-  <li>If the  initial distribution  of people among  Group A and B , and the  arrangement of people within both groups  are all  random , it will consider all possible plays between every player.</li>
-  <li>Each  unique initial arrangement corresponds to a unique gameplay .</li>
-  <li>Since by  randomizing the initial group allotment , all possible distributions of people in Group A and B are considered, it means  all possible gameplays  are also considered. This exactly models the given problem.</li>
-</ul>
-
-<hr />
-
-<h3 id="key-observation">Key Observation</h3>
-
-<p>In our model of the gameplay, the  highest-rated and second-highest-rated player  will  face off against each other   only when they are in different groups initially .</p>
-
-<p>This problem is now much simpler, effectively reducing it to:</p>
-
-<blockquote>
-  <p>In how many ways can I arrange 128 people in 2 groups (their position within the group is unique), such that 2 particular people are always in different groups?</p>
-</blockquote>
-
-<hr />
-
-<h3 id="solving-the-sub-problem">Solving the Sub-Problem</h3>
-
-<p>First, let’s allot the highest player and second-highest player to each group.<br />
-There are  2 ways  of doing this:</p>
-<ul>
-  <li>Highest -&gt; Group A, Second-Highest -&gt; Group B</li>
-  <li>Highest -&gt; Group B, Second-Highest -&gt; Group A</li>
-</ul>
-
-<p>Now, once this is done:</p>
-<ul>
-  <li>Out of the remaining  126 people , select  63  people for Group A.</li>
-  <li>The remaining  63  go to Group B.</li>
-  <li>Now, we must  arrange the people within each group itself , thus another  \((64!) \times (64!)\) (one for each group).</li>
-</ul>
-
-<p>Our final expression for the  favorable cases  becomes:</p>
-
-\[n(A) = 2 \times \binom{126}{63} \times (64!) \times (64!)\]
-
-<p>where  \(A\) is the event described above.</p>
-
-<hr />
-
-<h3 id="computing-the-probability">Computing the Probability</h3>
-
-<p>To find the probability of this arrangement, we must compute the  total number of possible arrangements .<br />
-Clearly, this is  \(128!\) How 🤔 ?</p>
-
-<ul>
-  <li>Assume a partition after \(P_{64}\)  (representing the end of Group A and the beginning of Group B) exists, to seperate groups A and B.</li>
-  <li>We can linearly arrange all 128 people in \(128!\) ways. Thus each combination will represent a unique gameplay.</li>
-</ul>
-
-<p>Thus,</p>
-
-\[n(S) = 128!\]
-
-<p>The required probability is:</p>
-
-\[P(A) = \frac{n(A)}{n(S)}\]
-
-<p>Substituting values:</p>
-
-\[P(A) = \frac{2 \times \binom{126}{63} \times (64!)^2}{128!}\]
-
-<p>Expanding the combination formula:</p>
-
-\[\binom{126}{63} = \frac{126!}{63! \times 63!}\]
-
-<p>Thus:</p>
-
-\[P(A) = \frac{2 \times 126! \times (64!)^2}{63! \times 63! \times 128!}\]
-
-<p>Expanding \(128!\) as \(128 \times 127 \times 126!\):</p>
-
-\[P(A) = \frac{2 \times 126! \times 64! \times 64!}{63! \times 63! \times 128 \times 127 \times 126!}\]
-
-<p>Canceling \(126!\):</p>
-
-\[P(A) = \frac{2 \times 64! \times 64!}{63! \times 63! \times 128 \times 127}\]
-
-<p>Using:</p>
-
-\[\frac{64!}{63!} = 64\]
-
-\[P(A) = \frac{2 \times 64 \times 64}{128 \times 127}\]
-
-<p>Simplifying:</p>
-
-\[P(A) = \frac{64}{127}\]
-
-<hr />
-
-<h3 id="final-answer">Final Answer</h3>
-
-\[\boxed{\frac{64}{127}}\]
-
-<h2 id="thus-the-probability-that-the--highest-rated-and-second-highest-rated-players-meet-in-the-final--is--frac64127">Thus, the probability that the  highest-rated and second-highest-rated players meet in the final  is  \(\frac{64}{127}\).</h2>
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Random Angle II</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html" rel="alternate" type="text/html" title="Random Angle II" /><published>2025-02-23T00:00:00+05:30</published><updated>2025-02-23T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/23/Random-Angle-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs<br />
- A  and  B  are both IID  Uniform(0,1)  random variables.</p>
-
-<p>Let  θ  be the angle (in radians) opposite to side  A . Find the probability that:</p>
-
-\[P(\theta &gt; \pi/3)\]
-
-<p>Original Problem Link:  <a href="https://www.quantguide.io/questions/random-angle-ii">Click here</a></p>
-
-<hr />
-
-<h2 id="solution">Solution</h2>
-<p>Now we must find \(P(\theta &gt; \pi/3)\).</p>
-
-<p>Note that,</p>
-
-\[\tan(\theta) = \frac{A}{B}\]
-
-<p>where  A  and  B  both are IID  Uniform(0,1)  random variables.</p>
-
-<p>For convenience, let’s fix  B  for now. Then, this problem becomes much simpler. It reduces to:</p>
-
-<blockquote>
-  <p>Given  \(\tan(\theta) = A/B\), where  A  is  Uniform(0,1) ,  B  is a given constant,<br />
-find \(P(\theta &gt; \pi/3)\).</p>
-</blockquote>
-
-<p>Let’s try and solve this sub-problem:</p>
-
-\[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(A/B &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
-
-<p>Now, since  A  is a  Uniform(0,1)  random variable, clearly:</p>
-
-\[P(A &gt; x) = \max(0, 1-x)\]
-
-<p>(How? 🤔)</p>
-<ul>
-  <li>If \(x\) is between  0  and  1 , well and good.</li>
-  <li>If \(x &gt; 1\), since  A  cannot be greater than 1, \(P(A &gt; x) = 0\).</li>
-  <li>Still confused? Try intuitively finding \(P(A&gt;0)\), \(P(A&gt;1/2)\), and \(P(A&gt;1)\). You will see the essence of the above expression.</li>
-  <li>Still confused? Read up on  PDF (Probability Density Function)  and  CDF (Cumulative Density Function) <br />
-of the  continuous Uniform distribution .</li>
-</ul>
-
-<p>Therefore, for the smaller sub-problem above:</p>
-
-\[P(A &gt; B\sqrt{3}) = 1 - B\sqrt{3}\]
-
-<p>for all  \(1 - B\sqrt{3} \geq 0 \Rightarrow B \leq 1/\sqrt{3}\) .</p>
-
-<p>Essentially, this is equivalent to writing:</p>
-
-\[P(\theta &gt; \pi/3 \mid B) = 1 - B\sqrt{3}\]
-
-<p>Why? 🤔 <br />
-Because  \(P(\theta &gt; \pi/3 \mid B)\)  represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
- given some B / conditioned on some B .</p>
-
-<p>This is exactly what we calculated above! By fixing  B , we found  \(P(\theta &gt; \pi/3)\) <br />
-in terms of some  B , for a given  B .</p>
-
-<p>But of course, as the question states,  B  is also a  Uniform(0,1)  random variable.</p>
-
-<p>We shall now use the  fundamental law of total probability  here.</p>
-
-<hr />
-
-<h3 id="step-2-using-the-law-of-total-probability">Step 2: Using the Law of Total Probability</h3>
-<p>Note that we can say:</p>
-
-\[P(\theta &gt; \pi/3) = \sum P(\theta &gt; \pi/3 \mid B) P(B)\]
-
-<p>for all  B .</p>
-
-<p>Now, we must compute  \(P(B)\) .</p>
-
-<p>What exactly does this represent? 🤔</p>
-
-<p>It basically asks:<br />
-<em>“What is the probability of choosing a particular \(B\) from \([0,1]\)?”</em></p>
-
-<p>Very small, right?</p>
-
-<p>How do we quantify this?  Using calculus!</p>
-
-<p>We can say that the probability of choosing a particular \(B\) from \([0,1]\) is essentially:</p>
-
-\[\frac{dB}{1} = dB\]
-
-<p>where  dB  is a very small term.</p>
-
-<p>Notice that now our summation actually  reduces to a simple integration , due to our usage of<br />
- “elemental B” or “dB”  to model \(P(B)\).</p>
-
-<p>Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ 1/√3 ,<br />
-otherwise  \(P(\theta &gt; \pi/3 \mid B) = 0\) .</p>
-
-<p>Therefore, we rewrite the above expression as a definite integral:</p>
-
-\[P(\theta &gt; \pi/3) = \int_{0}^{1/\sqrt{3}} (1 - B\sqrt{3}) dB\]
-
-<hr />
-
-<h3 id="step-3-solving-the-integral">Step 3: Solving the Integral</h3>
-<p>Expanding the integral:</p>
-
-\[\int_{0}^{1/\sqrt{3}} (1 - B\sqrt{3}) dB\]
-
-<p>We solve separately:</p>
-
-\[\int 1 \, dB = B\]
-
-\[\int B\sqrt{3} \, dB = \frac{\sqrt{3} B^2}{2}\]
-
-<p>Evaluating from  0  to  1/√3 :</p>
-
-\[P(\theta &gt; \pi/3) = \left[ B - \frac{\sqrt{3} B^2}{2} \right]_{0}^{1/\sqrt{3}}\]
-
-<p>Substituting  B = 1/√3 :</p>
-
-\[P(\theta &gt; \pi/3) = \frac{1}{\sqrt{3}} - \frac{\sqrt{3} (1/3)}{2}\]
-
-\[= \frac{1}{\sqrt{3}} - \frac{\sqrt{3}}{6}\]
-
-\[= \frac{2}{2\sqrt{3}} - \frac{1}{2\sqrt{3}}\]
-
-\[= \frac{1}{2\sqrt{3}}\]
-
-<p>Thus,</p>
-
-\[\boxed{P(\theta &gt; \pi/3) = \frac{1}{2\sqrt{3}}}\]
-
-<hr />
-
-<h3 id="conclusion">Conclusion</h3>
-<p>Using a combination of  probability concepts, the law of total probability, and calculus ,<br />
-we found that the probability of  θ exceeding π/3  is  1/2√3 .</p>
-
-<p>This problem highlights how fundamental probability techniques can be used to analyze  geometric randomness .</p>
-
-<hr />
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Triangle" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Uniform Distribution" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement A stick of length L drops and breaks at a random point distributed uniformly across the length. What is the expected length of the smaller part?]]></summary></entry></feed>

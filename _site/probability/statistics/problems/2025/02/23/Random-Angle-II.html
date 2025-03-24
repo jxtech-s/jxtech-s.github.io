@@ -152,10 +152,10 @@
     <section class="page__content" itemprop="text">
       <h2 id="problem-statement">Problem Statement</h2>
 
-<p>A right triangle is being formed with legs labeled  A  and  B . The random lengths of legs<br />
- A  and  B  are both IID  Uniform(0,1)  random variables.</p>
+<p>A right triangle is being formed with legs labeled  \(A\)  and  \(B\). The random lengths of legs<br />
+ \(A\)  and  \(B\)  are both IID  Uniform(0,1)  random variables.</p>
 
-<p>Let  θ  be the angle (in radians) opposite to side  A . Find the probability that:</p>
+<p>Let  \(\theta\)  be the angle (in radians) opposite to side  \(A\). Find the probability that:</p>
 
 \[P(\theta &gt; \pi/3)\]
 
@@ -170,18 +170,18 @@
 
 \[\tan(\theta) = \frac{A}{B}\]
 
-<p>where  A  and  B  both are IID  Uniform(0,1)  random variables.</p>
+<p>where  \(A\)  and  \(B\)  both are IID  Uniform(0,1)  random variables.</p>
 
-<p>For convenience, let’s fix  B  for now. Then, this problem becomes much simpler. It reduces to:</p>
+<p>For convenience, let’s fix  \(B\)  for now. Then, this problem becomes much simpler. It reduces to:</p>
 
 <blockquote>
-  <p>Given  \(\tan(\theta) = A/B\), where  A  is  Uniform(0,1) ,  B  is a given constant,<br />
+  <p>Given  \(\tan(\theta) = \frac{A}{B}\), where  \(A\)  is  Uniform(0,1) ,\(B\)  is a given constant,<br />
 find \(P(\theta &gt; \pi/3)\).</p>
 </blockquote>
 
 <p>Let’s try and solve this sub-problem:</p>
 
-\[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(A/B &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
+\[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(\frac{A}{B} &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
 
 <p>Now, since  A  is a  Uniform(0,1)  random variable, clearly:</p>
 
@@ -206,7 +206,7 @@ of the  continuous Uniform distribution .</li>
 
 \[P(\theta &gt; \pi/3 \mid B) = 1 - B\sqrt{3}\]
 
-<p>Why? 🤔 <br />
+<p>(Why? 🤔) <br />
 Because  \(P(\theta &gt; \pi/3 \mid B)\)  represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
  given some B / conditioned on some B .</p>
 
@@ -230,8 +230,11 @@ in terms of some  B , for a given  B .</p>
 
 <p>What exactly does this represent? 🤔</p>
 
-<p>It basically asks:<br />
-<em>“What is the probability of choosing a particular \(B\) from \([0,1]\)?”</em></p>
+<p>It basically asks:</p>
+
+<blockquote>
+  <p>What is the probability of choosing a particular \(B\) from \([0,1]\)?</p>
+</blockquote>
 
 <p>Very small, right?</p>
 
@@ -244,9 +247,9 @@ in terms of some  B , for a given  B .</p>
 <p>where  dB  is a very small term.</p>
 
 <p>Notice that now our summation actually  reduces to a simple integration , due to our usage of<br />
- “elemental B” or “dB”  to model \(P(B)\).</p>
+ “elemental B” or “\(dB\)”  to model \(P(B)\).</p>
 
-<p>Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ 1/√3 ,<br />
+<p>Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ \(\frac{1}{\sqrt 3}\) ,<br />
 otherwise  \(P(\theta &gt; \pi/3 \mid B) = 0\) .</p>
 
 <p>Therefore, we rewrite the above expression as a definite integral:</p>

@@ -70,4 +70,10 @@ var store = [{
         "tags": ["Random Walks","Probability"],
         "url": "/probability/problems/2025/03/23/Particle-Reach.html",
         "teaser": null
+      },{
+        "title": "Matching Die Trio",
+        "excerpt":"Problem Statement Three fair \\(6\\)−sided dice are rolled and their upfaces are recorded. Find the probability that the values showing upon rolling all three dice again is the same as the original three values recorded. Original Problem Link: Click here Solution We approach this problem using conditional expectation and casework...","categories": ["Probability","Problems"],
+        "tags": ["Combinatorics","Probability"],
+        "url": "/probability/problems/2025/03/24/Matching-Die-Trio.html",
+        "teaser": null
       }]

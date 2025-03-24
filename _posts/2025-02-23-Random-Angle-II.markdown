@@ -39,7 +39,7 @@ Let's try and solve this sub-problem:
 
 $$  P(\theta > \pi/3) = P(\tan(\theta) > \sqrt{3}) = P(\frac{A}{B} > \sqrt{3}) = P(A > B\sqrt{3})$$  
 
-Now, since  A  is a  Uniform(0,1)  random variable, clearly:  
+Now, since  $$A$$  is a  Uniform(0,1)  random variable, clearly:  
 
 $$  P(A > x) = \max(0, 1-x)$$  
 
@@ -64,10 +64,10 @@ $$  P(\theta > \pi/3 \mid B) = 1 - B\sqrt{3}$$
 Because  $$  P(\theta > \pi/3 \mid B)$$  represents the probability of $$  \theta$$ being greater than $$  \pi/3$$,  
  given some B / conditioned on some B .  
 
-This is exactly what we calculated above! By fixing  B , we found  $$  P(\theta > \pi/3)$$   
-in terms of some  B , for a given  B .  
+This is exactly what we calculated above! By fixing  $$B$$ , we found  $$  P(\theta > \pi/3)$$   
+in terms of some  $$B$$ , for a given  $$B$$.  
 
-But of course, as the question states,  B  is also a  Uniform(0,1)  random variable.  
+But of course, as the question states, $$B$$ is also a  Uniform(0,1)  random variable.  
 
 We shall now use the  fundamental law of total probability  here.  
 
@@ -78,7 +78,7 @@ Note that we can say:
 
 $$  P(\theta > \pi/3) = \sum P(\theta > \pi/3 \mid B) P(B)$$  
 
-for all  B .  
+for all  $$B$$.  
 
 Now, we must compute  $$  P(B)$$ .  
 
@@ -96,12 +96,12 @@ We can say that the probability of choosing a particular $$  B$$ from $$  [0,1]$
 
 $$  \frac{dB}{1} = dB$$  
 
-where  dB  is a very small term.  
+where  $$dB$$  is a very small term.  
 
 Notice that now our summation actually  reduces to a simple integration , due to our usage of  
  "elemental B" or "$$dB$$"  to model $$  P(B)$$.  
 
-Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ $$\frac{1}{\sqrt 3}$$ ,  
+Ideally, we should vary  $$B$$  from  $$0$$ to $$1$$, but note that  $$B$$ must be ≤ $$\frac{1}{\sqrt 3}$$ ,  
 otherwise  $$  P(\theta > \pi/3 \mid B) = 0$$ .  
 
 Therefore, we rewrite the above expression as a definite integral:  
@@ -121,11 +121,11 @@ $$  \int 1 \, dB = B$$
 
 $$  \int B\sqrt{3} \, dB = \frac{\sqrt{3} B^2}{2}$$  
 
-Evaluating from  0  to  1/√3 :  
+Evaluating from  $$0$$  to  $$1/√3$$:  
 
 $$  P(\theta > \pi/3) = \left[ B - \frac{\sqrt{3} B^2}{2} \right]_{0}^{1/\sqrt{3}}$$  
 
-Substituting  B = 1/√3 :  
+Substituting  $$B = 1/√3$$:  
 
 $$  P(\theta > \pi/3) = \frac{1}{\sqrt{3}} - \frac{\sqrt{3} (1/3)}{2}$$  
 

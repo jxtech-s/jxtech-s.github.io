@@ -183,7 +183,7 @@ find \(P(\theta &gt; \pi/3)\).</p>
 
 \[P(\theta &gt; \pi/3) = P(\tan(\theta) &gt; \sqrt{3}) = P(\frac{A}{B} &gt; \sqrt{3}) = P(A &gt; B\sqrt{3})\]
 
-<p>Now, since  A  is a  Uniform(0,1)  random variable, clearly:</p>
+<p>Now, since  \(A\)  is a  Uniform(0,1)  random variable, clearly:</p>
 
 \[P(A &gt; x) = \max(0, 1-x)\]
 
@@ -210,10 +210,10 @@ of the  continuous Uniform distribution .</li>
 Because  \(P(\theta &gt; \pi/3 \mid B)\)  represents the probability of \(\theta\) being greater than \(\pi/3\),<br />
  given some B / conditioned on some B .</p>
 
-<p>This is exactly what we calculated above! By fixing  B , we found  \(P(\theta &gt; \pi/3)\) <br />
-in terms of some  B , for a given  B .</p>
+<p>This is exactly what we calculated above! By fixing  \(B\) , we found  \(P(\theta &gt; \pi/3)\) <br />
+in terms of some  \(B\) , for a given  \(B\).</p>
 
-<p>But of course, as the question states,  B  is also a  Uniform(0,1)  random variable.</p>
+<p>But of course, as the question states, \(B\) is also a  Uniform(0,1)  random variable.</p>
 
 <p>We shall now use the  fundamental law of total probability  here.</p>
 
@@ -224,7 +224,7 @@ in terms of some  B , for a given  B .</p>
 
 \[P(\theta &gt; \pi/3) = \sum P(\theta &gt; \pi/3 \mid B) P(B)\]
 
-<p>for all  B .</p>
+<p>for all  \(B\).</p>
 
 <p>Now, we must compute  \(P(B)\) .</p>
 
@@ -244,12 +244,12 @@ in terms of some  B , for a given  B .</p>
 
 \[\frac{dB}{1} = dB\]
 
-<p>where  dB  is a very small term.</p>
+<p>where  \(dB\)  is a very small term.</p>
 
 <p>Notice that now our summation actually  reduces to a simple integration , due to our usage of<br />
  “elemental B” or “\(dB\)”  to model \(P(B)\).</p>
 
-<p>Ideally, we should vary  B  from  0 to 1 , but note that  B must be ≤ \(\frac{1}{\sqrt 3}\) ,<br />
+<p>Ideally, we should vary  \(B\)  from  \(0\) to \(1\), but note that  \(B\) must be ≤ \(\frac{1}{\sqrt 3}\) ,<br />
 otherwise  \(P(\theta &gt; \pi/3 \mid B) = 0\) .</p>
 
 <p>Therefore, we rewrite the above expression as a definite integral:</p>
@@ -269,11 +269,11 @@ otherwise  \(P(\theta &gt; \pi/3 \mid B) = 0\) .</p>
 
 \[\int B\sqrt{3} \, dB = \frac{\sqrt{3} B^2}{2}\]
 
-<p>Evaluating from  0  to  1/√3 :</p>
+<p>Evaluating from  \(0\)  to  \(1/√3\):</p>
 
 \[P(\theta &gt; \pi/3) = \left[ B - \frac{\sqrt{3} B^2}{2} \right]_{0}^{1/\sqrt{3}}\]
 
-<p>Substituting  B = 1/√3 :</p>
+<p>Substituting  \(B = 1/√3\):</p>
 
 \[P(\theta &gt; \pi/3) = \frac{1}{\sqrt{3}} - \frac{\sqrt{3} (1/3)}{2}\]
 

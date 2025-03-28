@@ -76,4 +76,10 @@ var store = [{
         "tags": ["Combinatorics","Probability"],
         "url": "/probability/problems/2025/03/24/Matching-Die-Trio.html",
         "teaser": null
+      },{
+        "title": "Square Cross",
+        "excerpt":"Problem Statement A square of side length \\(20\\) is placed in front of you. You select a point uniformly at random from its interior. Then, independently, a circle of radius \\(R \\sim \\text{Unif}(0,10)\\) is formed around the selected point. What is the probability that this circle does not intersect the...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Integration"],
+        "url": "/probability/problems/2025/03/28/Square-Cross.html",
+        "teaser": null
       }]

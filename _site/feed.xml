@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-24T18:51:33+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Matching Die Trio</title><link href="http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio.html" rel="alternate" type="text/html" title="Matching Die Trio" /><published>2025-03-24T00:00:00+05:30</published><updated>2025-03-24T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-28T21:21:36+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Square Cross</title><link href="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html" rel="alternate" type="text/html" title="Square Cross" /><published>2025-03-28T00:00:00+05:30</published><updated>2025-03-28T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/28/Square-Cross</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>A square of side length \(20\) is placed in front of you. You select a point uniformly at random from its interior. Then, independently, a circle of radius \(R \sim \text{Unif}(0,10)\) is formed around the selected point. What is the probability that this circle does not intersect the square at any point?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/square-cross">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1---understanding-the-core-idea">Step 1 - Understanding the Core Idea</h3>
+
+<p>Let’s build some intuition. Clearly, the best place to pick a point is the center of the square—a circle centered there can grow up to radius \(10\) before touching an edge. Any point away from the center? Well, that’s where things get tricky—closer points to the boundary have a higher chance of their circle spilling out.</p>
+
+<p>Try to visualize the locus of all points that are an equal distance from the closest edge. These points form a smaller concentric square, with perpendicular distance \(x\) from the center. Our goal is now clear:</p>
+
+<ol>
+  <li>Find the probability of choosing a point at a given \(x\).</li>
+  <li>Given \(x\), find the probability that a circle centered there does not intersect the square.</li>
+  <li>Integrate over all possible \(x\).</li>
+</ol>
+
+<h4 id="visualizing-the-locus">Visualizing the Locus</h4>
+
+<p>The points that are an equal distance from the nearest edge form a square frame at distance \(x\). Here’s what it looks like:</p>
+
+<p><img src="/assets/images/squarecross.png" alt="Visualization" /></p>
+
+<p><em>(Yeah ik the diagram kinda sucks, but I believe in MS-Paint XD. Anyhow)</em></p>
+
+<p>Key observations:</p>
+
+<ol>
+  <li>All points on the same locus are equivalent. The probability of a circle touching the square depends only on \(x\), not on the specific point along the locus.</li>
+  <li>Probability of picking a point at distance \(x\):
+    <ul>
+      <li>The area of the square frame at distance \(x\) is<br />
+\(4 \times (2x) \times dx = 8x \, dx\)</li>
+      <li>Since the total area of the square is \(400\), the probability of selecting a point from this region is<br />
+\(\frac{8x \, dx}{400} = \frac{x \, dx}{50}\)</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="step-2---computing-the-probability">Step 2 - Computing the Probability</h3>
+
+<p>Now, assume a point at distance \(x\) has been chosen. What is the probability that a randomly chosen radius does not cause intersection?</p>
+
+<ul>
+  <li>The favorable radii are those that do not exceed \(x\), i.e., \(R \in [0, 10-x]\).</li>
+  <li>Since \(R \sim \text{Unif}(0,10)\), the probability that \(R \leq 10 - x\) is simply:<br />
+\(\frac{10 - x}{10}\)</li>
+</ul>
+
+<p>Thus, our probability function is now completely defined. To compute the final probability, we integrate:</p>
+
+\[P(\text{No intersection}) = \int_0^{10} \frac{10-x}{10} \cdot \frac{x}{50} \, dx\]
+
+<p>Expanding:</p>
+
+\[P(\text{No intersection}) = \frac{1}{500} \int_0^{10} x(10-x) \, dx\]
+
+<p>Breaking it down:</p>
+
+\[\frac{1}{500} \int_0^{10} (10x - x^2) \, dx\]
+
+<p>Computing the integral,</p>
+
+\[\frac{1}{500} \left[ 5x^2 - \frac{x^3}{3} \right]_0^{10}\]
+
+\[= \frac{1}{500} \left[ 500 - \frac{1000}{3} \right]\]
+
+\[= \frac{1}{500} \times \frac{500}{3}\]
+
+\[= \frac{1}{3}\]
+
+<h3 id="thus-the-probability-that-the-circle-does-not-intersect-the-square-is-frac13">Thus, the probability that the circle does not intersect the square is \(\frac{1}{3}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Matching Die Trio</title><link href="http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio.html" rel="alternate" type="text/html" title="Matching Die Trio" /><published>2025-03-24T00:00:00+05:30</published><updated>2025-03-24T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/24/Matching-Die-Trio.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Three fair \(6\)−sided dice are rolled and their upfaces are recorded. Find the probability that the values showing upon rolling all three dice again is the same as the original three values recorded.</p>
 
@@ -396,100 +474,7 @@ Let \(Y_1\) be particle moving left. This \(P(Y_1) = 1 - p\). Similarly, let \(Y
 <h3 id="therefore-the-total-number-of-ways-is-mathbf34650">Therefore, the total number of ways is \(\mathbf{34650}\)</h3>
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Pass the ball</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html" rel="alternate" type="text/html" title="Pass the ball" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>You and 4 other people are sitting in a circle. You are given a ball to start the game. Every second of this game, the person with the ball has three choices they can make. They can either pass the ball to the left, pass the ball to the right, or keep the ball (all with equal probability). This game goes on till someone keeps the ball. What is the probability that you are the person to end the game and keep the ball?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/pass-the-ball">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Lets call the people \(A\)(me), \(B\), \(C\), \(D\), \(E\).
-Note that \(B\) and \(E\) are symmetric (at distance 1)
-Similarly, \(C\) and \(D\) are symmetric (at distance 2)</p>
-
-<p>If one thinks through the question trivially, a simple approach could be to just “count” all possible ways the game ends at person A. But soon one realises there are inifinitely many ways, although possibly countable, but not-so-trivial after all!</p>
-
-<p>A simpler approach involves identifying markov states and using conditional probabilities. The fundamental law of total probability states</p>
-
-\[P(X) = \sum_{Y_i} P(X | Y_i) \times P(Y_i)\]
-
-<h3 id="step-1-identifying-states">Step 1: Identifying States</h3>
-
-<p>We can define 5 simple states, \(S_{A}\), \(S_{B}\), \(S_{C}\), \(S_{D}\), \(S_{E}\), with state \(S_{i}\) representing that the ball is with the \(i_{th}\) person.</p>
-
-<p>Now, consider the probability that the ball is with person \(i\), and the game ends with person \(A\). Lets denote this as \(P(A* \mid i)\), where \(A*\) means that the game will end with person \(A\).</p>
-
-<p>At each state, the person can either stop the game, or pass it on to its neighbours with equal probabilities! Lets try to form a set of equations in \(P(A* \mid i)\) using this.</p>
-
-<h3 id="step-2-forming-the-set-of-probability-equations">Step 2: Forming the set of Probability equations</h3>
-
-<p>For each state \(S_{i}\), lets represent \(P(A* \mid i)\) in terms of its neighbours.</p>
-
-<p>Now,</p>
-
-<p>For state \(S_{A}\) (i.e. the person \(A\) has the ball itself), I can either</p>
-<ul>
-  <li>Stop the game, with prob \(\frac{1}{3}\)</li>
-  <li>Pass the ball to player \(B\), with prob \(\frac{1}{3}\), thus moving to state \(S_{B}\)</li>
-  <li>Pass the ball to player \(E\), with prob \(\frac{1}{3}\), thus moving to state \(S_{E}\)</li>
-</ul>
-
-<p>Therefore, we can write</p>
-
-\[P(A* \mid A) = \frac{1}{3} + P(A* \mid B)\frac{1}{3} + P(A* \mid E)\frac{1}{3}\]
-
-<p>Note that here the first term represents \(A\) ending the game there itself.</p>
-
-<p>Similarly, for state \(S_{B}\)</p>
-
-\[P(A* \mid B) = P(A* \mid A)\frac{1}{3} + P(A* \mid C)\frac{1}{3}\]
-
-<p>and for state \(S_{C}\)</p>
-
-\[P(A* \mid C) = P(A* \mid B)\frac{1}{3} + P(A* \mid D)\frac{1}{3}\]
-
-<blockquote>
-  <p>For more intuition on how these equations are formed, think of it like “the probability that A ends the game, given that the ball is currently with C, is that either he passes the ball to B(first neighbour) and we compute this same probability for B, or that he passes on the ball to D(other neighbour), and we compute the same for D. Its somewhat “recursive”. For A, another possiblility (that I end the game right now) is added, leading to an extra \(\frac{1}{3}\)</p>
-</blockquote>
-
-<p>Now, lets utilize some symmetry!</p>
-
-<p>Clearly, 
-\(P(A* \mid C) = P(A* \mid D)\)
-and \(P(A* \mid B) = P(A* \mid E)\)</p>
-
-<p>(As C and D are symmetrically placed around A; same with B and E)</p>
-
-<p>Thus, we can reduce the equations to 3 unique variables, \(P(A* \mid A)\), \(P(A* \mid B)\) and \(P(A* \mid C)\)</p>
-
-<h3 id="step-3-solving-the-equations">Step 3: Solving the equations</h3>
-
-<p>Now, substituting:</p>
-
-\[a = P(A* \mid A)\]
-
-\[b = P(A* \mid B) = P(A* \mid E)\]
-
-\[a = P(A* \mid C) = P(A* \mid D)\]
-
-<p>We get,</p>
-
-\[a = \frac{1}{3} + \frac{2b}{3}\]
-
-\[b = \frac{a + c}{3}\]
-
-\[c = \frac{b + c}{3}\]
-
-<p>Solving these, we get:</p>
-
-\[a = \frac{5}{11}\]
-
-<h3 id="therefore-the-probability-that-weperson-a-will-end-the-game-is-frac511">Therefore, the probability that we(Person \(A\)) will end the game is \(\frac{5}{11}\)</h3>
-
-<hr />
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many times do we have to roll a fair 6-sided die till we roll two numbers in a row that differ by 2?</p>
 
@@ -600,7 +585,100 @@ It essentially states that</p>
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Confused Ant II</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html" rel="alternate" type="text/html" title="Confused Ant II" /><published>2025-03-17T00:00:00+05:30</published><updated>2025-03-17T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Pass the ball</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html" rel="alternate" type="text/html" title="Pass the ball" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You and 4 other people are sitting in a circle. You are given a ball to start the game. Every second of this game, the person with the ball has three choices they can make. They can either pass the ball to the left, pass the ball to the right, or keep the ball (all with equal probability). This game goes on till someone keeps the ball. What is the probability that you are the person to end the game and keep the ball?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/pass-the-ball">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Lets call the people \(A\)(me), \(B\), \(C\), \(D\), \(E\).
+Note that \(B\) and \(E\) are symmetric (at distance 1)
+Similarly, \(C\) and \(D\) are symmetric (at distance 2)</p>
+
+<p>If one thinks through the question trivially, a simple approach could be to just “count” all possible ways the game ends at person A. But soon one realises there are inifinitely many ways, although possibly countable, but not-so-trivial after all!</p>
+
+<p>A simpler approach involves identifying markov states and using conditional probabilities. The fundamental law of total probability states</p>
+
+\[P(X) = \sum_{Y_i} P(X | Y_i) \times P(Y_i)\]
+
+<h3 id="step-1-identifying-states">Step 1: Identifying States</h3>
+
+<p>We can define 5 simple states, \(S_{A}\), \(S_{B}\), \(S_{C}\), \(S_{D}\), \(S_{E}\), with state \(S_{i}\) representing that the ball is with the \(i_{th}\) person.</p>
+
+<p>Now, consider the probability that the ball is with person \(i\), and the game ends with person \(A\). Lets denote this as \(P(A* \mid i)\), where \(A*\) means that the game will end with person \(A\).</p>
+
+<p>At each state, the person can either stop the game, or pass it on to its neighbours with equal probabilities! Lets try to form a set of equations in \(P(A* \mid i)\) using this.</p>
+
+<h3 id="step-2-forming-the-set-of-probability-equations">Step 2: Forming the set of Probability equations</h3>
+
+<p>For each state \(S_{i}\), lets represent \(P(A* \mid i)\) in terms of its neighbours.</p>
+
+<p>Now,</p>
+
+<p>For state \(S_{A}\) (i.e. the person \(A\) has the ball itself), I can either</p>
+<ul>
+  <li>Stop the game, with prob \(\frac{1}{3}\)</li>
+  <li>Pass the ball to player \(B\), with prob \(\frac{1}{3}\), thus moving to state \(S_{B}\)</li>
+  <li>Pass the ball to player \(E\), with prob \(\frac{1}{3}\), thus moving to state \(S_{E}\)</li>
+</ul>
+
+<p>Therefore, we can write</p>
+
+\[P(A* \mid A) = \frac{1}{3} + P(A* \mid B)\frac{1}{3} + P(A* \mid E)\frac{1}{3}\]
+
+<p>Note that here the first term represents \(A\) ending the game there itself.</p>
+
+<p>Similarly, for state \(S_{B}\)</p>
+
+\[P(A* \mid B) = P(A* \mid A)\frac{1}{3} + P(A* \mid C)\frac{1}{3}\]
+
+<p>and for state \(S_{C}\)</p>
+
+\[P(A* \mid C) = P(A* \mid B)\frac{1}{3} + P(A* \mid D)\frac{1}{3}\]
+
+<blockquote>
+  <p>For more intuition on how these equations are formed, think of it like “the probability that A ends the game, given that the ball is currently with C, is that either he passes the ball to B(first neighbour) and we compute this same probability for B, or that he passes on the ball to D(other neighbour), and we compute the same for D. Its somewhat “recursive”. For A, another possiblility (that I end the game right now) is added, leading to an extra \(\frac{1}{3}\)</p>
+</blockquote>
+
+<p>Now, lets utilize some symmetry!</p>
+
+<p>Clearly, 
+\(P(A* \mid C) = P(A* \mid D)\)
+and \(P(A* \mid B) = P(A* \mid E)\)</p>
+
+<p>(As C and D are symmetrically placed around A; same with B and E)</p>
+
+<p>Thus, we can reduce the equations to 3 unique variables, \(P(A* \mid A)\), \(P(A* \mid B)\) and \(P(A* \mid C)\)</p>
+
+<h3 id="step-3-solving-the-equations">Step 3: Solving the equations</h3>
+
+<p>Now, substituting:</p>
+
+\[a = P(A* \mid A)\]
+
+\[b = P(A* \mid B) = P(A* \mid E)\]
+
+\[a = P(A* \mid C) = P(A* \mid D)\]
+
+<p>We get,</p>
+
+\[a = \frac{1}{3} + \frac{2b}{3}\]
+
+\[b = \frac{a + c}{3}\]
+
+\[c = \frac{b + c}{3}\]
+
+<p>Solving these, we get:</p>
+
+\[a = \frac{5}{11}\]
+
+<h3 id="therefore-the-probability-that-weperson-a-will-end-the-game-is-frac511">Therefore, the probability that we(Person \(A\)) will end the game is \(\frac{5}{11}\)</h3>
+
+<hr />
+
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Confused Ant II</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html" rel="alternate" type="text/html" title="Confused Ant II" /><published>2025-03-17T00:00:00+05:30</published><updated>2025-03-17T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>An ant walks the corner of a 3D cube and moves to one of the three adjacent vertices with equal probability at each step. Find the expected number of steps needed for the ant to return to the vertex it started at.</p>
 
@@ -862,80 +940,4 @@ Where \(E(B)\) represents the expected value to reach state \(A\) from \(B\).</p
 
 <hr />
 
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Intersecting Chords</title><link href="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html" rel="alternate" type="text/html" title="Intersecting Chords" /><published>2025-02-26T00:00:00+05:30</published><updated>2025-02-26T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/02/26/Intersecting-Chords.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>10 chords with uniformly randomly chosen endpoints are drawn on a circle. What is the expected number of intersections?</p>
-
-<p><strong>Original Problem Link:</strong> <a href="https://www.quantguide.io/questions/intersecting-chords">Click here</a></p>
-
-<hr />
-
-<h2 id="solution">Solution</h2>
-
-<p>Let us consider the simpler case of 2 chords intersecting. Once we have that, perhaps we can use it to formulate something for 10 chords.</p>
-
-<p>Now, focusing on the subproblem:</p>
-<blockquote>
-  <p>I draw 2 chords in a circle at random, what is the probability that they intersect? Equivalently, what is the expected number of intersections?</p>
-</blockquote>
-
-<p>To solve this, there exist two fundamental approaches.</p>
-
-<h3 id="approach-1---complicated-stuff-alert">Approach 1 - [Complicated stuff alert]</h3>
-
-<p>One is a rigorous mathematical treatment, which involves considering that a random chord drawn in a circle will be defined by 2 angles (say \(\theta_1\) and \(\theta_2\)), where these angles define the start and the endpoint of the chord with respect to a given reference radius. Both these angles will have a uniform \((0, 2\pi)\) distribution.</p>
-
-<p>Thus, the angle made by the chord towards the circumference will be \((\theta_1 - \theta_2)\), which will have a triangular distribution. Once this is computed, we must calculate:</p>
-
-\[2 \times \frac{\theta}{2\pi} \times \left( 1 - \frac{\theta}{2\pi} \right)\]
-
-<p>and integrate over all \(\theta\) to compute the required probability.</p>
-
-<p>How did this expression come?<br />
-Given a chord, to make another intersecting chord, I can choose any random point from one “side” of the chord, and another from the other “side.”</p>
-
-<p>Note that the probability of choosing a point from one “side” is \(\frac{\theta}{2\pi}\), where \(\theta\) is the angle from the center subtended by the chord in that side. Also, the “2” in the start is added because the ordering of points is unique. (As in, either I choose one end from side A, other from side B, or one end from side B, and other from side A) (Here side A and B mean different sides of the chord (one is subtending angle \(\theta\), other is subtending \(2\pi - \theta\)))</p>
-
-<p>Clearly, this approach is a bit brain-racking (but it works; I have manually calculated and verified the answer. If interested, feel free to hit me up, and we can discuss this further!).</p>
-
-<h3 id="a-simpler-approach">A Simpler Approach</h3>
-
-<p>Clearly, 2 chords drawn randomly are essentially defined by 4 points chosen at random on a circle. Say \(A, B, C, D\).</p>
-
-<p>Now, let’s think of how we can connect these points such that the chords intersect. To connect them, these 3 arrangements are possible:</p>
-
-<ol>
-  <li>\(A\)-\(B\), \(C\)-\(D\)</li>
-  <li>\(A\)-\(C\), \(B\)-\(D\)</li>
-  <li>\(A\)-\(D\), \(B\)-\(C\)</li>
-</ol>
-
-<p>Note that out of the 3, only arrangement (2) will result in an intersection. Since everything here is uniformly random, all arrangements are equally likely, hence the probability of intersection is \(\frac{1}{3}\).</p>
-
-<p>Thus, we have now fairly established that the probability of intersection of 2 chords drawn at random in a circle is \(\frac{1}{3}\). (Read up the above explanation again, it may take time to digest).</p>
-
-<hr />
-
-<h3 id="moving-on-to-the-original-problem-what-if-we-have-10-chords">Moving on to the original problem. What if we have 10 chords?</h3>
-
-<p>It’s actually fairly simple. From the 10 chords, select any 2 at random. What is the probability they will intersect? \(\frac{1}{3}\), right? (As we computed above).</p>
-
-<p>This means every pair will essentially contribute \(\frac{1}{3}\) to the expected number of intersections. (Note that the probability of overlapping intersections, i.e., more than 2 chords intersecting at the same point, is VERY small).</p>
-
-<p>Now, in how many ways can we select 2 chords at random from 10?</p>
-
-\[\binom{10}{2} = \frac{10 \times 9}{2}\]
-
-<p>Thus, the expected number of intersections in the case of 10 chords will be:</p>
-
-\[\binom{10}{2} \times \frac{1}{3} = \frac{10 \times 9}{2 \times 3} = 15.\]
-
-<hr />
-
-<h3 id="therefore-the-answer-is-15-intersections">Therefore, the answer is <strong>15</strong> intersections.</h3>
-
-<p><em>(PS: On the website linked above, it shows incorrect for “15.” One must enter “45/3” instead. A weird error, tbh. Possibly because 10C2 is 45, and p(for 2 chords) = 1/3, Thus 45/3)</em></p>
-
-<hr />
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting Principle" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

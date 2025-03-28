@@ -9,25 +9,24 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Problems Archive - JXTech</title>
-<meta name="description" content="Advanced probability problems and detailed solutions">
+<!-- begin _includes/seo.html --><title>Modified RNG - JXTech</title>
+<meta name="description" content="Problem Statement">
 
 
   <meta name="author" content="JXTech">
   
+  <meta property="article:author" content="JXTech">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="JXTech">
-<meta property="og:title" content="Problems Archive">
-<meta property="og:url" content="http://localhost:4000/problems/">
+<meta property="og:title" content="Modified RNG">
+<meta property="og:url" content="http://localhost:4000/probability/problems/2025/03/28/Modified-RNG.html">
 
 
-  <meta property="og:description" content="Advanced probability problems and detailed solutions">
-
-
-
+  <meta property="og:description" content="Problem Statement">
 
 
 
@@ -35,9 +34,14 @@
 
 
 
+  <meta property="article:published_time" content="2025-03-28T00:00:00+05:30">
 
 
-<link rel="canonical" href="http://localhost:4000/problems/">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/probability/problems/2025/03/28/Modified-RNG.html">
 
 
 
@@ -92,7 +96,7 @@
 
   </head>
 
-  <body class="layout--splash">
+  <body class="layout--splash wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -140,77 +144,67 @@
 
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Problems Archive">
-    
-    
+    <meta itemprop="headline" content="Modified RNG">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-03-28T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
-      <h2 id="problems-archive">Problems Archive</h2>
+      <h2 id="problem-statement">Problem Statement</h2>
 
-<ul>
+<p>Jimmy picks a number uniformly at random from (0,1). If Jimmy chooses x, then Jon picks a number from (x,1) uniformly at random. If Y represents the number Jon selects, in simplest form, find \(\frac{\mathbb{E}[Y]}{Var(Y)}\)</p>
 
-  
-    <li><a href="/probability/problems/2025/03/28/Modified-RNG.html">Modified RNG</a></li>
-  
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/modified-rng">Click here</a></p>
 
-  
-    <li><a href="/probability/problems/2025/03/28/Square-Cross.html">Square Cross</a></li>
-  
+<h2 id="solution">Solution</h2>
 
-  
-    <li><a href="/probability/problems/2025/03/24/Matching-Die-Trio.html">Matching Die Trio</a></li>
-  
+<h3 id="step-1---compute-conditional-expectation-mathbbey-mid-x-and-conditional-variance-vary-mid-x">Step 1 - Compute Conditional Expectation \(\mathbb{E}[Y \mid X]\) and Conditional Variance \(Var(Y \mid X)\)</h3>
 
-  
-    <li><a href="/probability/problems/2025/03/23/Particle-Reach.html">Particle Reach</a></li>
-  
+<p>For \(Y\) uniform on \((X,1)\), the conditional expectation is:</p>
 
-  
-    <li><a href="/expectations/probability/problems/2025/03/23/Graph-Search-II.html">Graph Search II</a></li>
-  
+\[\mathbb{E}[Y \mid X] = \frac{X+1}{2}\]
 
-  
-    <li><a href="/expectations/probability/problems/2025/03/23/Graph-Search-I.html">Graph Search I</a></li>
-  
+<p>How? Its obvious that its gonna be the middle point! Alternatively, you can integrate and compute using the standard method.</p>
 
-  
-    <li><a href="/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html">Mean babysitter</a></li>
-  
+<p>Similarly, for Conditional Variance \(Var[Y \mid X]\), we have</p>
 
-  
-    <li><a href="/probability/statistics/problems/2025/03/18/Pass-the-Ball.html">Pass the ball</a></li>
-  
+\[Var[Y \mid X] = \frac{(1-X)^2}{12}\]
 
-  
-    <li><a href="/probability/statistics/problems/2025/03/18/Differ-by-2.html">Differ by 2</a></li>
-  
+<h3 id="step-2---total-expectation">Step 2 - Total Expectation</h3>
 
-  
-    <li><a href="/probability/statistics/problems/2025/03/17/Confused-Ant-II.html">Confused Ant II</a></li>
-  
+<p>Using the law of total expectation:</p>
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/27/Random-Ratio.html">Random Ratio</a></li>
-  
+\[\mathbb{E}[Y] = \mathbb{E}[\mathbb{E}[Y \mid X]] = \mathbb{E}\left[\frac{X+1}{2}\right] = \int_0^1 \frac{x+1}{2} dx = \left[\frac{x^2}{4} + \frac{x}{2}\right]_0^1 = \frac{1}{4} + \frac{1}{2} = \frac{3}{4}\]
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/26/Intersecting-Chords.html">Intersecting Chords</a></li>
-  
+<h3 id="step-3---computing-total-variance">Step 3 - Computing Total Variance</h3>
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/24/Breaking-Sticks.html">Breaking Stick</a></li>
-  
+<p>Using the law of total variance:</p>
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Random-Angle-II.html">Random Angle II</a></li>
-  
+\[Var(Y) = \mathbb{E}[Var(Y \mid X)] + Var(\mathbb{E}[Y \mid X])\]
 
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html">Chess Tournament I</a></li>
-  
+<p>First, compute \(\mathbb{E}[Var(Y \mid X)]\):</p>
 
-</ul>
+\[\mathbb{E}[Var(Y \mid X)] = \int_0^1 \frac{(1-x)^2}{12} dx\]
+
+\[= \frac{1}{12} \int_0^1 (1-x)^2 dx = \frac{1}{12} \left[\frac{-1}{3}(1-x)^3\right]_0^1 = \frac{1}{12} \cdot \frac{1}{3} = \frac{1}{36}\]
+
+<p>Next, compute \(Var(\mathbb{E}[Y \mid X])\):</p>
+
+\[Var(\mathbb{E}[Y \mid X]) = \mathbb{E}\left[\left(\frac{X+1}{2}\right)^2\right] - \left(\mathbb{E}\left[\frac{X+1}{2}\right]\right)^2\]
+
+\[= \int_0^1 \frac{(x+1)^2}{4} dx - \left(\frac{3}{4}\right)^2 = \frac{1}{4} \int_0^1 (x^2 + 2x + 1) dx - \frac{9}{16}\]
+
+\[= \frac{1}{4} \left[\frac{x^3}{3} + x^2 + x\right]_0^1 - \frac{9}{16} = \frac{1}{4} \left(\frac{1}{3} + 1 + 1\right) - \frac{9}{16} = \frac{1}{4} \cdot \frac{7}{3} - \frac{9}{16} = \frac{7}{12} - \frac{9}{16} = \frac{1}{48}\]
+
+<p>Therefore:</p>
+
+\[Var(Y) = \frac{1}{36} + \frac{1}{48} = \frac{7}{144}\]
+
+<h3 id="final-answer">Final Answer</h3>
+
+\[\frac{\mathbb{E}[Y]}{Var(Y)} = \frac{3/4}{7/144} = \frac{108}{7}\]
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
 
     </section>
   </article>

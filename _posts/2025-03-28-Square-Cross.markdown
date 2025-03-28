@@ -52,10 +52,7 @@ Key observations:
 Now, assume a point at distance $$ x $$ has been chosen. What is the probability that a randomly chosen radius does not cause intersection?
 
 - The favorable radii are those that do not exceed $$ x $$, i.e., $$ R \in [0, 10-x] $$.  
-- Since $$ R \sim \text{Unif}(0,10) $$, the probability that $$ R \leq 10 - x $$ is simply:  
-  $$
-  \frac{10 - x}{10}
-  $$
+- Since $$ R \sim \text{Unif}(0,10) $$, the probability that $$ R \leq 10 - x $$ is simply $$\frac{10 - x}{10}$$
 
 Thus, our probability function is now completely defined. To compute the final probability, we integrate:
 

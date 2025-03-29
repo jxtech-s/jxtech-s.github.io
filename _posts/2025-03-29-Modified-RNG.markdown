@@ -1,7 +1,7 @@
 --- 
 layout: splash 
 title: "Modified RNG" 
-date: 2025-03-28 
+date: 2025-03-29
 categories: [Probability, Problems] 
 tags: [Probability, Expectations, Conditional Expectation, Conditional Variance] 
 math: true 

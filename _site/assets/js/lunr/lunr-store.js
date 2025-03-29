@@ -86,6 +86,6 @@ var store = [{
         "title": "Modified RNG",
         "excerpt":"Problem Statement Jimmy picks a number uniformly at random from (0,1). If Jimmy chooses x, then Jon picks a number from (x,1) uniformly at random. If Y represents the number Jon selects, in simplest form, find \\(\\frac{\\mathbb{E}[Y]}{Var(Y)}\\) Original Problem Link: Click here Solution Step 1 - Compute Conditional Expectation \\(\\mathbb{E}[Y...","categories": ["Probability","Problems"],
         "tags": ["Probability","Expectations","Conditional Expectation","Conditional Variance"],
-        "url": "/probability/problems/2025/03/28/Modified-RNG.html",
+        "url": "/probability/problems/2025/03/29/Modified-RNG.html",
         "teaser": null
       }]

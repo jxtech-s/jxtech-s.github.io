@@ -61,4 +61,6 @@ $$Var(Y) = \frac{1}{36} + \frac{1}{48} = \frac{7}{144}$$
 
 $$\frac{\mathbb{E}[Y]}{Var(Y)} = \frac{3/4}{7/144} = \frac{108}{7}$$
 
+---
+
 💡 Did you enjoy this problem? Check out more puzzles in the [Problems](https://jxtech-s.github.io/problems/) section!

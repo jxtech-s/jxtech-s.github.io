@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-29T12:03:10+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Modified RNG</title><link href="http://localhost:4000/probability/problems/2025/03/29/Modified-RNG.html" rel="alternate" type="text/html" title="Modified RNG" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/29/Modified-RNG</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/29/Modified-RNG.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-29T12:38:46+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Modified RNG</title><link href="http://localhost:4000/probability/problems/2025/03/29/Modified-RNG.html" rel="alternate" type="text/html" title="Modified RNG" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/29/Modified-RNG</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/29/Modified-RNG.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Jimmy picks a number uniformly at random from (0,1). If Jimmy chooses x, then Jon picks a number from (x,1) uniformly at random. If Y represents the number Jon selects, in simplest form, find \(\frac{\mathbb{E}[Y]}{Var(Y)}\)</p>
 
@@ -52,7 +52,73 @@
 
 \[\frac{\mathbb{E}[Y]}{Var(Y)} = \frac{3/4}{7/144} = \frac{108}{7}\]
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><category term="Conditional Expectation" /><category term="Conditional Variance" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Square Cross</title><link href="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html" rel="alternate" type="text/html" title="Square Cross" /><published>2025-03-28T00:00:00+05:30</published><updated>2025-03-28T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/28/Square-Cross</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><category term="Conditional Expectation" /><category term="Conditional Variance" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Russian Roulette II</title><link href="http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-II.html" rel="alternate" type="text/html" title="Russian Roulette II" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given that the cylinder is re-spun after each turn, what is the probability that you win if your friend goes first?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/russian-roulette-ii">Click here</a>
+<strong>Another version</strong>: <a href="">Russian Roulette I</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="thus-the-probability-that-we-will-win-is-frac12">Thus, the probability that we will win is \(\frac{1}{2}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Series" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Russian Roulette I</title><link href="http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-I.html" rel="alternate" type="text/html" title="Russian Roulette I" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-I</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/29/Russian-Roulette-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given that the cylinder is not re-spun after each turn, what is the probability that you win if your friend goes first?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/russian-roulette-i">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1-understanding-the-setup">Step 1: Understanding the Setup</h3>
+
+<p>The revolver has 6 chambers, and exactly one of them contains a bullet. Since the cylinder is spun at the start, the bullet is equally likely to be in any of the 6 positions.</p>
+
+<p>The game proceeds in turns:</p>
+<ul>
+  <li>Your friend goes first.</li>
+  <li>If the bullet is in the chamber they fire, they lose immediately.</li>
+  <li>Otherwise, the turn passes to you.</li>
+  <li>The game continues until someone loses.</li>
+</ul>
+
+<h3 id="step-2-analyzing-possible-bullet-positions">Step 2: Analyzing Possible Bullet Positions</h3>
+
+<p>Let’s label the chambers \(1\) to \(6\), where \(1\) is the chamber fired first, \(2\) is fired second, and so on.</p>
+
+<ul>
+  <li>If the bullet is in chamber \(1\), your friend loses immediately.</li>
+  <li>If the bullet is in chamber \(2\), you lose immediately.</li>
+  <li>If the bullet is in chamber \(3\), your friend fires an empty chamber, then you fire an empty chamber, then your friend fires chamber \(3\) and loses.</li>
+  <li>If the bullet is in chamber \(4\), you lose (similar reasoning).</li>
+  <li>If the bullet is in chamber \(5\), your friend loses.</li>
+  <li>If the bullet is in chamber \(6\), you lose.</li>
+</ul>
+
+<p>Thus, we win if the bullet is in chambers \(1\), \(3\) or \(5\).</p>
+
+<h3 id="step-3-computing-the-probability">Step 3: Computing the Probability</h3>
+
+<p>Since each chamber is equally likely to contain the bullet, the probability of each case is:</p>
+
+\[\mathbb{P}(\text{Bullet in chamber } i) = \frac{1}{6}\]
+
+<p>From our analysis, we win in 3 out of the 6 cases (chambers \(1\), \(3\) and \(5\)).</p>
+
+<p>Thus, the probability of winning is:</p>
+
+\[\frac{3}{6} = \frac{1}{2}\]
+
+<h3 id="thus-the-probability-that-we-will-win-is-frac12">Thus, the probability that we will win is \(\frac{1}{2}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Square Cross</title><link href="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html" rel="alternate" type="text/html" title="Square Cross" /><published>2025-03-28T00:00:00+05:30</published><updated>2025-03-28T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/28/Square-Cross</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/28/Square-Cross.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>A square of side length \(20\) is placed in front of you. You select a point uniformly at random from its interior. Then, independently, a circle of radius \(R \sim \text{Unif}(0,10)\) is formed around the selected point. What is the probability that this circle does not intersect the square at any point?</p>
 
@@ -527,100 +593,7 @@ Let \(Y_1\) be particle moving left. This \(P(Y_1) = 1 - p\). Similarly, let \(Y
 <h3 id="therefore-the-total-number-of-ways-is-mathbf34650">Therefore, the total number of ways is \(\mathbf{34650}\)</h3>
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Pass the ball</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html" rel="alternate" type="text/html" title="Pass the ball" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Pass-the-Ball.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>You and 4 other people are sitting in a circle. You are given a ball to start the game. Every second of this game, the person with the ball has three choices they can make. They can either pass the ball to the left, pass the ball to the right, or keep the ball (all with equal probability). This game goes on till someone keeps the ball. What is the probability that you are the person to end the game and keep the ball?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/pass-the-ball">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Lets call the people \(A\)(me), \(B\), \(C\), \(D\), \(E\).
-Note that \(B\) and \(E\) are symmetric (at distance 1)
-Similarly, \(C\) and \(D\) are symmetric (at distance 2)</p>
-
-<p>If one thinks through the question trivially, a simple approach could be to just “count” all possible ways the game ends at person A. But soon one realises there are inifinitely many ways, although possibly countable, but not-so-trivial after all!</p>
-
-<p>A simpler approach involves identifying markov states and using conditional probabilities. The fundamental law of total probability states</p>
-
-\[P(X) = \sum_{Y_i} P(X | Y_i) \times P(Y_i)\]
-
-<h3 id="step-1-identifying-states">Step 1: Identifying States</h3>
-
-<p>We can define 5 simple states, \(S_{A}\), \(S_{B}\), \(S_{C}\), \(S_{D}\), \(S_{E}\), with state \(S_{i}\) representing that the ball is with the \(i_{th}\) person.</p>
-
-<p>Now, consider the probability that the ball is with person \(i\), and the game ends with person \(A\). Lets denote this as \(P(A* \mid i)\), where \(A*\) means that the game will end with person \(A\).</p>
-
-<p>At each state, the person can either stop the game, or pass it on to its neighbours with equal probabilities! Lets try to form a set of equations in \(P(A* \mid i)\) using this.</p>
-
-<h3 id="step-2-forming-the-set-of-probability-equations">Step 2: Forming the set of Probability equations</h3>
-
-<p>For each state \(S_{i}\), lets represent \(P(A* \mid i)\) in terms of its neighbours.</p>
-
-<p>Now,</p>
-
-<p>For state \(S_{A}\) (i.e. the person \(A\) has the ball itself), I can either</p>
-<ul>
-  <li>Stop the game, with prob \(\frac{1}{3}\)</li>
-  <li>Pass the ball to player \(B\), with prob \(\frac{1}{3}\), thus moving to state \(S_{B}\)</li>
-  <li>Pass the ball to player \(E\), with prob \(\frac{1}{3}\), thus moving to state \(S_{E}\)</li>
-</ul>
-
-<p>Therefore, we can write</p>
-
-\[P(A* \mid A) = \frac{1}{3} + P(A* \mid B)\frac{1}{3} + P(A* \mid E)\frac{1}{3}\]
-
-<p>Note that here the first term represents \(A\) ending the game there itself.</p>
-
-<p>Similarly, for state \(S_{B}\)</p>
-
-\[P(A* \mid B) = P(A* \mid A)\frac{1}{3} + P(A* \mid C)\frac{1}{3}\]
-
-<p>and for state \(S_{C}\)</p>
-
-\[P(A* \mid C) = P(A* \mid B)\frac{1}{3} + P(A* \mid D)\frac{1}{3}\]
-
-<blockquote>
-  <p>For more intuition on how these equations are formed, think of it like “the probability that A ends the game, given that the ball is currently with C, is that either he passes the ball to B(first neighbour) and we compute this same probability for B, or that he passes on the ball to D(other neighbour), and we compute the same for D. Its somewhat “recursive”. For A, another possiblility (that I end the game right now) is added, leading to an extra \(\frac{1}{3}\)</p>
-</blockquote>
-
-<p>Now, lets utilize some symmetry!</p>
-
-<p>Clearly, 
-\(P(A* \mid C) = P(A* \mid D)\)
-and \(P(A* \mid B) = P(A* \mid E)\)</p>
-
-<p>(As C and D are symmetrically placed around A; same with B and E)</p>
-
-<p>Thus, we can reduce the equations to 3 unique variables, \(P(A* \mid A)\), \(P(A* \mid B)\) and \(P(A* \mid C)\)</p>
-
-<h3 id="step-3-solving-the-equations">Step 3: Solving the equations</h3>
-
-<p>Now, substituting:</p>
-
-\[a = P(A* \mid A)\]
-
-\[b = P(A* \mid B) = P(A* \mid E)\]
-
-\[a = P(A* \mid C) = P(A* \mid D)\]
-
-<p>We get,</p>
-
-\[a = \frac{1}{3} + \frac{2b}{3}\]
-
-\[b = \frac{a + c}{3}\]
-
-\[c = \frac{b + c}{3}\]
-
-<p>Solving these, we get:</p>
-
-\[a = \frac{5}{11}\]
-
-<h3 id="therefore-the-probability-that-weperson-a-will-end-the-game-is-frac511">Therefore, the probability that we(Person \(A\)) will end the game is \(\frac{5}{11}\)</h3>
-
-<hr />
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Statistics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Differ by 2</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html" rel="alternate" type="text/html" title="Differ by 2" /><published>2025-03-18T00:00:00+05:30</published><updated>2025-03-18T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/18/Differ-by-2.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many times do we have to roll a fair 6-sided die till we roll two numbers in a row that differ by 2?</p>
 
@@ -728,167 +701,6 @@ It essentially states that</p>
 \[E[X] = \frac{17}{3}\]
 
 <h3 id="therefore-the-expected-number-of-moves-required-for-the-ant-to-reach-back-to-its-starting-point-is-frac173">Therefore, the expected number of moves required for the ant to reach back to its starting point is \(\frac{17}{3}\)</h3>
-
-<hr />
-
-<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Statistics" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Confused Ant II</title><link href="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html" rel="alternate" type="text/html" title="Confused Ant II" /><published>2025-03-17T00:00:00+05:30</published><updated>2025-03-17T00:00:00+05:30</updated><id>http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II</id><content type="html" xml:base="http://localhost:4000/probability/statistics/problems/2025/03/17/Confused-Ant-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>An ant walks the corner of a 3D cube and moves to one of the three adjacent vertices with equal probability at each step. Find the expected number of steps needed for the ant to return to the vertex it started at.</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/confused-ant-ii">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Here from each corner, the ant can take any path with an equal probability of \(1/3\).
-We must realize that if we compute the probability of each possible path, and multiply it by the number of steps its taking, and take its summation over all possible cases, that would yes lead to our answer, but it is very tedious to compute.</p>
-
-<p>A better alternative is to use the concept of Conditional Expectations.
-It essentially states that</p>
-
-\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
-
-<h3 id="step-1-identifying-states">Step 1: Identifying States</h3>
-
-<p>In the described problem, the ant can be uniquely at 4 possible positions.</p>
-<ol>
-  <li>At the starting point itself (call this \(A\)).</li>
-  <li>At a point only 1 edge away from \(A\) (call this \(B\)).</li>
-  <li>At a point 2 edges away from \(A\) (call this \(C\)).</li>
-  <li>At a point 3 edges away from \(A\) (call this \(D\). Note that there is only 1 such point, the one diagonally opposite to \(A\)).</li>
-</ol>
-
-<p>This reduces our problem to a Markov Chain analysis, with transition probablities as follows -</p>
-
-<p>State \(A\) to State \(B\) = 1 
-(How? -&gt; Note that from \(A\), you have 3 options to move, all symmetric and 1 edge away from \(A\). This means you will definitely move to state \(B\))</p>
-
-<p>State \(B\) to State \(A\) = 1/3
-(How? -&gt; When you are at point \(B\) (which is 1 edge away from \(A\)), you can move back to point \(A\) with probability 1/3 (since at each point, all edges are equiprobable))</p>
-
-<p>State \(B\) to State \(C\) = 2/3
-(How? From State \(B\), you either move back to \(A\), or the other 2 edges lead to a point which is 2 edges away from \(A\), this point \(C\))</p>
-
-<p>State \(C\) to State \(B\) = 2/3
-(How? When at State \(C\), 2 paths will lead to State \(B\), and 1 will lead to \(D\). Try to visualize this on a cube, with State \(C\) being just adjacent to the opposite corner to \(A\))</p>
-
-<p>State \(C\) to State \(D\) = 1/3
-(How? When at State \(C\), 2 paths will lead to State \(B\), and 1 will lead to \(D\))</p>
-
-<p>Thus, we can reduce the problem to</p>
-
-<blockquote>
-  <p>“Given the above State Transition Probabilities, find E[A], where A is the event of returning to point A after moving atleast once”</p>
-</blockquote>
-
-<h3 id="step-2-forming-the-set-of-expectation-equations">Step 2: Forming the set of Expectation equations</h3>
-
-<p>For any State X, using the Conditional Expectation Equation described above</p>
-
-\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
-
-<p>Where the states \(Y_i\) represent points just adjacent to state \(X\).</p>
-
-<p>Solving for State A, we get</p>
-
-<p>\(E[A] = 1\)(for the 1 step we take) \(+3*1/3E[B]\)
-Where \(E(B)\) represents the expected value to reach state \(A\) from \(B\).</p>
-
-<p>Simplifying, we get</p>
-
-\[E[A] = 1 + E[B]\]
-
-<p>Similarly, for State \(B\), we have,</p>
-
-<p>Neighbouring States = A, C, C. Thus,</p>
-
-\[E[B] = 1 +  1/3(E'[A]) + 2/3(E[C])\]
-
-<p>Note that here, \(E'[A]\) is NOT \(E[A]\).</p>
-
-<p>\(E[A]\) is the expected number of states to reach \(A\) from \(A\), given that we haven’t moved before.</p>
-
-<p>\(E'[A]\) is the expected number of states to reach \(A\) from \(A\), given that we HAVE moved (since we went to \(B\)!). This is obviously 0, as you have already reached \(A\)!</p>
-
-<p>Thus, we get</p>
-
-\[E[B] = 1 + 2/3 (E[C])\]
-
-<p>For states \(C\) and \(D\), following a similar analysis, we will get</p>
-
-\[E[C] = 1 + 1/3 (E[D]) + 2/3 (E[B])\]
-
-<p>(Note - for \(C\), we are surrounded by 2 \(B\)’s and 1 \(D\)); and</p>
-
-\[E[D] = 1 + E[C]\]
-
-<p>(When at \(D\), we are only surrounded by \(C\)’s. Just a reminder, \(D\) is the opposite diagonal to \(A\)(our starting point), so this becomes trivial)</p>
-
-<p>Therefore, we have a set of 4 equations and four variables (\(E[A]\), \(E[B]\), \(E[C]\), \(E[D]\))! These can be solved easily using backsubstitution.</p>
-
-<h3 id="step-3-solving-the-equations">Step 3: Solving the Equations</h3>
-
-<p>We have the following system of equations:</p>
-
-<ol>
-  <li>
-\[E[A] = 1 + E[B]\]
-  </li>
-  <li>
-\[E[B] = 1 + \frac{2}{3} E[C]\]
-  </li>
-  <li>
-\[E[C] = 1 + \frac{1}{3} E[D] + \frac{2}{3} E[B]\]
-  </li>
-  <li>
-\[E[D] = 1 + E[C]\]
-  </li>
-</ol>
-
-<p>Now,</p>
-
-<p>From Equation (4):</p>
-
-\[E[D] = 1 + E[C]\]
-
-<p>Substituting this into Equation (3):</p>
-
-\[E[C] = 1 + \frac{1}{3} (1 + E[C]) + \frac{2}{3} E[B]\]
-
-<p>Expanding:</p>
-
-\[E[C] = 1 + \frac{1}{3} + \frac{1}{3}E[C] + \frac{2}{3}E[B]\]
-
-<p>Rearrange:</p>
-
-\[E[C] - \frac{1}{3} E[C] = \frac{4}{3} + \frac{2}{3}E[B]\]
-
-\[\frac{2}{3}E[C] = \frac{4}{3} + \frac{2}{3}E[B]\]
-
-<p>Multiplying both sides by \(\frac{3}{2}\):</p>
-
-\[E[C] = 2 + E[B]\]
-
-<p>From Equation (2):</p>
-
-\[E[B] = 1 + \frac{2}{3} E[C]\]
-
-<p>Substituting \(E[C] = 2 + E[B]\):</p>
-
-\[E[B] = 1 + \frac{2}{3} (2 + E[B])\]
-
-\[E[B] = 1 + \frac{4}{3} + \frac{2}{3}E[B]\]
-
-\[E[B] - \frac{2}{3}E[B] = \frac{7}{3}\]
-
-\[\frac{1}{3}E[B] = \frac{7}{3}\]
-
-\[E[B] = 7\]
-
-<p>Thus, finally we get,</p>
-
-\[E[A] = 1 + E[B] = 1 + 7 = 8\]
-
-<h3 id="therefore-the-the-expected-number-of-moves-required-for-the-ant-to-reach-back-to-its-starting-point-is-8">Therefore, the the expected number of moves required for the ant to reach back to its starting point is 8.</h3>
 
 <hr />
 

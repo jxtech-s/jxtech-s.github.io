@@ -88,4 +88,16 @@ var store = [{
         "tags": ["Probability","Expectations","Conditional Expectation","Conditional Variance"],
         "url": "/probability/problems/2025/03/29/Modified-RNG.html",
         "teaser": null
+      },{
+        "title": "Russian Roulette I",
+        "excerpt":"Problem Statement You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given...","categories": ["Probability","Problems"],
+        "tags": ["Probability"],
+        "url": "/probability/problems/2025/03/29/Russian-Roulette-I.html",
+        "teaser": null
+      },{
+        "title": "Russian Roulette II",
+        "excerpt":"Problem Statement You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Series"],
+        "url": "/probability/problems/2025/03/29/Russian-Roulette-II.html",
+        "teaser": null
       }]

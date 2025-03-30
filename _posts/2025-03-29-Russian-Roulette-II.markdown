@@ -14,8 +14,6 @@ You're playing a game of Russian Roulette with a friend. The six-chambered revol
 **Original Problem Link**: [Click here](https://www.quantguide.io/questions/russian-roulette-ii)  
 **First version**: [Russian Roulette I](https://jxtech-s.github.io/probability/problems/2025/03/29/Russian-Roulette-I.html)
 
----
-
 ## Solution
 
 ### Step 1: Understanding the Difference

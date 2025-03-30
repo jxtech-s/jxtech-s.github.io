@@ -100,4 +100,10 @@ var store = [{
         "tags": ["Probability","Series"],
         "url": "/probability/problems/2025/03/29/Russian-Roulette-II.html",
         "teaser": null
+      },{
+        "title": "Multinomial Expansion",
+        "excerpt":"Problem Statement How many terms are there in the expansion of \\[(x_1 + x_2 + x_3 + x_4 + x_5 + x_6)^{18}\\] after all like terms have been combined? Original Problem Link: Click here Solution Step 1: Understanding the Expansion When expanding \\[(x_1 + x_2 + x_3 + x_4 +...","categories": ["Probability","Problems"],
+        "tags": ["Combinatorics","Counting"],
+        "url": "/probability/problems/2025/03/30/Multinomial-Expansion.html",
+        "teaser": null
       }]

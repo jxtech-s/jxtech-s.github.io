@@ -2,7 +2,7 @@
 layout: splash
 title: "Multinomial Sum"
 date: 2025-03-30
-categories: [Probability, Problems]
+categories: [Combinatorics, Problems]
 tags: [Combinatorics, Counting]
 math: true
 ---
@@ -35,7 +35,7 @@ $$
 (x_1 + x_2 + x_3 + x_4)^7.
 $$
 
-Thus, the sum of all such coefficients is simply the sum of all terms in this multinomial expansion **when each $$x_i = 1$$**.
+Thus, the sum of all such coefficients is simply the sum of all terms in this multinomial expansion when each $$x_i = 1$$.
 
 ### Step 2: Reduced Version - The Core Idea  
 

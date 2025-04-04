@@ -128,6 +128,12 @@ var store = [{
         "title": "Exact 5 II",
         "excerpt":"Problem Statement Abd continually rolls a fair \\(6\\)-sided die until he obtains his first \\(6\\). What’s the expected number of times Abd rolls a \\(5\\) before he stops? Original Problem Link: Click here Solution Let \\(X\\) be the event representing number of times we get a \\(5\\) before hitting our...","categories": ["Probability","Problems"],
         "tags": ["Probability","Statistics","Expectations"],
+        "url": "/probability/problems/2025/04/05/Exact-5-II-copy.html",
+        "teaser": null
+      },{
+        "title": "Exact 5 II",
+        "excerpt":"Problem Statement Abd continually rolls a fair \\(6\\)-sided die until he obtains his first \\(6\\). What’s the expected number of times Abd rolls a \\(5\\) before he stops? Original Problem Link: Click here Solution Let \\(X\\) be the event representing number of times we get a \\(5\\) before hitting our...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Statistics","Expectations"],
         "url": "/probability/problems/2025/04/05/Exact-5-II.html",
         "teaser": null
       }]

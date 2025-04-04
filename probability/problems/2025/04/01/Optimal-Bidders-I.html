@@ -1,0 +1,268 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Optimal Bidders I - JXTech</title>
+<meta name="description" content="Problem Statement">
+
+
+  <meta name="author" content="JXTech">
+  
+  <meta property="article:author" content="JXTech">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="JXTech">
+<meta property="og:title" content="Optimal Bidders I">
+<meta property="og:url" content="/probability/problems/2025/04/01/Optimal-Bidders-I.html">
+
+
+  <meta property="og:description" content="Problem Statement">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-04-01T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="/probability/problems/2025/04/01/Optimal-Bidders-I.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JXTech",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JXTech Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JXTech
+          <span class="site-subtitle">Redefine Computing and Intelligence</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Optimal Bidders I">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-04-01T00:00:00+05:30">
+    
+
+    <section class="page__content" itemprop="text">
+      <h2 id="problem-statement">Problem Statement</h2>
+
+<p>Carter has come into contact with a bounty of gold. He takes it to an auction shop. The shop tells him that every bidder will place a bid uniformly between $500 and $1000. They also say they can recruit bidders for $5 per person.</p>
+
+<p>Carter needs to figure out the optimal number of bidders to maximize his expected payout. What is this maximum payout?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/optimal-bidders-i">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1-modeling-the-maximum-bid">Step 1: Modeling the Maximum Bid</h3>
+
+<p>Each bidder bids randomly between 500 and 1000. Now, if there are \(n\) bidders, we can assume that the bids will be evenly spaced between 500 and 1000 on average.</p>
+
+<p>The expected spacing between bids is:</p>
+
+\[\frac{500}{n+1}\]
+
+<p>Thus, the expected maximum bid will be:</p>
+
+\[M(n) = 1000 - \frac{500}{n+1}\]
+
+<h3 id="step-2-writing-the-expected-payout">Step 2: Writing the Expected Payout</h3>
+
+<p>Now, Carter’s expected earnings are simply:</p>
+
+\[\text{Max bid} - \text{Cost of bidders}\]
+
+<p>Which gives us:</p>
+
+\[E(n) = M(n) - 5n\]
+
+<p>Substituting \(M(n)\):</p>
+
+\[E(n) = 1000 - \frac{500}{n+1} - 5n\]
+
+<p>Now, we need to maximize this function.</p>
+
+<h3 id="step-3-finding-the-optimal-n">Step 3: Finding the Optimal \(n\)</h3>
+
+<p>We differentiate \(E(n)\) and set it to 0:</p>
+
+\[\frac{d}{dn} \left( 1000 - \frac{500}{n+1} - 5n \right) = 0\]
+
+\[\frac{500}{(n+1)^2} = 5\]
+
+<p>Solving:</p>
+
+\[500 = 5(n+1)^2\]
+
+\[100 = (n+1)^2\]
+
+\[n+1 = 10 \Rightarrow n = 9\]
+
+<p>Thus, the optimal number of bidders is \(n = 9\).</p>
+
+<h3 id="step-4-calculating-the-maximum-expected-payout">Step 4: Calculating the Maximum Expected Payout</h3>
+
+<p>Substituting \(n = 9\):</p>
+
+\[E(9) = 1000 - \frac{500}{10} - 5(9)\]
+
+\[= 1000 - 50 - 45\]
+
+\[= 905\]
+
+<h3 id="thus-the-maximum-expected-payout-carter-can-get-is-905">Thus, the maximum expected payout Carter can get is $905.</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+
+    </section>
+  </article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/TheAlphaJas" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 JXTech. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

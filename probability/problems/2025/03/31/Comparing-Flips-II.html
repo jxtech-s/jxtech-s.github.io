@@ -1,0 +1,280 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Comparing Flips II - JXTech</title>
+<meta name="description" content="Problem Statement">
+
+
+  <meta name="author" content="JXTech">
+  
+  <meta property="article:author" content="JXTech">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="JXTech">
+<meta property="og:title" content="Comparing Flips II">
+<meta property="og:url" content="/probability/problems/2025/03/31/Comparing-Flips-II.html">
+
+
+  <meta property="og:description" content="Problem Statement">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-31T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="/probability/problems/2025/03/31/Comparing-Flips-II.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JXTech",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JXTech Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JXTech
+          <span class="site-subtitle">Redefine Computing and Intelligence</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Comparing Flips II">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-03-31T00:00:00+05:30">
+    
+
+    <section class="page__content" itemprop="text">
+      <h2 id="problem-statement">Problem Statement</h2>
+
+<p>You and your friend are playing a game with a fair coin, tossing it and writing down the outcomes. You win if HTH appears before HHT, else your friend wins. What is the probability that your friend wins?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/comparing-flips-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1-understanding-the-game">Step 1: Understanding the Game</h3>
+
+<p>The game continues until either HTH or HHT appears first. To analyze this, we consider the probability of winning from the instance the first H appears.</p>
+
+<p>Let \(p\) be the probability that I win from this point onward. We now determine \(p\) using conditional probability.</p>
+
+<h3 id="step-2-breaking-down-possible-sequences">Step 2: Breaking Down Possible Sequences</h3>
+
+<p>After the first H, the next flip can be:</p>
+
+<ol>
+  <li>H → Sequence: HH_</li>
+  <li>T → Sequence: HT_</li>
+</ol>
+
+<p>We analyze both cases separately.</p>
+
+<h4 id="case-1-the-sequence-becomes-hh_">Case 1: The sequence becomes HH_</h4>
+
+<ul>
+  <li>The next flip can be H (forming HHH_) or T (forming HHT).</li>
+  <li>If we get HHT, my friend immediately wins.</li>
+  <li>If we get HHH, the sequence will continue indefinitely, but since the only way to eventually break out is forming HHT, I am guaranteed to lose.</li>
+  <li>Thus, if HH occurs, I cannot win.<br />
+\(P(\text{Winning} \mid HH) = 0\)</li>
+</ul>
+
+<h4 id="case-2-the-sequence-becomes-ht_">Case 2: The sequence becomes HT_</h4>
+
+<ul>
+  <li>If the next flip is H, then HTH forms, and I immediately win.</li>
+  <li>If the next flip is T, then the sequence extends to HTT_ and continues.</li>
+  <li>Now, at some point in the future, an H must eventually appear (since an infinite T sequence has probability 0).</li>
+  <li>When this H appears, the game resets to the same original scenario, meaning my probability of winning from here is still \(p\).</li>
+</ul>
+
+<p>Thus,</p>
+
+\[P(\text{Winning} \mid HTT) = p.\]
+
+<p>and</p>
+
+\[P(\text{Winning} \mid HTH) = 1.\]
+
+<p>Now, consider that I said earlier “consider the case from the first H”. Since the game is an inifinte sequence, a series of TTTTT… is not possible, hence the first H is guarateed to appear. Therefore, I can argue that this probability \(p\) is the same as me winning in any case from the start of the game, and not just from the first H.</p>
+
+<h3 id="step-3-setting-up-the-probability-equation">Step 3: Setting Up the Probability Equation</h3>
+
+<p>Obviously,</p>
+
+\[P(HTT) = P(HTH) = \frac{1}{4}\]
+
+<p>and</p>
+
+\[P(HH) = \frac{1}{2}\]
+
+<p>Using the law of total probability, we can write</p>
+
+\[p = \frac{1}{4} (1) + \frac{1}{4} (p) + \frac{1}{2} (0)\]
+
+\[p = \frac{1}{4} + \frac{1}{4} p\]
+
+\[\frac{3}{4} p = \frac{1}{4}\]
+
+\[p = \frac{1}{3}\]
+
+<p>Thus, the probability that I win is \(\frac{1}{3}\), and the probability that my friend wins is:</p>
+
+\[1 - \frac{1}{3} = \frac{2}{3}.\]
+
+<h3 id="thus-the-probability-my-friend-wins-is-mathbffrac23">Thus the probability my friend wins is \(\mathbf{\frac{2}{3}}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+
+    </section>
+  </article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/TheAlphaJas" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 JXTech. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Russian Roulette II - JXTech</title>
+<meta name="description" content="Problem Statement">
+
+
+  <meta name="author" content="JXTech">
+  
+  <meta property="article:author" content="JXTech">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="JXTech">
+<meta property="og:title" content="Russian Roulette II">
+<meta property="og:url" content="/probability/problems/2025/03/29/Russian-Roulette-II.html">
+
+
+  <meta property="og:description" content="Problem Statement">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-29T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="/probability/problems/2025/03/29/Russian-Roulette-II.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JXTech",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JXTech Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JXTech
+          <span class="site-subtitle">Redefine Computing and Intelligence</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Russian Roulette II">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-03-29T00:00:00+05:30">
+    
+
+    <section class="page__content" itemprop="text">
+      <h2 id="problem-statement">Problem Statement</h2>
+
+<p>You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given that the cylinder is re-spun after each turn, what is the probability that you win if your friend goes first?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/russian-roulette-ii">Click here</a><br />
+<strong>First version</strong>: <a href="https://jxtech-s.github.io/probability/problems/2025/03/29/Russian-Roulette-I.html">Russian Roulette I</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="step-1-understanding-the-difference">Step 1: Understanding the Difference</h3>
+
+<p>Unlike the previous version, the key difference here is that after each turn, the cylinder is re-spun. This means:</p>
+<ul>
+  <li>Every turn is independent of the previous turns.</li>
+  <li>At every turn, the probability of firing the bullet remains constant.</li>
+</ul>
+
+<p>Since the chamber is re-randomized, on each turn, the probability that the player firing will shoot the chamber with the bullet is:</p>
+
+\[\frac{1}{6}\]
+
+<p>Similarly, the probability that the bullet is not fired on any given turn is:</p>
+
+\[\frac{5}{6}\]
+
+<h3 id="step-2-analyzing-the-winning-chances">Step 2: Analyzing the Winning Chances</h3>
+
+<p>For you to win, the game must end on an odd-numbered turn (i.e., your friend fires and survives, then you fire and lose).</p>
+
+<ul>
+  <li>Case 1: Your friend loses immediately (turn 1).
+    <ul>
+      <li>Probability = \(\frac{1}{6}\).</li>
+    </ul>
+  </li>
+  <li>Case 2: Your friend survives, you survive, then your friend loses (turn 3).
+    <ul>
+      <li>Probability = \(\left(\frac{5}{6}\right) \times \left(\frac{5}{6}\right) \times \frac{1}{6}\).</li>
+    </ul>
+  </li>
+  <li>Case 3: Your friend survives, you survive, your friend survives, you survive, then your friend loses (turn 5).
+    <ul>
+      <li>Probability = \(\left(\frac{5}{6}\right)^2 \times \left(\frac{5}{6}\right)^2 \times \frac{1}{6}\).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Generalizing, the probability that your friend loses on the 2(k-1)th turn is (factor of 2 as we will win only in the odd numbered cases) -</p>
+
+\[\left(\frac{5}{6}\right)^{2(k-1)} \times \frac{1}{6}\]
+
+<p>Summing this up for all \(k\):</p>
+
+\[P(\text{You win}) = \sum_{k=1}^{\infty} \left(\frac{5}{6}\right)^{2(k-1)} \times \frac{1}{6}\]
+
+<h3 id="step-3-summing-the-infinite-geometric-series">Step 3: Summing the Infinite Geometric Series</h3>
+
+<p>This is a geometric series with first term:</p>
+
+\[a = \frac{1}{6}\]
+
+<p>and common ratio:</p>
+
+\[r = \left(\frac{5}{6}\right)^2 = \frac{25}{36}\]
+
+<p>Using the sum formula for an infinite geometric series:</p>
+
+\[S = \frac{a}{1 - r}\]
+
+<p>we get:</p>
+
+\[P(\text{You win}) = \frac{\frac{1}{6}}{1 - \frac{25}{36}}\]
+
+\[= \frac{\frac{1}{6}}{\frac{11}{36}}\]
+
+\[= \frac{1}{6} \times \frac{36}{11} = \frac{6}{11}\]
+
+<h3 id="thus-the-probability-that-we-will-win-is-frac611">Thus, the probability that we will win is \(\frac{6}{11}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+
+    </section>
+  </article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/TheAlphaJas" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 JXTech. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

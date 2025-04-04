@@ -1,58 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-04-05T02:04:22+05:30</updated><id>/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Exact 5 II</title><link href="/probability/problems/2025/04/05/Exact-5-II-copy.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>/probability/problems/2025/04/05/Exact-5-II%20copy</id><content type="html" xml:base="/probability/problems/2025/04/05/Exact-5-II-copy.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
-What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/exact-5-ii">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Let \(X\) be the event representing number of times we get a \(5\) before hitting our first \(6\).</p>
-
-<p>Let’s try to break this down using conditional expectation.<br />
-From any given state, every die roll gives us 6 possible outcomes:</p>
-
-<ul>
-  <li>With probability \(\frac{1}{6}\), we get a \(5\).</li>
-  <li>With probability \(\frac{1}{6}\), we get a \(6\) → game stops.</li>
-  <li>With probability \(\frac{4}{6}\), we get something else (\(1\), \(2\), \(3\), or \(4\)).</li>
-</ul>
-
-<p>Let’s write the expected value in terms of these outcomes:</p>
-
-\[E[X] = \frac{1}{6} \cdot E[X \mid \text{5}] + \frac{1}{6} \cdot E[X \mid \text{6}] + \frac{4}{6} \cdot E[X \mid \text{Other}]\]
-
-<p>Now, analyze each term:</p>
-
-<ul>
-  <li>\(E[X \mid \text{6}] = 0\) → because we stop immediately, no more \(5\)s possible.</li>
-  <li>\(E[X \mid \text{5}] = 1 + E[X]\) → we got one \(5\), and then we’re back to square one, since the process restarts.</li>
-  <li>\(E[X \mid \text{Other}] = E[X]\) → getting \(1\), \(2\), \(3\), or \(4\) doesn’t change the structure. We’re still in the exact same state with same probabilities.</li>
-</ul>
-
-<h3 id="substituting-all-this-in">Substituting all this in:</h3>
-
-\[E[X] = \frac{1}{6}(1 + E[X]) + \frac{1}{6}(0) + \frac{4}{6}(E[X])\]
-
-\[E[X] = \frac{1}{6} + \frac{1}{6}E[X] + \frac{4}{6}E[X]\]
-
-\[E[X] = \frac{1}{6} + \frac{5}{6}E[X]\]
-
-<p>Bring terms together:</p>
-
-\[E[X] - \frac{5}{6}E[X] = \frac{1}{6}
-\Rightarrow \frac{1}{6}E[X] = \frac{1}{6}
-\Rightarrow E[X] = 1\]
-
-<h3 id="final-answer">Final Answer</h3>
-
-<p>So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</p>
-
-\[\boxed{1}\]
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Exact 5 II</title><link href="/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-04-05T02:14:08+05:30</updated><id>/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Exact 5 II</title><link href="/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
 What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
@@ -626,4 +572,77 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Matching Die Trio</title><link href="/probability/problems/2025/03/24/Matching-Die-Trio.html" rel="alternate" type="text/html" title="Matching Die Trio" /><published>2025-03-24T00:00:00+05:30</published><updated>2025-03-24T00:00:00+05:30</updated><id>/probability/problems/2025/03/24/Matching-Die-Trio</id><content type="html" xml:base="/probability/problems/2025/03/24/Matching-Die-Trio.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Three fair \(6\)−sided dice are rolled and their upfaces are recorded. Find the probability that the values showing upon rolling all three dice again is the same as the original three values recorded.</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/matching-die-trio">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>We approach this problem using conditional expectation and casework probability. Since the three dice are not labeled, the probability of getting a matching set on the second roll depends on the structure of the first roll.</p>
+
+<h3 id="step-1-classifying-cases-based-on-first-roll">Step 1: Classifying Cases Based on First Roll</h3>
+
+<p>When rolling three fair 6-sided dice, the possible cases based on distinctness of numbers are:</p>
+
+<ol>
+  <li><strong>Case 1: All three dice show distinct numbers.</strong>
+    <ul>
+      <li>The probability of this occurring:
+\(P(C_1) = \frac{\binom{6}{3} \cdot 3!}{6^3} = \frac{20 \cdot 6}{216} = \frac{120}{216}\)</li>
+      <li>On re-rolling, all 3 numbers must appear again. The number of favorable outcomes is the <strong>number of ways to permute the same three numbers</strong>, which is \(3!\).
+        <ul>
+          <li>Probability of matching:
+\(P(M \mid C_1) = \frac{3!}{6^3} = \frac{6}{216}\)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Case 2: Two dice show the same number, and the third is different.</strong>
+    <ul>
+      <li>The probability of this occurring:
+\(P(C_2) = \frac{\binom{6}{1} \cdot \binom{5}{1} \cdot \frac{3!}{2!}}{6^3} = \frac{6 \cdot 5 \cdot 3}{216} = \frac{90}{216}\)</li>
+      <li>On re-rolling, we must obtain the same structure (two of one number and one of another), and the arrangement of dice does not matter.
+        <ul>
+          <li>Probability of matching:
+\(P(M \mid C_2) = \frac{\frac{3!}{2!}}{6^3} = \frac{3}{216}\)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Case 3: All three dice show the same number.</strong>
+    <ul>
+      <li>The probability of this occurring:
+\(P(C_3) = \frac{6}{216}\)</li>
+      <li>On re-rolling, the only way to match is if the same number appears on all three dice.
+        <ul>
+          <li>Probability of matching:
+\(P(M \mid C_3) = \frac{1}{6^3} = \frac{1}{216}\)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="step-2-computing-the-final-probability">Step 2: Computing the Final Probability</h3>
+
+<p>Using the Law of Total Probability:</p>
+
+\[P(M) = P(M \mid C_1) P(C_1) + P(M \mid C_2) P(C_2) + P(M \mid C_3) P(C_3)\]
+
+<p>Substituting values:</p>
+
+\[P(M) = \left(\frac{6}{216} \times \frac{120}{216}\right) + \left(\frac{3}{216} \times \frac{90}{216}\right) + \left(\frac{1}{216} \times \frac{6}{216}\right)\]
+
+\[P(M) = \frac{720}{46656} + \frac{270}{46656} + \frac{6}{46656}\]
+
+\[P(M) = \frac{996}{46656}\]
+
+\[P(M) = \frac{83}{3888}\]
+
+<h3 id="thus-the-probability-that-the-second-roll-matches-the-first-roll-is-frac833888">Thus, the probability that the second roll matches the first roll is \(\frac{83}{3888}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

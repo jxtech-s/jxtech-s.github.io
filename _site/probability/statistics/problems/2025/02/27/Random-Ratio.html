@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Exact 5 II - JXTech</title>
+<!-- begin _includes/seo.html --><title>Random Ratio - JXTech</title>
 <meta name="description" content="Problem Statement">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="JXTech">
-<meta property="og:title" content="Exact 5 II">
-<meta property="og:url" content="/probability/problems/2025/04/05/Exact-5-II-copy.html">
+<meta property="og:title" content="Random Ratio">
+<meta property="og:url" content="/probability/statistics/problems/2025/02/27/Random-Ratio.html">
 
 
   <meta property="og:description" content="Problem Statement">
@@ -34,14 +34,14 @@
 
 
 
-  <meta property="article:published_time" content="2025-04-05T00:00:00+05:30">
+  <meta property="article:published_time" content="2025-02-27T00:00:00+05:30">
 
 
 
 
 
 
-<link rel="canonical" href="/probability/problems/2025/04/05/Exact-5-II-copy.html">
+<link rel="canonical" href="/probability/statistics/problems/2025/02/27/Random-Ratio.html">
 
 
 
@@ -138,67 +138,114 @@
 
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Exact 5 II">
+    <meta itemprop="headline" content="Random Ratio">
     <meta itemprop="description" content="Problem Statement">
-    <meta itemprop="datePublished" content="2025-04-05T00:00:00+05:30">
+    <meta itemprop="datePublished" content="2025-02-27T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
       <h2 id="problem-statement">Problem Statement</h2>
 
-<p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
-What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
+<p>\(p\) and \(q\) are two points chosen at random between 0 \(\&amp;\) 1. What is the probability that the ratio \(p/q\) lies between 1 \(\&amp;\) 2?</p>
 
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/exact-5-ii">Click here</a></p>
+<p><strong>Original Problem Link</strong>: <a href="https://brainstellar.com/puzzles/medium/112">Click here</a></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>Let \(X\) be the event representing number of times we get a \(5\) before hitting our first \(6\).</p>
+<p>We have 2 random variables (RVs) \(p \&amp; q\) here. Let’s try to fix one for simplicity, and then use that result to develop a general solution where both are RVs.</p>
 
-<p>Let’s try to break this down using conditional expectation.<br />
-From any given state, every die roll gives us 6 possible outcomes:</p>
+<h3 id="step-1-fixing-q">Step 1: Fixing q</h3>
 
-<ul>
-  <li>With probability \(\frac{1}{6}\), we get a \(5\).</li>
-  <li>With probability \(\frac{1}{6}\), we get a \(6\) → game stops.</li>
-  <li>With probability \(\frac{4}{6}\), we get something else (\(1\), \(2\), \(3\), or \(4\)).</li>
-</ul>
+<p>Say we fix \(q\) at some value between 0 and 1. Now, the given problem reduces to:</p>
 
-<p>Let’s write the expected value in terms of these outcomes:</p>
+<blockquote>
+  <p>“q is a fixed value between 0 and 1. p ~ Uniform(0,1). What is the probability that 1 &lt; p/q &lt; 2?”</p>
+</blockquote>
 
-\[E[X] = \frac{1}{6} \cdot E[X \mid \text{5}] + \frac{1}{6} \cdot E[X \mid \text{6}] + \frac{4}{6} \cdot E[X \mid \text{Other}]\]
+<p>This question is fairly straightforward.</p>
 
-<p>Now, analyze each term:</p>
+<h3 id="step-2-rearranging-the-inequality">Step 2: Rearranging the Inequality</h3>
 
-<ul>
-  <li>\(E[X \mid \text{6}] = 0\) → because we stop immediately, no more \(5\)s possible.</li>
-  <li>\(E[X \mid \text{5}] = 1 + E[X]\) → we got one \(5\), and then we’re back to square one, since the process restarts.</li>
-  <li>\(E[X \mid \text{Other}] = E[X]\) → getting \(1\), \(2\), \(3\), or \(4\) doesn’t change the structure. We’re still in the exact same state with same probabilities.</li>
-</ul>
+<p>Let’s rearrange the inequality:</p>
 
-<h3 id="substituting-all-this-in">Substituting all this in:</h3>
+\[1 &lt; \frac{p}{q} &lt; 2\]
 
-\[E[X] = \frac{1}{6}(1 + E[X]) + \frac{1}{6}(0) + \frac{4}{6}(E[X])\]
+\[q &lt; p &lt; 2q\]
 
-\[E[X] = \frac{1}{6} + \frac{1}{6}E[X] + \frac{4}{6}E[X]\]
+<p>Also, note that since p is restricted in (0,1), we must say:</p>
 
-\[E[X] = \frac{1}{6} + \frac{5}{6}E[X]\]
+\[\max(0,q) &lt; p &lt; \min(2q, 1)\]
 
-<p>Bring terms together:</p>
+<p>But since q is also restricted in (0,1), we have \(\max(0,q) = q\)</p>
 
-\[E[X] - \frac{5}{6}E[X] = \frac{1}{6}
-\Rightarrow \frac{1}{6}E[X] = \frac{1}{6}
-\Rightarrow E[X] = 1\]
+<p>Thus, the final expression is:</p>
 
-<h3 id="final-answer">Final Answer</h3>
+\[q &lt; p &lt; \min(2q,1)\]
 
-<p>So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</p>
+<h3 id="step-3-computing-the-probability">Step 3: Computing the Probability</h3>
 
-\[\boxed{1}\]
+<p>Now, let’s compute the probability that p will lie within this range.</p>
+
+<p>As \(p \sim \text{Uniform}(0,1)\), the required probability:</p>
+
+\[P = \frac{\min(1,2q) - q}{1} = \min(2q,1) - q\]
+
+<p>(Note: The probability is simply the length of the required range divided by the length of the total range. This is also visible by intuition)</p>
+
+<h3 id="step-4-considering-q-as-a-random-variable">Step 4: Considering q as a Random Variable</h3>
+
+<p>Now, note that this is the case when q is fixed. But q itself will vary from 0 to 1.</p>
+
+<p>We can write the above probability as “conditioned on” a particular q:</p>
+
+\[P(E|q) = \min(2q,1) - q\]
+
+<p>(Where E is our required event of \(1 &lt; \frac{p}{q} &lt; 2\))</p>
+
+<h3 id="step-5-using-the-law-of-total-probability">Step 5: Using the Law of Total Probability</h3>
+
+<p>Using fundamental laws, we have:</p>
+
+\[P(E) = \sum P(E|q)P(q)\]
+
+<p>What is P(q)? Essentially the probability of choosing a particular value from 0 to 1, an infinite set! Clearly very small! Let’s use calculus to denote this.</p>
+
+\[P(q) = \frac{dq}{1} = dq\]
+
+<p>Thus,</p>
+
+\[P(E) = \int_0^1 (\min(2q,1) - q) \, dq\]
+
+<h3 id="step-6-solving-the-integral">Step 6: Solving the Integral</h3>
+
+<p>To solve this integral, we need to split it into two parts:</p>
+
+<ol>
+  <li>From 0 to 1/2, where \(\min(2q,1) = 2q\)</li>
+  <li>From 1/2 to 1, where \(\min(2q,1) = 1\)</li>
+</ol>
+
+<p>Now,</p>
+
+\[P(E) = \int_0^{1/2} (2q - q) \, dq + \int_{1/2}^1 (1 - q) \,\]
+
+\[= \int_0^{1/2} q \, dq + \int_{1/2}^1 (1 - q) \, dq\]
+
+\[= [\frac{q^2}{2}]_0^{1/2} + [q - \frac{q^2}{2}]_{1/2}^1\]
+
+\[= (\frac{1}{8} - 0) + ((1 - \frac{1}{2}) - (\frac{1}{2} - \frac{1}{8}))\]
+
+\[= \frac{1}{8} + \frac{1}{2} - \frac{3}{8} = \frac{1}{4}\]
+
+<h3 id="therefore-the-probability-that-the-ratio-pq-lies-between-1-and-2-is-frac14-or-025-or-25">Therefore, the probability that the ratio \(p/q\) lies between 1 and 2 is \(\frac{1}{4}\) or \(0.25\) or \(25\%\).</h3>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+<p>PS - A similar integration is involved in the problem <a href="https://jxtech-s.github.io/probability/statistics/problems/2025/02/23/Random-Angle-II.html">Random-Angle-II</a>. Check it out for a more detailed explaination incase of any confusions!.</p>
+
+<hr />
+
+<p>💡  Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
 
     </section>
   </article>

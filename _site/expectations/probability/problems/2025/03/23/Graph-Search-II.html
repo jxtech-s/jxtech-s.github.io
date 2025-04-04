@@ -1,0 +1,299 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Graph Search II - JXTech</title>
+<meta name="description" content="Problem Statement">
+
+
+  <meta name="author" content="JXTech">
+  
+  <meta property="article:author" content="JXTech">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="JXTech">
+<meta property="og:title" content="Graph Search II">
+<meta property="og:url" content="/expectations/probability/problems/2025/03/23/Graph-Search-II.html">
+
+
+  <meta property="og:description" content="Problem Statement">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-23T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="/expectations/probability/problems/2025/03/23/Graph-Search-II.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JXTech",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JXTech Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JXTech
+          <span class="site-subtitle">Redefine Computing and Intelligence</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Graph Search II">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-03-23T00:00:00+05:30">
+    
+
+    <section class="page__content" itemprop="text">
+      <h2 id="problem-statement">Problem Statement</h2>
+
+<p>You are given an undirected graph with \(11\) nodes. From every node, you are able to access any other node (not including itself), all with an equal probability of \(\frac{1}{10}\). What is the expected number of steps to reach all nodes at least once (rounded to the nearest step)?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/graph-search-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>It is clear that we must deal with conditional expectations in the given problem. As a recap, using conditional expectations, we get</p>
+
+\[E[X] = \sum_{Y_i} E[X \mid Y_i] P(Y_i)\]
+
+<h3 id="step-1-formulating-recursive-relation">Step 1: Formulating Recursive Relation</h3>
+
+<p>Lets denote \(E_{i}\) as the expected number of steps required to  visit \(i\) un-visited nodes. Note that this does not count our current node.</p>
+
+<p>Now, when the simulation starts, you will take 1 step and enter the first node. After this, 10 nodes remain to be visited. Now, when you take the next path, you will definitely end up on a new node (as all other nodes are unvisited). Lets say this step is done. Now, you are on your 2nd node, with 9 unvisited, and 1 visited. Now, with probability \(\frac{1}{10}\), you may end up on an already visited note, and with probability \(\frac{9}{10}\), you may end up on a new un-visited node.</p>
+
+<p>Therefore, for our second iteration, we could write
+\(E_{9} = (\frac{1}{10} \times (1 + E_{9})) + (\frac{9}{10} \times (1 + E_{8}))\)</p>
+
+<p>Note that the + 1 is added in each term as you take one step to reach there.</p>
+
+<h3 id="step-2-generalizing-the-relation">Step 2: Generalizing the Relation</h3>
+
+<p>After a few iterations, it will be clear that the relation can be generalized as follows -</p>
+<blockquote>
+  <p>“If you must visit n nodes more, then with probability \(\frac{10 - n}{10}\) you will reach an already visited node (where you will take \(E_{n}\) steps), and with probability \(\frac{n}{10}\) you will visit a new node (where you will take \(E_{n-1}\) steps).”</p>
+</blockquote>
+
+<p>Therefore,</p>
+
+\[E_{n} = (\frac{10 - n}{10} \times (1 + E_{n})) + (\frac{n}{10} \times (1 + E_{n-1}))\]
+
+<p>On simplification, we get</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1}\]
+
+<h3 id="step-3-solving-recursion">Step 3: Solving Recursion</h3>
+
+<p>Now that we have established the recurrence relation</p>
+
+\[E_{n} = \frac{10}{n} + E_{n-1},\]
+
+<p>we can solve it iteratively to find a general expression for \(E_{10}\), which is the expected number of steps to visit all 10 new nodes at least once. Note that we will also need to add 1 to this, as that will mark our “first” step into the graph (because its only on our first node we need to walk \(E_{10}\) steps more. We must include that first step to our first node as well).</p>
+
+<p>First, note that the recurrence starts with \(E_{0} = 0\) since when no nodes are unvisited, no more steps are required.</p>
+
+<p>Now, let’s compute the values step by step:</p>
+
+<ul>
+  <li>
+    <p>For \(E_1\):
+\(E_1 = \frac{10}{1} + E_0 = 10 + 0 = 10.\)</p>
+  </li>
+  <li>
+    <p>For \(E_2\):
+\(E_2 = \frac{10}{2} + E_1 = 5 + 10 = 15.\)</p>
+  </li>
+  <li>
+    <p>For \(E_3\):
+\(E_3 = \frac{10}{3} + E_2 = \frac{10}{3} + 15 \approx 3.33 + 15 = 18.33.\)</p>
+  </li>
+  <li>
+    <p>For \(E_4\):
+\(E_4 = \frac{10}{4} + E_3 = 2.5 + 18.33 \approx 20.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_5\):
+\(E_5 = \frac{10}{5} + E_4 = 2 + 20.83 \approx 22.83.\)</p>
+  </li>
+  <li>
+    <p>For \(E_6\):
+\(E_6 = \frac{10}{6} + E_5 = \frac{5}{3} + 22.83 \approx 1.67 + 22.83 = 24.5.\)</p>
+  </li>
+  <li>
+    <p>For \(E_7\):
+\(E_7 = \frac{10}{7} + E_6 = \frac{10}{7} + 24.5 \approx 1.43 + 24.5 = 25.93.\)</p>
+  </li>
+  <li>
+    <p>For \(E_8\):
+\(E_8 = \frac{10}{8} + E_7 = \frac{5}{4} + 25.93 \approx 1.25 + 25.93 = 27.18.\)</p>
+  </li>
+  <li>
+    <p>For \(E_9\):
+\(E_9 = \frac{10}{9} + E_8 = \frac{10}{9} + 27.18 \approx 1.11 + 27.18 = 28.29.\)</p>
+  </li>
+  <li>
+    <p>Finally, for \(E_{10}\):
+\(E_{10} = \frac{10}{10} + E_9 = 1 + 28.29 \approx 29.29.\)</p>
+  </li>
+</ul>
+
+<p>As discussed earlier, we must add 1 to account for our first step on the 11th node (from where we start exploring the remaining 10 nodes). Therefore,</p>
+
+\[Ans = 1 + E_10 = 1 + 29.29 \approx 30.29.\]
+
+<h3 id="thus-the-expected-number-of-steps-to-visit-all-11-nodes-at-least-once-is-approximately-3029-which-rounds-to-30-steps">Thus, the expected number of steps to visit all 11 nodes at least once is approximately <strong>30.29</strong>, which rounds to <strong>30</strong> steps.</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+
+    </section>
+  </article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/TheAlphaJas" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 JXTech. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

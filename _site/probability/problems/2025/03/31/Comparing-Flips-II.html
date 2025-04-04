@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Exact 5 II - JXTech</title>
+<!-- begin _includes/seo.html --><title>Comparing Flips II - JXTech</title>
 <meta name="description" content="Problem Statement">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="JXTech">
-<meta property="og:title" content="Exact 5 II">
-<meta property="og:url" content="/probability/problems/2025/04/05/Exact-5-II-copy.html">
+<meta property="og:title" content="Comparing Flips II">
+<meta property="og:url" content="/probability/problems/2025/03/31/Comparing-Flips-II.html">
 
 
   <meta property="og:description" content="Problem Statement">
@@ -34,14 +34,14 @@
 
 
 
-  <meta property="article:published_time" content="2025-04-05T00:00:00+05:30">
+  <meta property="article:published_time" content="2025-03-31T00:00:00+05:30">
 
 
 
 
 
 
-<link rel="canonical" href="/probability/problems/2025/04/05/Exact-5-II-copy.html">
+<link rel="canonical" href="/probability/problems/2025/03/31/Comparing-Flips-II.html">
 
 
 
@@ -138,63 +138,91 @@
 
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Exact 5 II">
+    <meta itemprop="headline" content="Comparing Flips II">
     <meta itemprop="description" content="Problem Statement">
-    <meta itemprop="datePublished" content="2025-04-05T00:00:00+05:30">
+    <meta itemprop="datePublished" content="2025-03-31T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
       <h2 id="problem-statement">Problem Statement</h2>
 
-<p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
-What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
+<p>You and your friend are playing a game with a fair coin, tossing it and writing down the outcomes. You win if HTH appears before HHT, else your friend wins. What is the probability that your friend wins?</p>
 
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/exact-5-ii">Click here</a></p>
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/comparing-flips-ii">Click here</a></p>
 
 <h2 id="solution">Solution</h2>
 
-<p>Let \(X\) be the event representing number of times we get a \(5\) before hitting our first \(6\).</p>
+<h3 id="step-1-understanding-the-game">Step 1: Understanding the Game</h3>
 
-<p>Let’s try to break this down using conditional expectation.<br />
-From any given state, every die roll gives us 6 possible outcomes:</p>
+<p>The game continues until either HTH or HHT appears first. To analyze this, we consider the probability of winning from the instance the first H appears.</p>
+
+<p>Let \(p\) be the probability that I win from this point onward. We now determine \(p\) using conditional probability.</p>
+
+<h3 id="step-2-breaking-down-possible-sequences">Step 2: Breaking Down Possible Sequences</h3>
+
+<p>After the first H, the next flip can be:</p>
+
+<ol>
+  <li>H → Sequence: HH_</li>
+  <li>T → Sequence: HT_</li>
+</ol>
+
+<p>We analyze both cases separately.</p>
+
+<h4 id="case-1-the-sequence-becomes-hh_">Case 1: The sequence becomes HH_</h4>
 
 <ul>
-  <li>With probability \(\frac{1}{6}\), we get a \(5\).</li>
-  <li>With probability \(\frac{1}{6}\), we get a \(6\) → game stops.</li>
-  <li>With probability \(\frac{4}{6}\), we get something else (\(1\), \(2\), \(3\), or \(4\)).</li>
+  <li>The next flip can be H (forming HHH_) or T (forming HHT).</li>
+  <li>If we get HHT, my friend immediately wins.</li>
+  <li>If we get HHH, the sequence will continue indefinitely, but since the only way to eventually break out is forming HHT, I am guaranteed to lose.</li>
+  <li>Thus, if HH occurs, I cannot win.<br />
+\(P(\text{Winning} \mid HH) = 0\)</li>
 </ul>
 
-<p>Let’s write the expected value in terms of these outcomes:</p>
-
-\[E[X] = \frac{1}{6} \cdot E[X \mid \text{5}] + \frac{1}{6} \cdot E[X \mid \text{6}] + \frac{4}{6} \cdot E[X \mid \text{Other}]\]
-
-<p>Now, analyze each term:</p>
+<h4 id="case-2-the-sequence-becomes-ht_">Case 2: The sequence becomes HT_</h4>
 
 <ul>
-  <li>\(E[X \mid \text{6}] = 0\) → because we stop immediately, no more \(5\)s possible.</li>
-  <li>\(E[X \mid \text{5}] = 1 + E[X]\) → we got one \(5\), and then we’re back to square one, since the process restarts.</li>
-  <li>\(E[X \mid \text{Other}] = E[X]\) → getting \(1\), \(2\), \(3\), or \(4\) doesn’t change the structure. We’re still in the exact same state with same probabilities.</li>
+  <li>If the next flip is H, then HTH forms, and I immediately win.</li>
+  <li>If the next flip is T, then the sequence extends to HTT_ and continues.</li>
+  <li>Now, at some point in the future, an H must eventually appear (since an infinite T sequence has probability 0).</li>
+  <li>When this H appears, the game resets to the same original scenario, meaning my probability of winning from here is still \(p\).</li>
 </ul>
 
-<h3 id="substituting-all-this-in">Substituting all this in:</h3>
+<p>Thus,</p>
 
-\[E[X] = \frac{1}{6}(1 + E[X]) + \frac{1}{6}(0) + \frac{4}{6}(E[X])\]
+\[P(\text{Winning} \mid HTT) = p.\]
 
-\[E[X] = \frac{1}{6} + \frac{1}{6}E[X] + \frac{4}{6}E[X]\]
+<p>and</p>
 
-\[E[X] = \frac{1}{6} + \frac{5}{6}E[X]\]
+\[P(\text{Winning} \mid HTH) = 1.\]
 
-<p>Bring terms together:</p>
+<p>Now, consider that I said earlier “consider the case from the first H”. Since the game is an inifinte sequence, a series of TTTTT… is not possible, hence the first H is guarateed to appear. Therefore, I can argue that this probability \(p\) is the same as me winning in any case from the start of the game, and not just from the first H.</p>
 
-\[E[X] - \frac{5}{6}E[X] = \frac{1}{6}
-\Rightarrow \frac{1}{6}E[X] = \frac{1}{6}
-\Rightarrow E[X] = 1\]
+<h3 id="step-3-setting-up-the-probability-equation">Step 3: Setting Up the Probability Equation</h3>
 
-<h3 id="final-answer">Final Answer</h3>
+<p>Obviously,</p>
 
-<p>So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</p>
+\[P(HTT) = P(HTH) = \frac{1}{4}\]
 
-\[\boxed{1}\]
+<p>and</p>
+
+\[P(HH) = \frac{1}{2}\]
+
+<p>Using the law of total probability, we can write</p>
+
+\[p = \frac{1}{4} (1) + \frac{1}{4} (p) + \frac{1}{2} (0)\]
+
+\[p = \frac{1}{4} + \frac{1}{4} p\]
+
+\[\frac{3}{4} p = \frac{1}{4}\]
+
+\[p = \frac{1}{3}\]
+
+<p>Thus, the probability that I win is \(\frac{1}{3}\), and the probability that my friend wins is:</p>
+
+\[1 - \frac{1}{3} = \frac{2}{3}.\]
+
+<h3 id="thus-the-probability-my-friend-wins-is-mathbffrac23">Thus the probability my friend wins is \(\mathbf{\frac{2}{3}}\)</h3>
 
 <hr />
 

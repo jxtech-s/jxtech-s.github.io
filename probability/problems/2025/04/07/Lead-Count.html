@@ -9,25 +9,24 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Problems Archive - JXTech</title>
-<meta name="description" content="Advanced probability problems and detailed solutions">
+<!-- begin _includes/seo.html --><title>Lead Count - JXTech</title>
+<meta name="description" content="Problem Statement">
 
 
   <meta name="author" content="JXTech">
   
+  <meta property="article:author" content="JXTech">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="JXTech">
-<meta property="og:title" content="Problems Archive">
-<meta property="og:url" content="http://localhost:4000/problems/">
+<meta property="og:title" content="Lead Count">
+<meta property="og:url" content="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html">
 
 
-  <meta property="og:description" content="Advanced probability problems and detailed solutions">
-
-
-
+  <meta property="og:description" content="Problem Statement">
 
 
 
@@ -35,9 +34,14 @@
 
 
 
+  <meta property="article:published_time" content="2025-04-07T00:00:00+05:30">
 
 
-<link rel="canonical" href="http://localhost:4000/problems/">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html">
 
 
 
@@ -92,7 +96,7 @@
 
   </head>
 
-  <body class="layout--splash">
+  <body class="layout--splash wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -134,121 +138,50 @@
 
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Problems Archive">
-    
-    
+    <meta itemprop="headline" content="Lead Count">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-04-07T00:00:00+05:30">
     
 
     <section class="page__content" itemprop="text">
-      <h2 id="problems-archive">Problems Archive</h2>
+      <h2 id="problem-statement">Problem Statement</h2>
 
+<p>Suppose you flip a fair coin 10 times. We say a certain outcome (heads or tails) is leading after \(n\) flips if there are strictly more than \(\frac{n}{2}\) flips of that outcome within the first \(n\) flips.</p>
+
+<p>Find the probability that the outcome of the first flip of the coin is leading after 10 flips.</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/lead-count">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s say the outcome of the first flip is \(k\) (could be either heads or tails — doesn’t matter, due to symmetry).</p>
+
+<p>Now, for \(k\) to be leading after 10 flips, the total number of \(k\)’s in the entire 10-flip sequence must be strictly greater than 5, since we’re considering \(n = 10\).</p>
+
+<p>But since the first flip is already \(k\), we just need to count how many additional \(k\)’s show up in the remaining 9 flips so that the total count of \(k\) becomes greater than 5.</p>
+
+<p>So we’re looking for how many ways we can get:</p>
 <ul>
-
-  
-    <li><a href="/probability/problems/2025/04/07/Lead-Count.html">Lead Count</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/04/07/9-Sum-II.html">9 Sum II</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/04/06/Hit-Or-Miss.html">Hit Or Miss</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/04/06/Fireball-Thrower.html">Fireball Thrower</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/04/05/Exact-5-II.html">Exact 5 II</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/04/01/Optimal-Bidders-I.html">Optimal Bidders I</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/31/Comparing-Flips-II.html">Comparing Flips II</a></li>
-  
-
-  
-    <li><a href="/combinatorics/problems/2025/03/30/Multinomial-Sum.html">Multinomial Sum</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/30/Multinomial-Expansion.html">Multinomial Expansion</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/29/Russian-Roulette-II.html">Russian Roulette II</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/29/Russian-Roulette-I.html">Russian Roulette I</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/29/Modified-RNG.html">Modified RNG</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/28/Square-Cross.html">Square Cross</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/24/Matching-Die-Trio.html">Matching Die Trio</a></li>
-  
-
-  
-    <li><a href="/probability/problems/2025/03/23/Particle-Reach.html">Particle Reach</a></li>
-  
-
-  
-    <li><a href="/expectations/probability/problems/2025/03/23/Graph-Search-II.html">Graph Search II</a></li>
-  
-
-  
-    <li><a href="/expectations/probability/problems/2025/03/23/Graph-Search-I.html">Graph Search I</a></li>
-  
-
-  
-    <li><a href="/combinatorics/statistics/problems/2025/03/21/Mean-babysitter.html">Mean babysitter</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/03/18/Pass-the-Ball.html">Pass the ball</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/03/18/Differ-by-2.html">Differ by 2</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/03/17/Confused-Ant-II.html">Confused Ant II</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/02/27/Random-Ratio.html">Random Ratio</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/02/26/Intersecting-Chords.html">Intersecting Chords</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/02/24/Breaking-Sticks.html">Breaking Stick</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Random-Angle-II.html">Random Angle II</a></li>
-  
-
-  
-    <li><a href="/probability/statistics/problems/2025/02/23/Chess-Tournament-I.html">Chess Tournament I</a></li>
-  
-
+  <li>\(5\) more \(k\)’s out of 9 → total \(6\)</li>
+  <li>\(6\) more \(k\)’s → total \(7\)</li>
+  <li>\(7\) more \(k\)’s → total \(8\)</li>
+  <li>\(8\) more \(k\)’s → total \(9\)</li>
+  <li>\(9\) more \(k\)’s → total \(10\)</li>
 </ul>
+
+<p>So the total number of favorable outcomes is:
+\(\binom{9}{5} + \binom{9}{6} + \binom{9}{7} + \binom{9}{8} + \binom{9}{9} = 126 + 84 + 36 + 9 + 1 = 256\)</p>
+
+<p>Each of these outcomes has equal probability (since each coin flip is independent and fair), and there are $2^9 = 512$ total possible outcomes for the remaining 9 flips.</p>
+
+<p>So the final probability is:
+\(\frac{256}{2^9} = \frac{256}{512} = \frac{1}{2}\)</p>
+
+<h3 id="so-the-required-probability-is-boxedfrac12">So the required probability is \(\boxed{\frac{1}{2}}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
 
     </section>
   </article>

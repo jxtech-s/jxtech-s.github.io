@@ -1,0 +1,287 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Careful Coin Question - JXTech</title>
+<meta name="description" content="Problem Statement">
+
+
+  <meta name="author" content="JXTech">
+  
+  <meta property="article:author" content="JXTech">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="JXTech">
+<meta property="og:title" content="Careful Coin Question">
+<meta property="og:url" content="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html">
+
+
+  <meta property="og:description" content="Problem Statement">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-04-27T00:00:00+05:30">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "JXTech",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="JXTech Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          JXTech
+          <span class="site-subtitle">Redefine Computing and Intelligence</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Careful Coin Question">
+    <meta itemprop="description" content="Problem Statement">
+    <meta itemprop="datePublished" content="2025-04-27T00:00:00+05:30">
+    
+
+    <section class="page__content" itemprop="text">
+      <h2 id="problem-statement">Problem Statement</h2>
+
+<p>Your friend has a fair coin. They flip it \(100\) times consecutively and record the sequence of outcomes. Your goal is to guess the sequence that your friend flipped. You may ask a single Yes/No question to your friend to help you determine the sequence.</p>
+
+<p>The maximum probability you can achieve of guessing your friend’s sequence is in the form \(a^{-b}\), where \(b\) is maximal. Find \(ab\).</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/careful-coin-question">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Obviously, since we can only ask one Yes/No question, it makes sense to ask a question that gives us the most information possible.</p>
+
+<p>At first thought, you might think asking for the value at a single position is optimal (which halves the search space). But interestingly, if we ask whether a certain set of \(n\) digits match a specific fixed sequence (say something like \(0101010011100\ldots\) \(n\) digits), we can achieve the same maximum reduction — and this is actually optimal.</p>
+
+<h3 id="step-1-structure-of-the-question">Step 1: Structure of the Question</h3>
+
+<p>Suppose we fix \(n\) specific positions, and ask:</p>
+<blockquote>
+  <p>“Do the digits at these positions form exactly this particular sequence?”</p>
+</blockquote>
+
+<p>The answer is either Yes or No.</p>
+
+<p>What is the probability that the answer is Yes?</p>
+
+<p>Since for those \(n\) positions, there are \(2^n\) possible combinations, and each is equally likely, the probability that the friend’s sequence matches exactly our chosen sequence is:</p>
+
+\[\mathbb{P}(\text{Yes}) = \frac{1}{2^n}\]
+
+<p>Thus,</p>
+
+\[\mathbb{P}(\text{No}) = 1 - \frac{1}{2^n}\]
+
+<h3 id="step-2-finding-the-expression">Step 2: Finding the expression</h3>
+
+<p>Using total probability:</p>
+
+\[\mathbb{P}(\text{Correct}) = \mathbb{P}(\text{Correct} \mid \text{Yes}) \times \mathbb{P}(\text{Yes}) + \mathbb{P}(\text{Correct} \mid \text{No}) \times \mathbb{P}(\text{No})\]
+
+<h3 id="step-3-finding-mathbbptextcorrect-mid-textyes">Step 3: Finding \(\mathbb{P}(\text{Correct} \mid \text{Yes})\)</h3>
+
+<p>If the answer is Yes, then we now know exactly what those \(n\) positions are.<br />
+Thus, we only need to correctly guess the remaining \(100-n\) positions.</p>
+
+<p>Since each unknown position is independent and fair:</p>
+
+\[\mathbb{P}(\text{Correct} \mid \text{Yes}) = \frac{1}{2^{100-n}}\]
+
+<h3 id="step-4-finding-mathbbptextcorrect-mid-textno">Step 4: Finding \(\mathbb{P}(\text{Correct} \mid \text{No})\)</h3>
+
+<p>If the answer is No, then:</p>
+<ul>
+  <li>Among the \(2^n\) possible combinations for the \(n\) positions, one sequence (the one we asked) is ruled out.</li>
+  <li>Thus, there are \(2^n - 1\) possible combinations remaining for those \(n\) digits.</li>
+  <li>For the other \(100-n\) digits, there are still \(2^{100-n}\) possibilities.</li>
+</ul>
+
+<p>Therefore, the total number of possible full sequences is:</p>
+
+\[(2^n - 1) \times 2^{100-n}\]
+
+<p>Hence, the probability of correctly guessing the entire sequence is:</p>
+
+\[\mathbb{P}(\text{Correct} \mid \text{No}) = \frac{1}{(2^n - 1) \times 2^{100-n}} = \frac{1}{2^{100-n}(2^n-1)}\]
+
+<h3 id="step-5-putting-it-all-together">Step 5: Putting It All Together</h3>
+
+<p>Thus,</p>
+
+\[\mathbb{P}(\text{Correct}) = \frac{1}{2^{100-n}} \times \frac{1}{2^n} + \frac{1}{2^{100-n}(2^n-1)} \times \left(1 - \frac{1}{2^n}\right)\]
+
+<p>Simplifying:</p>
+
+\[= \frac{1}{2^{100}} + \frac{1}{2^{100}} = \frac{2}{2^{100}} = \frac{1}{2^{99}}\]
+
+<p>Thus, the maximum probability is:</p>
+
+\[2^{-99}\]
+
+<p>Now, the problem asks for \(ab\) where the probability is \(a^{-b}\).<br />
+Here, \(a = 2\) and \(b = 99\), so:</p>
+
+\[ab = 2 \times 99 = \boxed{198}\]
+
+<h3 id="final-answer">Final Answer:</h3>
+<p>\(\boxed{198}\)</p>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>
+
+    </section>
+  </article>
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/TheAlphaJas" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 JXTech. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

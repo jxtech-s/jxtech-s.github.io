@@ -1,4 +1,433 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-04-05T02:14:08+05:30</updated><id>/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Exact 5 II</title><link href="/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-27T01:22:34+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Careful Coin Question</title><link href="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html" rel="alternate" type="text/html" title="Careful Coin Question" /><published>2025-04-27T00:00:00+05:30</published><updated>2025-04-27T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Your friend has a fair coin. They flip it \(100\) times consecutively and record the sequence of outcomes. Your goal is to guess the sequence that your friend flipped. You may ask a single Yes/No question to your friend to help you determine the sequence.</p>
+
+<p>The maximum probability you can achieve of guessing your friend’s sequence is in the form \(a^{-b}\), where \(b\) is maximal. Find \(ab\).</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/careful-coin-question">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Obviously, since we can only ask one Yes/No question, it makes sense to ask a question that gives us the most information possible.</p>
+
+<p>At first thought, you might think asking for the value at a single position is optimal (which halves the search space). But interestingly, if we ask whether a certain set of \(n\) digits match a specific fixed sequence (say something like \(0101010011100\ldots\) \(n\) digits), we can achieve the same maximum reduction — and this is actually optimal.</p>
+
+<h3 id="step-1-structure-of-the-question">Step 1: Structure of the Question</h3>
+
+<p>Suppose we fix \(n\) specific positions, and ask:</p>
+<blockquote>
+  <p>“Do the digits at these positions form exactly this particular sequence?”</p>
+</blockquote>
+
+<p>The answer is either Yes or No.</p>
+
+<p>What is the probability that the answer is Yes?</p>
+
+<p>Since for those \(n\) positions, there are \(2^n\) possible combinations, and each is equally likely, the probability that the friend’s sequence matches exactly our chosen sequence is:</p>
+
+\[\mathbb{P}(\text{Yes}) = \frac{1}{2^n}\]
+
+<p>Thus,</p>
+
+\[\mathbb{P}(\text{No}) = 1 - \frac{1}{2^n}\]
+
+<h3 id="step-2-finding-the-expression">Step 2: Finding the expression</h3>
+
+<p>Using total probability:</p>
+
+\[\mathbb{P}(\text{Correct}) = \mathbb{P}(\text{Correct} \mid \text{Yes}) \times \mathbb{P}(\text{Yes}) + \mathbb{P}(\text{Correct} \mid \text{No}) \times \mathbb{P}(\text{No})\]
+
+<h3 id="step-3-finding-mathbbptextcorrect-mid-textyes">Step 3: Finding \(\mathbb{P}(\text{Correct} \mid \text{Yes})\)</h3>
+
+<p>If the answer is Yes, then we now know exactly what those \(n\) positions are.<br />
+Thus, we only need to correctly guess the remaining \(100-n\) positions.</p>
+
+<p>Since each unknown position is independent and fair:</p>
+
+\[\mathbb{P}(\text{Correct} \mid \text{Yes}) = \frac{1}{2^{100-n}}\]
+
+<h3 id="step-4-finding-mathbbptextcorrect-mid-textno">Step 4: Finding \(\mathbb{P}(\text{Correct} \mid \text{No})\)</h3>
+
+<p>If the answer is No, then:</p>
+<ul>
+  <li>Among the \(2^n\) possible combinations for the \(n\) positions, one sequence (the one we asked) is ruled out.</li>
+  <li>Thus, there are \(2^n - 1\) possible combinations remaining for those \(n\) digits.</li>
+  <li>For the other \(100-n\) digits, there are still \(2^{100-n}\) possibilities.</li>
+</ul>
+
+<p>Therefore, the total number of possible full sequences is:</p>
+
+\[(2^n - 1) \times 2^{100-n}\]
+
+<p>Hence, the probability of correctly guessing the entire sequence is:</p>
+
+\[\mathbb{P}(\text{Correct} \mid \text{No}) = \frac{1}{(2^n - 1) \times 2^{100-n}} = \frac{1}{2^{100-n}(2^n-1)}\]
+
+<h3 id="step-5-putting-it-all-together">Step 5: Putting It All Together</h3>
+
+<p>Thus,</p>
+
+\[\mathbb{P}(\text{Correct}) = \frac{1}{2^{100-n}} \times \frac{1}{2^n} + \frac{1}{2^{100-n}(2^n-1)} \times \left(1 - \frac{1}{2^n}\right)\]
+
+<p>Simplifying:</p>
+
+\[= \frac{1}{2^{100}} + \frac{1}{2^{100}} = \frac{2}{2^{100}} = \frac{1}{2^{99}}\]
+
+<p>Thus, the maximum probability is:</p>
+
+\[2^{-99}\]
+
+<p>Now, the problem asks for \(ab\) where the probability is \(a^{-b}\).<br />
+Here, \(a = 2\) and \(b = 99\), so:</p>
+
+\[ab = 2 \times 99 = \boxed{198}\]
+
+<h3 id="final-answer">Final Answer:</h3>
+<p>\(\boxed{198}\)</p>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">9 Sum II</title><link href="http://localhost:4000/probability/problems/2025/04/07/9-Sum-II.html" rel="alternate" type="text/html" title="9 Sum II" /><published>2025-04-07T00:00:00+05:30</published><updated>2025-04-07T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/07/9-Sum-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/07/9-Sum-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>How many integers at most \(100000\) have digits that sum to \(9\)?<br />
+Some examples include: \(81\), \(144\), and \(13212\).</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/9-sum-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>We are asked to count how many positive integers ≤ \(100000\) have digits that sum to exactly \(9\).</p>
+
+<p>Now, notice that:</p>
+<ul>
+  <li>\(100000\) is a \(6\)-digit number, but there’s only one such number: exactly \(100000\), whose digit sum is \(1\).</li>
+  <li>So we can safely say we’re only concerned with numbers having at most \(5\) digits.</li>
+</ul>
+
+<p>That means we need to count all non-negative integer solutions to:</p>
+
+\[a + b + c + d + e = 9\]
+
+<p>Where each of \(a, b, c, d, e\) is a digit (i.e., between \(0\) and \(9\)), representing the digits of the number. Leading zeros are allowed here since we are working with the digit representation, not the number itself.</p>
+
+<p>This becomes a classic <a href="https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)">Stars and Bars</a> problem.</p>
+
+<p>We are basically solving:</p>
+
+\[\text{Number of integer solutions to } x_1 + x_2 + x_3 + x_4 + x_5 = 9,\quad x_i \geq 0\]
+
+<p>Which is given by:</p>
+
+\[\binom{9 + 5 - 1}{5 - 1} = \binom{13}{4} = 715\]
+
+<p>So, there are \(715\) such digit combinations.</p>
+
+<p>But we have to be a bit careful — this gives us digit-strings of length \(5\).<br />
+However, we’re interested in actual numbers, so we need to make sure we’re not counting combinations that start with a zero and would otherwise be \(4\)-digit or smaller.</p>
+
+<p>But in this formulation, it’s fine — since leading zeros are just placeholders in the digit count. For example, \(00810\) (digit sum \(9\)) is really just \(810\), which is ≤ \(100000\). So all such digit combinations are valid.</p>
+
+<h3 id="so-the-total-number-of-integers-at-most-100000-whose-digits-sum-to-9-is-boxed715">So the total number of integers at most \(100000\) whose digits sum to \(9\) is \(\boxed{715}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Lead Count</title><link href="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html" rel="alternate" type="text/html" title="Lead Count" /><published>2025-04-07T00:00:00+05:30</published><updated>2025-04-07T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/07/Lead-Count</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Suppose you flip a fair coin 10 times. We say a certain outcome (heads or tails) is leading after \(n\) flips if there are strictly more than \(\frac{n}{2}\) flips of that outcome within the first \(n\) flips.</p>
+
+<p>Find the probability that the outcome of the first flip of the coin is leading after 10 flips.</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/lead-count">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s say the outcome of the first flip is \(k\) (could be either heads or tails — doesn’t matter, due to symmetry).</p>
+
+<p>Now, for \(k\) to be leading after 10 flips, the total number of \(k\)’s in the entire 10-flip sequence must be strictly greater than 5, since we’re considering \(n = 10\).</p>
+
+<p>But since the first flip is already \(k\), we just need to count how many additional \(k\)’s show up in the remaining 9 flips so that the total count of \(k\) becomes greater than 5.</p>
+
+<p>So we’re looking for how many ways we can get:</p>
+<ul>
+  <li>\(5\) more \(k\)’s out of 9 → total \(6\)</li>
+  <li>\(6\) more \(k\)’s → total \(7\)</li>
+  <li>\(7\) more \(k\)’s → total \(8\)</li>
+  <li>\(8\) more \(k\)’s → total \(9\)</li>
+  <li>\(9\) more \(k\)’s → total \(10\)</li>
+</ul>
+
+<p>So the total number of favorable outcomes is:
+\(\binom{9}{5} + \binom{9}{6} + \binom{9}{7} + \binom{9}{8} + \binom{9}{9} = 126 + 84 + 36 + 9 + 1 = 256\)</p>
+
+<p>Each of these outcomes has equal probability (since each coin flip is independent and fair), and there are \(2^9 = 512\) total possible outcomes for the remaining 9 flips.</p>
+
+<p>So the final probability is:
+\(\frac{256}{2^9} = \frac{256}{512} = \frac{1}{2}\)</p>
+
+<h3 id="so-the-required-probability-is-boxedfrac12">So the required probability is \(\boxed{\frac{1}{2}}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Fireball Thrower</title><link href="http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower.html" rel="alternate" type="text/html" title="Fireball Thrower" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Mario and Luigi are throwing Fireballs. Each one throws a fireball twice.</p>
+
+<p>Let:</p>
+<ul>
+  <li>\(M_1, M_2 \sim \text{Exp}(1)\) — Mario’s two fireball throws</li>
+  <li>\(L_1, L_2 \sim \text{Exp}(2)\) — Luigi’s two throws</li>
+</ul>
+
+<p>All variables are independent.</p>
+
+<p>Define:<br />
+\(M = \max\{M_1, M_2\}, \quad L = \max\{L_1, L_2\}\)</p>
+
+<p>Find the probability:
+\(\mathbb{P}[M &gt; 2L]\)</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/fireball-thrower">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s solve this step by step.</p>
+
+<h3 id="step-1-pdf-of-maxm-m">Step 1: PDF of Max(M₁, M₂)</h3>
+
+<p>Let’s say we want to find the PDF of \(M = \max(M_1, M_2)\), where each \(M_i \sim \text{Exp}(1)\).</p>
+
+<p>To get this, let’s use a simple idea:<br />
+If the max is some value \(m\), then either:</p>
+
+<ul>
+  <li>\(M_1 = m\) and \(M_2 &lt; m\), OR</li>
+  <li>\(M_2 = m\) and \(M_1 &lt; m\)</li>
+</ul>
+
+<p>The events are disjoint, so total probability is just the sum of both:</p>
+
+\[f_M(m) = \mathbb{P}[M_1 = m] \cdot \mathbb{P}[M_2 &lt; m] + \mathbb{P}[M_2 = m] \cdot \mathbb{P}[M_1 &lt; m]\]
+
+<p>Now:</p>
+<ul>
+  <li>
+\[\mathbb{P}[M_i = m] = f_{M_i}(m) = e^{-m}\]
+  </li>
+  <li>
+\[\mathbb{P}[M_i &lt; m] = F_{M_i}(m) = 1 - e^{-m}\]
+  </li>
+</ul>
+
+<p>So:
+\(f_M(m) = e^{-m}(1 - e^{-m}) + e^{-m}(1 - e^{-m}) = 2e^{-m}(1 - e^{-m})\)</p>
+
+<p>Cool — we now have the PDF of Mario’s max distance.</p>
+
+<h3 id="step-2-pdf-of-maxl-l">Step 2: PDF of Max(L₁, L₂)</h3>
+
+<p>Same reasoning, but Luigi’s variables are \(\text{Exp}(2)\), so:</p>
+
+<ul>
+  <li>
+\[f_{L_i}(l) = 2e^{-2l}\]
+  </li>
+  <li>
+\[F_{L_i}(l) = 1 - e^{-2l}\]
+  </li>
+</ul>
+
+<p>Using the same logic as above:</p>
+
+\[f_L(l) = 2 \cdot f_{L_1}(l) \cdot F_{L_2}(l) = 2 \cdot 2e^{-2l} \cdot (1 - e^{-2l}) = 4e^{-2l}(1 - e^{-2l})\]
+
+<h3 id="step-3-compute-mathbbpm--2l">Step 3: Compute \(\mathbb{P}[M &gt; 2L]\)</h3>
+
+<p>Let’s now compute the probability \(\mathbb{P}[M &gt; 2L]\).<br />
+We’ll condition on \(L = l\), compute \(\mathbb{P}[M &gt; 2l]\), then integrate over all \(l\).</p>
+
+<p>So:</p>
+
+\[\mathbb{P}[M &gt; 2L] = \int_0^\infty \mathbb{P}[M &gt; 2l] \cdot f_L(l)\, dl\]
+
+<p>We already know \(f_M(m) = 2e^{-m}(1 - e^{-m})\), so:</p>
+
+\[\mathbb{P}[M &gt; 2l] = \int_{2l}^\infty f_M(m)\, dm = \int_{2l}^\infty 2e^{-m}(1 - e^{-m})\, dm\]
+
+<p>Let’s compute that inner integral first.</p>
+
+<h3 id="step-4-evaluate-int_2linfty-2e-m1---e-m-dm">Step 4: Evaluate \(\int_{2l}^\infty 2e^{-m}(1 - e^{-m})\, dm\)</h3>
+
+<p>Let’s expand the expression:</p>
+
+\[\int_{2l}^\infty 2e^{-m}(1 - e^{-m})\, dm = \int_{2l}^\infty \left(2e^{-m} - 2e^{-2m}\right)\, dm\]
+
+<p>Break it into two integrals:</p>
+
+\[= \left[ -2e^{-m} + e^{-2m} \right]_{2l}^\infty
+= (0 + 0) - \left( -2e^{-2l} + e^{-4l} \right) = 2e^{-2l} - e^{-4l}\]
+
+<p>So:
+\(\mathbb{P}[M &gt; 2l] = 2e^{-2l} - e^{-4l}\)</p>
+
+<h3 id="step-5-plug-into-total-integral">Step 5: Plug into Total Integral</h3>
+
+<p>Now plug this into the full expression:</p>
+
+\[\mathbb{P}[M &gt; 2L] = \int_0^\infty \left(2e^{-2l} - e^{-4l} \right) \cdot 4e^{-2l}(1 - e^{-2l})\, dl\]
+
+<p>Let’s expand this:</p>
+
+\[= \int_0^\infty \left(2e^{-2l} - e^{-4l}\right) \cdot 4e^{-2l}(1 - e^{-2l})\, dl
+= \int_0^\infty \left[8e^{-4l}(1 - e^{-2l}) - 4e^{-6l}(1 - e^{-2l})\right]\, dl\]
+
+<p>Break into two integrals:</p>
+
+<ul>
+  <li>
+    <p>First:
+\(\int_0^\infty 8e^{-4l}(1 - e^{-2l})\, dl = \int_0^\infty (8e^{-4l} - 8e^{-6l})\, dl = 2 - \frac{4}{3} = \frac{2}{3}\)</p>
+  </li>
+  <li>
+    <p>Second:
+\(\int_0^\infty 4e^{-6l}(1 - e^{-2l})\, dl = \int_0^\infty (4e^{-6l} - 4e^{-8l})\, dl = \frac{2}{3} - \frac{1}{2} = \frac{1}{6}\)</p>
+  </li>
+</ul>
+
+<p>Now combine both parts:</p>
+
+\[\mathbb{P}[M &gt; 2L] = \frac{2}{3} - \frac{1}{6} = \boxed{\frac{1}{2}}\]
+
+<h3 id="the-required-probability-is">The required probability is:</h3>
+
+\[\boxed{\frac{1}{2}}\]
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Hit Or Miss</title><link href="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html" rel="alternate" type="text/html" title="Hit Or Miss" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>A particle starts at \((4, 4)\). Each turn, it moves either:</p>
+
+<ul>
+  <li>1 unit in the \(-x\) direction,</li>
+  <li>1 unit in the \(-y\) direction, or</li>
+  <li>1 unit diagonally in the \(-x\) and \(-y\) directions (i.e. \(-1, -1\)).</li>
+</ul>
+
+<p>Each move has equal probability \(\frac{1}{3}\).<br />
+The particle continues moving until it hits either the x-axis or the y-axis for the first time.</p>
+
+<p>What’s the probability that it hits the origin?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/hit-or-miss">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s try to visualize what’s happening.</p>
+
+<p>At each step, the particle chooses one of 3 directions:<br />
+←, ↓, or ↙ (i.e., move left, down, or diagonally left-down).</p>
+
+<p>Now, we stop the moment we hit either axis. That means:</p>
+
+<ul>
+  <li>The particle can only reach the origin \((0, 0)\) if it never touches the x-axis or y-axis before that.</li>
+  <li>This is a strict constraint: you either go all the way to the origin without hitting any edge, or the game ends.</li>
+</ul>
+
+<h3 id="key-insight">Key Insight</h3>
+
+<p>To reach \((0, 0)\), the last point before that must be \((1, 1)\). Why?</p>
+
+<ul>
+  <li>Because if we ever touch a point like \((1, 0)\) or \((0, 1)\), the process ends.</li>
+  <li>So the only way to reach the origin is by moving from \((1, 1) \to (0, 0)\), which is a diagonal move (only allowed move from \((1, 1)\)).</li>
+</ul>
+
+<p>Thus, we break the problem into two parts:</p>
+
+<ol>
+  <li>What is the probability of reaching \((1, 1)\) from \((4, 4)\)?</li>
+  <li>Then, with a \(\frac{1}{3}\) chance, we go diagonally to \((0, 0)\).</li>
+</ol>
+
+<h3 id="step-1-getting-to-1-1">Step 1: Getting to \((1, 1)\)</h3>
+
+<p>Let’s count the number of paths from \((4, 4) \to (1, 1)\) using only the allowed moves:</p>
+
+<p>We define three types of moves:</p>
+<ul>
+  <li>L (left): \((-1, 0)\)</li>
+  <li>D (down): \((0, -1)\)</li>
+  <li>Diag (diagonal): \((-1, -1)\)</li>
+</ul>
+
+<p>We need to move a total of:</p>
+<ul>
+  <li>3 units left</li>
+  <li>3 units down<br />
+→ But we can also substitute some L+D pairs with diagonal moves.</li>
+</ul>
+
+<p>Let’s enumerate all valid move combinations that result in reaching \((1, 1)\) from \((4, 4)\):</p>
+
+<h4 id="case-1-3-left-3-down--6-moves-total">Case 1: 3 Left, 3 Down → 6 moves total</h4>
+<ul>
+  <li>No diagonals</li>
+  <li>Ways = \(\binom{6}{3} = 20\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^6\)</li>
+</ul>
+
+<h4 id="case-2-2-left-2-down-1-diagonal--5-moves">Case 2: 2 Left, 2 Down, 1 Diagonal → 5 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{5}{1} \cdot \binom{4}{2} = 5 \cdot 6 = 30\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^5\)</li>
+</ul>
+
+<h4 id="case-3-1-left-1-down-2-diagonal--4-moves">Case 3: 1 Left, 1 Down, 2 Diagonal → 4 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{4}{2} = 6\) (choose 2 out of 4 to be Diagonal, rest are L &amp; D)</li>
+  <li>Then multiply by 2 for L and D order → \(6 \cdot 2 = 12\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^4\)</li>
+</ul>
+
+<h4 id="case-4-3-diagonal-moves--3-moves-total">Case 4: 3 Diagonal moves → 3 moves total</h4>
+<ul>
+  <li>Only 1 way</li>
+  <li>Probability = \(\left(\frac{1}{3}\right)^3 = \frac{1}{27}\)</li>
+</ul>
+
+<h3 id="step-2-multiply-with-probability-to-go-from-11--00">Step 2: Multiply with probability to go from (1,1) → (0,0)</h3>
+
+<p>That can only happen if the particle chooses Diagonal again → Probability = \(\frac{1}{3}\)</p>
+
+<h3 id="final-probability">Final Probability</h3>
+
+\[P = \left[ 
+20 \cdot \left(\frac{1}{3}\right)^6 +
+30 \cdot \left(\frac{1}{3}\right)^5 +
+12 \cdot \left(\frac{1}{3}\right)^4 +
+1 \cdot \left(\frac{1}{3}\right)^3
+\right] \cdot \frac{1}{3}\]
+
+\[= \left[
+\frac{20}{729} + \frac{30}{243} + \frac{12}{81} + \frac{1}{27}
+\right] \cdot \frac{1}{3}\]
+
+<p>Converting all to a common denominator (say 729), we get:</p>
+
+\[= \left[
+\frac{20}{729} + \frac{90}{729} + \frac{108}{729} + \frac{27}{729}
+\right] \cdot \frac{1}{3}
+= \frac{245}{729} \cdot \frac{1}{3}
+= \frac{245}{2187}\]
+
+<h3 id="the-required-probability-is">The required probability is:</h3>
+
+\[\boxed{\frac{245}{2187}}\]
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Exact 5 II</title><link href="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
 What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
@@ -44,15 +473,13 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 \Rightarrow \frac{1}{6}E[X] = \frac{1}{6}
 \Rightarrow E[X] = 1\]
 
-<h3 id="final-answer">Final Answer</h3>
-
-<p>So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</p>
+<h3 id="so-the-expected-number-of-times-abd-rolls-a-5-before-his-first-6-is">So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</h3>
 
 \[\boxed{1}\]
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Optimal Bidders I</title><link href="/probability/problems/2025/04/01/Optimal-Bidders-I.html" rel="alternate" type="text/html" title="Optimal Bidders I" /><published>2025-04-01T00:00:00+05:30</published><updated>2025-04-01T00:00:00+05:30</updated><id>/probability/problems/2025/04/01/Optimal-Bidders-I</id><content type="html" xml:base="/probability/problems/2025/04/01/Optimal-Bidders-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Optimal Bidders I</title><link href="http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I.html" rel="alternate" type="text/html" title="Optimal Bidders I" /><published>2025-04-01T00:00:00+05:30</published><updated>2025-04-01T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Carter has come into contact with a bounty of gold. He takes it to an auction shop. The shop tells him that every bidder will place a bid uniformly between $500 and $1000. They also say they can recruit bidders for $5 per person.</p>
 
@@ -122,7 +549,7 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Comparing Flips II</title><link href="/probability/problems/2025/03/31/Comparing-Flips-II.html" rel="alternate" type="text/html" title="Comparing Flips II" /><published>2025-03-31T00:00:00+05:30</published><updated>2025-03-31T00:00:00+05:30</updated><id>/probability/problems/2025/03/31/Comparing-Flips-II</id><content type="html" xml:base="/probability/problems/2025/03/31/Comparing-Flips-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Comparing Flips II</title><link href="http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II.html" rel="alternate" type="text/html" title="Comparing Flips II" /><published>2025-03-31T00:00:00+05:30</published><updated>2025-03-31T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>You and your friend are playing a game with a fair coin, tossing it and writing down the outcomes. You win if HTH appears before HHT, else your friend wins. What is the probability that your friend wins?</p>
 
@@ -204,51 +631,7 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Sum</title><link href="/combinatorics/problems/2025/03/30/Multinomial-Sum.html" rel="alternate" type="text/html" title="Multinomial Sum" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>/combinatorics/problems/2025/03/30/Multinomial-Sum</id><content type="html" xml:base="/combinatorics/problems/2025/03/30/Multinomial-Sum.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Find the sum of all multinomial coefficients:</p>
-
-\[\binom{7}{b_1, b_2, b_3, b_4}\]
-
-<p>where \(b_1 + b_2 + b_3 + b_4 = 7\) and each \(b_i \geq 0\) is an integer.</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/multinomial-sum">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-understanding-the-multinomial-coefficients">Step 1: Understanding the Multinomial Coefficients</h3>
-
-<p>Each multinomial coefficient</p>
-
-\[\binom{7}{b_1, b_2, b_3, b_4}\]
-
-<p>represents the number of ways to assign the exponents \(b_1, b_2, b_3,\) and \(b_4\) in the expansion of:</p>
-
-\[(x_1 + x_2 + x_3 + x_4)^7.\]
-
-<p>Thus, the sum of all such coefficients is simply the sum of all terms in this multinomial expansion when each \(x_i = 1\).</p>
-
-<h3 id="step-2-reduced-version---the-core-idea">Step 2: Reduced Version - The Core Idea</h3>
-
-<p>We recognize that the given sum is:</p>
-
-\[\sum_{b_1 + b_2 + b_3 + b_4 = 7} \binom{7}{b_1, b_2, b_3, b_4}.\]
-
-<p>Setting \(x_1 = x_2 = x_3 = x_4 = 1\), the expansion simplifies to:</p>
-
-\[(1 + 1 + 1 + 1)^7 = 4^7.\]
-
-<p>which directly gives us the sum.</p>
-
-<h3 id="step-3-compute-the-final-value">Step 3: Compute the Final Value</h3>
-
-\[4^7 = 16384.\]
-
-<h3 id="thus-the-sum-of-all-multinomial-coefficients-is-mathbf16384">Thus, the sum of all multinomial coefficients is \(\mathbf{16384}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Expansion</title><link href="/probability/problems/2025/03/30/Multinomial-Expansion.html" rel="alternate" type="text/html" title="Multinomial Expansion" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>/probability/problems/2025/03/30/Multinomial-Expansion</id><content type="html" xml:base="/probability/problems/2025/03/30/Multinomial-Expansion.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Expansion</title><link href="http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion.html" rel="alternate" type="text/html" title="Multinomial Expansion" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many terms are there in the expansion of</p>
 
@@ -307,342 +690,48 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Modified RNG</title><link href="/probability/problems/2025/03/29/Modified-RNG.html" rel="alternate" type="text/html" title="Modified RNG" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>/probability/problems/2025/03/29/Modified-RNG</id><content type="html" xml:base="/probability/problems/2025/03/29/Modified-RNG.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Sum</title><link href="http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum.html" rel="alternate" type="text/html" title="Multinomial Sum" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum</id><content type="html" xml:base="http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
-<p>Jimmy picks a number uniformly at random from (0,1). If Jimmy chooses x, then Jon picks a number from (x,1) uniformly at random. If Y represents the number Jon selects, in simplest form, find \(\frac{\mathbb{E}[Y]}{Var(Y)}\)</p>
+<p>Find the sum of all multinomial coefficients:</p>
 
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/modified-rng">Click here</a></p>
+\[\binom{7}{b_1, b_2, b_3, b_4}\]
 
-<h2 id="solution">Solution</h2>
+<p>where \(b_1 + b_2 + b_3 + b_4 = 7\) and each \(b_i \geq 0\) is an integer.</p>
 
-<h3 id="step-1---compute-conditional-expectation-mathbbey-mid-x-and-conditional-variance-vary-mid-x">Step 1 - Compute Conditional Expectation \(\mathbb{E}[Y \mid X]\) and Conditional Variance \(Var(Y \mid X)\)</h3>
-
-<p>For \(Y\) uniform on \((X,1)\), the conditional expectation is:</p>
-
-\[\mathbb{E}[Y \mid X] = \frac{X+1}{2}\]
-
-<p>How? Its obvious that its gonna be the middle point! Alternatively, you can integrate and compute using the standard method.</p>
-
-<p>Similarly, for Conditional Variance \(Var[Y \mid X]\), we have</p>
-
-\[Var[Y \mid X] = \frac{(1-X)^2}{12}\]
-
-<h3 id="step-2---total-expectation">Step 2 - Total Expectation</h3>
-
-<p>Using the law of total expectation:</p>
-
-\[\mathbb{E}[Y] = \mathbb{E}[\mathbb{E}[Y \mid X]] = \mathbb{E}\left[\frac{X+1}{2}\right] = \int_0^1 \frac{x+1}{2} dx = \left[\frac{x^2}{4} + \frac{x}{2}\right]_0^1 = \frac{1}{4} + \frac{1}{2} = \frac{3}{4}\]
-
-<h3 id="step-3---computing-total-variance">Step 3 - Computing Total Variance</h3>
-
-<p>Using the law of total variance:</p>
-
-\[Var(Y) = \mathbb{E}[Var(Y \mid X)] + Var(\mathbb{E}[Y \mid X])\]
-
-<p>First, compute \(\mathbb{E}[Var(Y \mid X)]\):</p>
-
-\[\mathbb{E}[Var(Y \mid X)] = \int_0^1 \frac{(1-x)^2}{12} dx\]
-
-\[= \frac{1}{12} \int_0^1 (1-x)^2 dx = \frac{1}{12} \left[\frac{-1}{3}(1-x)^3\right]_0^1 = \frac{1}{12} \cdot \frac{1}{3} = \frac{1}{36}\]
-
-<p>Next, compute \(Var(\mathbb{E}[Y \mid X])\):</p>
-
-\[Var(\mathbb{E}[Y \mid X]) = \mathbb{E}\left[\left(\frac{X+1}{2}\right)^2\right] - \left(\mathbb{E}\left[\frac{X+1}{2}\right]\right)^2\]
-
-\[= \int_0^1 \frac{(x+1)^2}{4} dx - \left(\frac{3}{4}\right)^2 = \frac{1}{4} \int_0^1 (x^2 + 2x + 1) dx - \frac{9}{16}\]
-
-\[= \frac{1}{4} \left[\frac{x^3}{3} + x^2 + x\right]_0^1 - \frac{9}{16} = \frac{1}{4} \left(\frac{1}{3} + 1 + 1\right) - \frac{9}{16} = \frac{1}{4} \cdot \frac{7}{3} - \frac{9}{16} = \frac{7}{12} - \frac{9}{16} = \frac{1}{48}\]
-
-<p>Therefore:</p>
-
-\[Var(Y) = \frac{1}{36} + \frac{1}{48} = \frac{7}{144}\]
-
-<h3 id="final-answer">Final Answer</h3>
-
-\[\frac{\mathbb{E}[Y]}{Var(Y)} = \frac{3/4}{7/144} = \frac{108}{7}\]
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Expectations" /><category term="Conditional Expectation" /><category term="Conditional Variance" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Russian Roulette II</title><link href="/probability/problems/2025/03/29/Russian-Roulette-II.html" rel="alternate" type="text/html" title="Russian Roulette II" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>/probability/problems/2025/03/29/Russian-Roulette-II</id><content type="html" xml:base="/probability/problems/2025/03/29/Russian-Roulette-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given that the cylinder is re-spun after each turn, what is the probability that you win if your friend goes first?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/russian-roulette-ii">Click here</a><br />
-<strong>First version</strong>: <a href="https://jxtech-s.github.io/probability/problems/2025/03/29/Russian-Roulette-I.html">Russian Roulette I</a></p>
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/multinomial-sum">Click here</a></p>
 
 <h2 id="solution">Solution</h2>
 
-<h3 id="step-1-understanding-the-difference">Step 1: Understanding the Difference</h3>
+<h3 id="step-1-understanding-the-multinomial-coefficients">Step 1: Understanding the Multinomial Coefficients</h3>
 
-<p>Unlike the previous version, the key difference here is that after each turn, the cylinder is re-spun. This means:</p>
-<ul>
-  <li>Every turn is independent of the previous turns.</li>
-  <li>At every turn, the probability of firing the bullet remains constant.</li>
-</ul>
+<p>Each multinomial coefficient</p>
 
-<p>Since the chamber is re-randomized, on each turn, the probability that the player firing will shoot the chamber with the bullet is:</p>
+\[\binom{7}{b_1, b_2, b_3, b_4}\]
 
-\[\frac{1}{6}\]
+<p>represents the number of ways to assign the exponents \(b_1, b_2, b_3,\) and \(b_4\) in the expansion of:</p>
 
-<p>Similarly, the probability that the bullet is not fired on any given turn is:</p>
+\[(x_1 + x_2 + x_3 + x_4)^7.\]
 
-\[\frac{5}{6}\]
+<p>Thus, the sum of all such coefficients is simply the sum of all terms in this multinomial expansion when each \(x_i = 1\).</p>
 
-<h3 id="step-2-analyzing-the-winning-chances">Step 2: Analyzing the Winning Chances</h3>
+<h3 id="step-2-reduced-version---the-core-idea">Step 2: Reduced Version - The Core Idea</h3>
 
-<p>For you to win, the game must end on an odd-numbered turn (i.e., your friend fires and survives, then you fire and lose).</p>
+<p>We recognize that the given sum is:</p>
 
-<ul>
-  <li>Case 1: Your friend loses immediately (turn 1).
-    <ul>
-      <li>Probability = \(\frac{1}{6}\).</li>
-    </ul>
-  </li>
-  <li>Case 2: Your friend survives, you survive, then your friend loses (turn 3).
-    <ul>
-      <li>Probability = \(\left(\frac{5}{6}\right) \times \left(\frac{5}{6}\right) \times \frac{1}{6}\).</li>
-    </ul>
-  </li>
-  <li>Case 3: Your friend survives, you survive, your friend survives, you survive, then your friend loses (turn 5).
-    <ul>
-      <li>Probability = \(\left(\frac{5}{6}\right)^2 \times \left(\frac{5}{6}\right)^2 \times \frac{1}{6}\).</li>
-    </ul>
-  </li>
-</ul>
+\[\sum_{b_1 + b_2 + b_3 + b_4 = 7} \binom{7}{b_1, b_2, b_3, b_4}.\]
 
-<p>Generalizing, the probability that your friend loses on the 2(k-1)th turn is (factor of 2 as we will win only in the odd numbered cases) -</p>
+<p>Setting \(x_1 = x_2 = x_3 = x_4 = 1\), the expansion simplifies to:</p>
 
-\[\left(\frac{5}{6}\right)^{2(k-1)} \times \frac{1}{6}\]
+\[(1 + 1 + 1 + 1)^7 = 4^7.\]
 
-<p>Summing this up for all \(k\):</p>
+<p>which directly gives us the sum.</p>
 
-\[P(\text{You win}) = \sum_{k=1}^{\infty} \left(\frac{5}{6}\right)^{2(k-1)} \times \frac{1}{6}\]
+<h3 id="step-3-compute-the-final-value">Step 3: Compute the Final Value</h3>
 
-<h3 id="step-3-summing-the-infinite-geometric-series">Step 3: Summing the Infinite Geometric Series</h3>
+\[4^7 = 16384.\]
 
-<p>This is a geometric series with first term:</p>
-
-\[a = \frac{1}{6}\]
-
-<p>and common ratio:</p>
-
-\[r = \left(\frac{5}{6}\right)^2 = \frac{25}{36}\]
-
-<p>Using the sum formula for an infinite geometric series:</p>
-
-\[S = \frac{a}{1 - r}\]
-
-<p>we get:</p>
-
-\[P(\text{You win}) = \frac{\frac{1}{6}}{1 - \frac{25}{36}}\]
-
-\[= \frac{\frac{1}{6}}{\frac{11}{36}}\]
-
-\[= \frac{1}{6} \times \frac{36}{11} = \frac{6}{11}\]
-
-<h3 id="thus-the-probability-that-we-will-win-is-frac611">Thus, the probability that we will win is \(\frac{6}{11}\)</h3>
+<h3 id="thus-the-sum-of-all-multinomial-coefficients-is-mathbf16384">Thus, the sum of all multinomial coefficients is \(\mathbf{16384}\)</h3>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Series" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Russian Roulette I</title><link href="/probability/problems/2025/03/29/Russian-Roulette-I.html" rel="alternate" type="text/html" title="Russian Roulette I" /><published>2025-03-29T00:00:00+05:30</published><updated>2025-03-29T00:00:00+05:30</updated><id>/probability/problems/2025/03/29/Russian-Roulette-I</id><content type="html" xml:base="/probability/problems/2025/03/29/Russian-Roulette-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>You’re playing a game of Russian Roulette with a friend. The six-chambered revolver is loaded with one bullet. Initially, the cylinder is spun to randomize the order of the chambers. The two of you take turns pulling the trigger until the person who fires the gun loses. Given that the cylinder is not re-spun after each turn, what is the probability that you win if your friend goes first?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/russian-roulette-i">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-understanding-the-setup">Step 1: Understanding the Setup</h3>
-
-<p>The revolver has 6 chambers, and exactly one of them contains a bullet. Since the cylinder is spun at the start, the bullet is equally likely to be in any of the 6 positions.</p>
-
-<p>The game proceeds in turns:</p>
-<ul>
-  <li>Your friend goes first.</li>
-  <li>If the bullet is in the chamber they fire, they lose immediately.</li>
-  <li>Otherwise, the turn passes to you.</li>
-  <li>The game continues until someone loses.</li>
-</ul>
-
-<h3 id="step-2-analyzing-possible-bullet-positions">Step 2: Analyzing Possible Bullet Positions</h3>
-
-<p>Let’s label the chambers \(1\) to \(6\), where \(1\) is the chamber fired first, \(2\) is fired second, and so on.</p>
-
-<ul>
-  <li>If the bullet is in chamber \(1\), your friend loses immediately.</li>
-  <li>If the bullet is in chamber \(2\), you lose immediately.</li>
-  <li>If the bullet is in chamber \(3\), your friend fires an empty chamber, then you fire an empty chamber, then your friend fires chamber \(3\) and loses.</li>
-  <li>If the bullet is in chamber \(4\), you lose (similar reasoning).</li>
-  <li>If the bullet is in chamber \(5\), your friend loses.</li>
-  <li>If the bullet is in chamber \(6\), you lose.</li>
-</ul>
-
-<p>Thus, we win if the bullet is in chambers \(1\), \(3\) or \(5\).</p>
-
-<h3 id="step-3-computing-the-probability">Step 3: Computing the Probability</h3>
-
-<p>Since each chamber is equally likely to contain the bullet, the probability of each case is:</p>
-
-\[\mathbb{P}(\text{Bullet in chamber } i) = \frac{1}{6}\]
-
-<p>From our analysis, we win in 3 out of the 6 cases (chambers \(1\), \(3\) and \(5\)).</p>
-
-<p>Thus, the probability of winning is:</p>
-
-\[\frac{3}{6} = \frac{1}{2}\]
-
-<h3 id="thus-the-probability-that-we-will-win-is-frac12">Thus, the probability that we will win is \(\frac{1}{2}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Square Cross</title><link href="/probability/problems/2025/03/28/Square-Cross.html" rel="alternate" type="text/html" title="Square Cross" /><published>2025-03-28T00:00:00+05:30</published><updated>2025-03-28T00:00:00+05:30</updated><id>/probability/problems/2025/03/28/Square-Cross</id><content type="html" xml:base="/probability/problems/2025/03/28/Square-Cross.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>A square of side length \(20\) is placed in front of you. You select a point uniformly at random from its interior. Then, independently, a circle of radius \(R \sim \text{Unif}(0,10)\) is formed around the selected point. What is the probability that this circle does not intersect the square at any point?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/square-cross">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1---understanding-the-core-idea">Step 1 - Understanding the Core Idea</h3>
-
-<p>Let’s build some intuition. Clearly, the best place to pick a point is the center of the square—a circle centered there can grow up to radius \(10\) before touching an edge. Any point away from the center? Well, that’s where things get tricky—closer points to the boundary have a higher chance of their circle spilling out.</p>
-
-<p>Try to visualize the locus of all points that are an equal distance from the closest edge. These points form a smaller concentric square, with perpendicular distance \(x\) from the center. Our goal is now clear:</p>
-
-<ol>
-  <li>Find the probability of choosing a point at a given \(x\).</li>
-  <li>Given \(x\), find the probability that a circle centered there does not intersect the square.</li>
-  <li>Integrate over all possible \(x\).</li>
-</ol>
-
-<h4 id="visualizing-the-locus">Visualizing the Locus</h4>
-
-<p>The points that are an equal distance from the nearest edge form a square frame at distance \(x\). Here’s what it looks like:</p>
-
-<p><img src="/assets/images/squarecross.png" alt="Visualization" /></p>
-
-<p><em>(Yeah ik the diagram kinda sucks, but I believe in MS-Paint XD. Anyhow)</em></p>
-
-<p>Key observations:</p>
-
-<ol>
-  <li>All points on the same locus are equivalent. The probability of a circle touching the square depends only on \(x\), not on the specific point along the locus.</li>
-  <li>Probability of picking a point at distance \(x\):
-    <ul>
-      <li>The area of the square frame at distance \(x\) is<br />
-\(4 \times (2x) \times dx = 8x \, dx\)</li>
-      <li>Since the total area of the square is \(400\), the probability of selecting a point from this region is<br />
-\(\frac{8x \, dx}{400} = \frac{x \, dx}{50}\)</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="step-2---computing-the-probability">Step 2 - Computing the Probability</h3>
-
-<p>Now, assume a point at distance \(x\) has been chosen. What is the probability that a randomly chosen radius does not cause intersection?</p>
-
-<ul>
-  <li>The favorable radii are those that do not exceed \(x\), i.e., \(R \in [0, 10-x]\)</li>
-  <li>Since \(R \sim \text{Unif}(0,10)\), the probability that \(R \leq 10 - x\) is simply \(\frac{10 - x}{10}\)</li>
-</ul>
-
-<p>Thus, our probability function is now completely defined. To compute the final probability, we integrate:</p>
-
-\[P(\text{No intersection}) = \int_0^{10} \frac{10-x}{10} \cdot \frac{x}{50} \, dx\]
-
-<p>Expanding:</p>
-
-\[P(\text{No intersection}) = \frac{1}{500} \int_0^{10} x(10-x) \, dx\]
-
-<p>Breaking it down:</p>
-
-\[\frac{1}{500} \int_0^{10} (10x - x^2) \, dx\]
-
-<p>Computing the integral,</p>
-
-\[\frac{1}{500} \left[ 5x^2 - \frac{x^3}{3} \right]_0^{10}\]
-
-\[= \frac{1}{500} \left[ 500 - \frac{1000}{3} \right]\]
-
-\[= \frac{1}{500} \times \frac{500}{3}\]
-
-\[= \frac{1}{3}\]
-
-<h3 id="thus-the-probability-that-the-circle-does-not-intersect-the-square-is-frac13">Thus, the probability that the circle does not intersect the square is \(\frac{1}{3}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Integration" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Matching Die Trio</title><link href="/probability/problems/2025/03/24/Matching-Die-Trio.html" rel="alternate" type="text/html" title="Matching Die Trio" /><published>2025-03-24T00:00:00+05:30</published><updated>2025-03-24T00:00:00+05:30</updated><id>/probability/problems/2025/03/24/Matching-Die-Trio</id><content type="html" xml:base="/probability/problems/2025/03/24/Matching-Die-Trio.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Three fair \(6\)−sided dice are rolled and their upfaces are recorded. Find the probability that the values showing upon rolling all three dice again is the same as the original three values recorded.</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/matching-die-trio">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>We approach this problem using conditional expectation and casework probability. Since the three dice are not labeled, the probability of getting a matching set on the second roll depends on the structure of the first roll.</p>
-
-<h3 id="step-1-classifying-cases-based-on-first-roll">Step 1: Classifying Cases Based on First Roll</h3>
-
-<p>When rolling three fair 6-sided dice, the possible cases based on distinctness of numbers are:</p>
-
-<ol>
-  <li><strong>Case 1: All three dice show distinct numbers.</strong>
-    <ul>
-      <li>The probability of this occurring:
-\(P(C_1) = \frac{\binom{6}{3} \cdot 3!}{6^3} = \frac{20 \cdot 6}{216} = \frac{120}{216}\)</li>
-      <li>On re-rolling, all 3 numbers must appear again. The number of favorable outcomes is the <strong>number of ways to permute the same three numbers</strong>, which is \(3!\).
-        <ul>
-          <li>Probability of matching:
-\(P(M \mid C_1) = \frac{3!}{6^3} = \frac{6}{216}\)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><strong>Case 2: Two dice show the same number, and the third is different.</strong>
-    <ul>
-      <li>The probability of this occurring:
-\(P(C_2) = \frac{\binom{6}{1} \cdot \binom{5}{1} \cdot \frac{3!}{2!}}{6^3} = \frac{6 \cdot 5 \cdot 3}{216} = \frac{90}{216}\)</li>
-      <li>On re-rolling, we must obtain the same structure (two of one number and one of another), and the arrangement of dice does not matter.
-        <ul>
-          <li>Probability of matching:
-\(P(M \mid C_2) = \frac{\frac{3!}{2!}}{6^3} = \frac{3}{216}\)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><strong>Case 3: All three dice show the same number.</strong>
-    <ul>
-      <li>The probability of this occurring:
-\(P(C_3) = \frac{6}{216}\)</li>
-      <li>On re-rolling, the only way to match is if the same number appears on all three dice.
-        <ul>
-          <li>Probability of matching:
-\(P(M \mid C_3) = \frac{1}{6^3} = \frac{1}{216}\)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="step-2-computing-the-final-probability">Step 2: Computing the Final Probability</h3>
-
-<p>Using the Law of Total Probability:</p>
-
-\[P(M) = P(M \mid C_1) P(C_1) + P(M \mid C_2) P(C_2) + P(M \mid C_3) P(C_3)\]
-
-<p>Substituting values:</p>
-
-\[P(M) = \left(\frac{6}{216} \times \frac{120}{216}\right) + \left(\frac{3}{216} \times \frac{90}{216}\right) + \left(\frac{1}{216} \times \frac{6}{216}\right)\]
-
-\[P(M) = \frac{720}{46656} + \frac{270}{46656} + \frac{6}{46656}\]
-
-\[P(M) = \frac{996}{46656}\]
-
-\[P(M) = \frac{83}{3888}\]
-
-<h3 id="thus-the-probability-that-the-second-roll-matches-the-first-roll-is-frac833888">Thus, the probability that the second roll matches the first roll is \(\frac{83}{3888}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

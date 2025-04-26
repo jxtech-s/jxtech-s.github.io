@@ -130,4 +130,34 @@ var store = [{
         "tags": ["Probability","Statistics","Expectations"],
         "url": "/probability/problems/2025/04/05/Exact-5-II.html",
         "teaser": null
+      },{
+        "title": "Fireball Thrower",
+        "excerpt":"Problem Statement Mario and Luigi are throwing Fireballs. Each one throws a fireball twice. Let: \\(M_1, M_2 \\sim \\text{Exp}(1)\\) — Mario’s two fireball throws \\(L_1, L_2 \\sim \\text{Exp}(2)\\) — Luigi’s two throws All variables are independent. Define: \\(M = \\max\\{M_1, M_2\\}, \\quad L = \\max\\{L_1, L_2\\}\\) Find the probability: \\(\\mathbb{P}[M...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Combinatorics","Counting"],
+        "url": "/probability/problems/2025/04/06/Fireball-Thrower.html",
+        "teaser": null
+      },{
+        "title": "Hit Or Miss",
+        "excerpt":"Problem Statement A particle starts at \\((4, 4)\\). Each turn, it moves either: 1 unit in the \\(-x\\) direction, 1 unit in the \\(-y\\) direction, or 1 unit diagonally in the \\(-x\\) and \\(-y\\) directions (i.e. \\(-1, -1\\)). Each move has equal probability \\(\\frac{1}{3}\\). The particle continues moving until it...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Combinatorics","Counting"],
+        "url": "/probability/problems/2025/04/06/Hit-Or-Miss.html",
+        "teaser": null
+      },{
+        "title": "9 Sum II",
+        "excerpt":"Problem Statement How many integers at most \\(100000\\) have digits that sum to \\(9\\)? Some examples include: \\(81\\), \\(144\\), and \\(13212\\). Original Problem Link: Click here Solution We are asked to count how many positive integers ≤ \\(100000\\) have digits that sum to exactly \\(9\\). Now, notice that: \\(100000\\) is...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Combinatorics","Counting"],
+        "url": "/probability/problems/2025/04/07/9-Sum-II.html",
+        "teaser": null
+      },{
+        "title": "Lead Count",
+        "excerpt":"Problem Statement Suppose you flip a fair coin 10 times. We say a certain outcome (heads or tails) is leading after \\(n\\) flips if there are strictly more than \\(\\frac{n}{2}\\) flips of that outcome within the first \\(n\\) flips. Find the probability that the outcome of the first flip of...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Combinatorics","Counting"],
+        "url": "/probability/problems/2025/04/07/Lead-Count.html",
+        "teaser": null
+      },{
+        "title": "Careful Coin Question",
+        "excerpt":"Problem Statement Your friend has a fair coin. They flip it \\(100\\) times consecutively and record the sequence of outcomes. Your goal is to guess the sequence that your friend flipped. You may ask a single Yes/No question to your friend to help you determine the sequence. The maximum probability...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Combinatorics","Counting"],
+        "url": "/probability/problems/2025/04/27/Careful-Coin-Question.html",
+        "teaser": null
       }]

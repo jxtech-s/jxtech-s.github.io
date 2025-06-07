@@ -160,4 +160,22 @@ var store = [{
         "tags": ["Probability","Combinatorics","Counting"],
         "url": "/probability/problems/2025/04/27/Careful-Coin-Question.html",
         "teaser": null
+      },{
+        "title": "Odd Stars",
+        "excerpt":"Problem Statement How many non-negative odd integer solutions are there to the equation: \\[x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 96?\\] The answer is in the form: \\[\\binom{n}{k} \\quad \\text{where} \\quad k &lt; \\frac{n}{2}\\] Find \\(nk\\). Original Problem Link: Click here Solution This is essentially...","categories": ["Probability","Problems"],
+        "tags": ["Combinatorics","Counting"],
+        "url": "/probability/problems/2025/06/06/Odd-Stars.html",
+        "teaser": null
+      },{
+        "title": "Strictly Better",
+        "excerpt":"Problem Statement Suppose Jimmy and Simon are selecting uniformly random numbers. Jimmy selects from the set \\(\\{1, 2, \\ldots, 1000\\}\\), and Simon selects from \\(\\{1, 2, \\ldots, 3000\\}\\). Compute the probability that Simon chooses a strictly larger number than Jimmy. Original Problem Link: Click here Solution Let’s break this down...","categories": ["Probability","Problems"],
+        "tags": ["Probability","Counting"],
+        "url": "/probability/problems/2025/06/06/Strictly-Better.html",
+        "teaser": null
+      },{
+        "title": "Fibonacci Limit II",
+        "excerpt":"Problem Statement Let \\(F_n\\) be the Fibonacci sequence. Compute: \\[\\lim_{n \\to \\infty} \\frac{F_{n+2}}{F_n}.\\] Your answer should be in the form: \\[\\frac{a + \\sqrt{b}}{c},\\] where \\(a, b, c\\) are pairwise relatively prime. Find \\(abc\\). Original Problem Link: Click here Solution We begin with the Fibonacci recurrence: \\[F_{n+2} = F_{n+1} + F_n\\]...","categories": ["Limits","Series","Problems"],
+        "tags": ["Limits"],
+        "url": "/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html",
+        "teaser": null
       }]

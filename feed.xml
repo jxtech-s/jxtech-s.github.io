@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-27T01:45:28+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Careful Coin Question</title><link href="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html" rel="alternate" type="text/html" title="Careful Coin Question" /><published>2025-04-27T00:00:00+05:30</published><updated>2025-04-27T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-08T01:24:48+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Fibonacci Limit II</title><link href="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html" rel="alternate" type="text/html" title="Fibonacci Limit II" /><published>2025-06-08T00:00:00+05:30</published><updated>2025-06-08T00:00:00+05:30</updated><id>http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II</id><content type="html" xml:base="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Let \(F_n\) be the Fibonacci sequence. Compute:</p>
+
+\[\lim_{n \to \infty} \frac{F_{n+2}}{F_n}.\]
+
+<p>Your answer should be in the form:</p>
+
+\[\frac{a + \sqrt{b}}{c},\]
+
+<p>where \(a, b, c\) are pairwise relatively prime. Find \(abc\).</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/fibonacci-limit-ii">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>We begin with the Fibonacci recurrence:</p>
+
+\[F_{n+2} = F_{n+1} + F_n\]
+
+<p>So the expression becomes:</p>
+
+\[\frac{F_{n+2}}{F_n} = \frac{F_{n+1} + F_n}{F_n} = \frac{F_{n+1}}{F_n} + 1\]
+
+<p>Let:</p>
+
+\[x_n = \frac{F_{n+1}}{F_n}\]
+
+<p>Then:</p>
+
+\[\frac{F_{n+2}}{F_n} = x_n + 1\]
+
+<p>We now analyze the behavior of \(x_n\) as \(n \to \infty\). Using the Fibonacci recurrence again:</p>
+
+\[x_n = \frac{F_{n+1}}{F_n} = \frac{F_n + F_{n-1}}{F_n} = 1 + \frac{F_{n-1}}{F_n}\]
+
+<p>As \(n \to \infty\), one can obviously safely assume that \(\frac{F_{n-1}}{F_n} \to \frac{1}{x_n}\)</p>
+
+<p>So we get:</p>
+
+\[x = 1 + \frac{1}{x}\]
+
+<p>Multiply both sides by \(x\):</p>
+
+\[x^2 = x + 1 \quad \Rightarrow \quad x^2 - x - 1 = 0\]
+
+<p>Solving this quadratic:</p>
+
+\[x = \frac{1 \pm \sqrt{5}}{2}\]
+
+<p>We discard the negative root (since Fibonacci ratios are positive), so:</p>
+
+\[x = \frac{1 + \sqrt{5}}{2}\]
+
+<p>Therefore,</p>
+
+\[\lim_{n \to \infty} \frac{F_{n+2}}{F_n} = x + 1 = \frac{1 + \sqrt{5}}{2} + 1 = \frac{3 + \sqrt{5}}{2}\]
+
+<p>So the required expression is:</p>
+
+\[\frac{a + \sqrt{b}}{c} = \frac{3 + \sqrt{5}}{2}\]
+
+<p>Thus, \(a = 3, b = 5, c = 2 \Rightarrow abc = 3 \times 5 \times 2 = \boxed{30}\)</p>
+
+<hr />
+
+<h3 id="final-answer">Final Answer:</h3>
+<p>\(\boxed{30}\)</p>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Limits" /><category term="Series" /><category term="Problems" /><category term="Limits" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Odd Stars</title><link href="http://localhost:4000/probability/problems/2025/06/06/Odd-Stars.html" rel="alternate" type="text/html" title="Odd Stars" /><published>2025-06-06T00:00:00+05:30</published><updated>2025-06-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/06/06/Odd-Stars</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/06/06/Odd-Stars.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>How many non-negative odd integer solutions are there to the equation:</p>
+
+\[x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 96?\]
+
+<p>The answer is in the form:</p>
+
+\[\binom{n}{k}
+\quad \text{where} \quad k &lt; \frac{n}{2}\]
+
+<p>Find \(nk\).</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/odd-stars">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>This is essentially a stars and bars problem, but with a twist — the variables must be odd non-negative integers.</p>
+
+<h3 id="step-1-reduce-the-problem">Step 1: Reduce the Problem</h3>
+
+<p>We know any odd non-negative integer can be written in the form:</p>
+
+\[x_i = 2k_i + 1 \quad \text{where } k_i \geq 0\]
+
+<p>So, substituting this in for each \(x_i\):</p>
+
+\[x_1 + x_2 + \dots + x_6 = (2k_1 + 1) + (2k_2 + 1) + \dots + (2k_6 + 1)
+= 2(k_1 + k_2 + \dots + k_6) + 6\]
+
+<p>Set:</p>
+
+\[2(k_1 + \dots + k_6) + 6 = 96 \Rightarrow k_1 + \dots + k_6 = \frac{96 - 6}{2} = 45\]
+
+<p>So now, the problem reduces to:</p>
+
+<blockquote>
+  <p>In how many ways can we write 45 as the sum of 6 non-negative integers?</p>
+</blockquote>
+
+<p>This is a classic stars and bars problem. The number of non-negative integer solutions to:</p>
+
+\[k_1 + \dots + k_6 = 45\]
+
+<p>is:</p>
+
+\[\binom{45 + 6 - 1}{6 - 1} = \binom{50}{5}\]
+
+<hr />
+
+<h3 id="step-2-extracting-n-and-k">Step 2: Extracting \(n\) and \(k\)</h3>
+
+<p>We are told the answer is \(\binom{n}{k}\), where \(k &lt; \frac{n}{2}\).</p>
+
+<p>Here, \(\binom{50}{5}\) satisfies that, since \(5 &lt; 25\).<br />
+So, \(n = 50\), \(k = 5\), and:</p>
+
+\[nk = 50 \times 5 = 250\]
+
+<hr />
+
+<h3 id="final-answer-boxed250">Final Answer \(\boxed{250}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Strictly Better</title><link href="http://localhost:4000/probability/problems/2025/06/06/Strictly-Better.html" rel="alternate" type="text/html" title="Strictly Better" /><published>2025-06-06T00:00:00+05:30</published><updated>2025-06-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/06/06/Strictly-Better</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/06/06/Strictly-Better.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Suppose Jimmy and Simon are selecting uniformly random numbers.<br />
+Jimmy selects from the set \(\{1, 2, \ldots, 1000\}\),<br />
+and Simon selects from \(\{1, 2, \ldots, 3000\}\).</p>
+
+<p>Compute the probability that Simon chooses a strictly larger number than Jimmy.</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/strictly-better">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s break this down based on Simon’s value. Clearly, if Simon picks anything greater than 1000, he automatically wins, since Jimmy can’t go beyond 1000.</p>
+
+<p>So let’s first consider two cases:</p>
+
+<h3 id="case-1-simon-picks-a-number-from-1001-to-3000">Case 1: Simon picks a number from 1001 to 3000</h3>
+
+<p>These are all guaranteed wins, since Jimmy picks from only 1 to 1000.<br />
+Total such numbers = \(3000 - 1000 = 2000\)</p>
+
+<p>So the probability Simon picks such a number is:</p>
+
+\[P(\text{Simon &gt; 1000}) = \frac{2000}{3000} = \frac{2}{3}\]
+
+<p>And for each such pick, probability that Simon wins = 1.<br />
+So this contributes \(\frac{2}{3} \times 1 = \frac{2}{3}\) to the final answer.</p>
+
+<hr />
+
+<h3 id="case-2-simon-picks-a-number-from-1-to-1000">Case 2: Simon picks a number from 1 to 1000</h3>
+
+<p>This is the more interesting case.<br />
+Let’s say Simon picks a number \(x \in \{1, 2, \ldots, 1000\}\).<br />
+This happens with probability \(\frac{1}{3000}\) for each value of \(x\).</p>
+
+<p>Given this, Jimmy can pick any number from 1 to 1000, uniformly.<br />
+The probability that Jimmy picks a strictly smaller number than \(x\) is:</p>
+
+\[P(\text{Jimmy} &lt; x) = \frac{x - 1}{1000}\]
+
+<p>So for a fixed \(x\), the probability that Simon wins is \(\frac{x - 1}{1000}\).<br />
+Now sum this over all values of \(x\) from 1 to 1000:</p>
+
+\[\sum_{x=1}^{1000} \left( \frac{1}{3000} \cdot \frac{x - 1}{1000} \right)
+= \frac{1}{3000 \cdot 1000} \sum_{x=1}^{1000} (x - 1)\]
+
+<p>But:</p>
+
+\[\sum_{x=1}^{1000} (x - 1) = \sum_{i=0}^{999} i = \frac{999 \cdot 1000}{2}\]
+
+<p>So the contribution from this case is:</p>
+
+\[\frac{1}{3000 \cdot 1000} \cdot \frac{999 \cdot 1000}{2} = \frac{999}{6000}\]
+
+<hr />
+
+<h3 id="final-step-total-probability">Final Step: Total Probability</h3>
+
+\[P(\text{Simon wins}) = \underbrace{\frac{2}{3}}_{\text{Simon &gt; 1000}} + \underbrace{\frac{999}{6000}}_{\text{Simon ≤ 1000}}\]
+
+<p>Let’s simplify:</p>
+
+\[\frac{2}{3} = \frac{4000}{6000} \quad \Rightarrow \quad \text{Total} = \frac{4000 + 999}{6000} = \frac{4999}{6000}\]
+
+<hr />
+
+<h3 id="final-answer">Final Answer:</h3>
+<p>\(\boxed{\frac{4999}{6000}}\)</p>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Careful Coin Question</title><link href="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html" rel="alternate" type="text/html" title="Careful Coin Question" /><published>2025-04-27T00:00:00+05:30</published><updated>2025-04-27T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/27/Careful-Coin-Question.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Your friend has a fair coin. They flip it \(100\) times consecutively and record the sequence of outcomes. Your goal is to guess the sequence that your friend flipped. You may ask a single Yes/No question to your friend to help you determine the sequence.</p>
 
@@ -168,6 +376,130 @@ However, we’re interested in actual numbers, so we need to make sure we’re n
 
 <hr />
 
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Hit Or Miss</title><link href="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html" rel="alternate" type="text/html" title="Hit Or Miss" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>A particle starts at \((4, 4)\). Each turn, it moves either:</p>
+
+<ul>
+  <li>1 unit in the \(-x\) direction,</li>
+  <li>1 unit in the \(-y\) direction, or</li>
+  <li>1 unit diagonally in the \(-x\) and \(-y\) directions (i.e. \(-1, -1\)).</li>
+</ul>
+
+<p>Each move has equal probability \(\frac{1}{3}\).<br />
+The particle continues moving until it hits either the x-axis or the y-axis for the first time.</p>
+
+<p>What’s the probability that it hits the origin?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/hit-or-miss">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s try to visualize what’s happening.</p>
+
+<p>At each step, the particle chooses one of 3 directions:<br />
+←, ↓, or ↙ (i.e., move left, down, or diagonally left-down).</p>
+
+<p>Now, we stop the moment we hit either axis. That means:</p>
+
+<ul>
+  <li>The particle can only reach the origin \((0, 0)\) if it never touches the x-axis or y-axis before that.</li>
+  <li>This is a strict constraint: you either go all the way to the origin without hitting any edge, or the game ends.</li>
+</ul>
+
+<h3 id="key-insight">Key Insight</h3>
+
+<p>To reach \((0, 0)\), the last point before that must be \((1, 1)\). Why?</p>
+
+<ul>
+  <li>Because if we ever touch a point like \((1, 0)\) or \((0, 1)\), the process ends.</li>
+  <li>So the only way to reach the origin is by moving from \((1, 1) \to (0, 0)\), which is a diagonal move (only allowed move from \((1, 1)\)).</li>
+</ul>
+
+<p>Thus, we break the problem into two parts:</p>
+
+<ol>
+  <li>What is the probability of reaching \((1, 1)\) from \((4, 4)\)?</li>
+  <li>Then, with a \(\frac{1}{3}\) chance, we go diagonally to \((0, 0)\).</li>
+</ol>
+
+<h3 id="step-1-getting-to-1-1">Step 1: Getting to \((1, 1)\)</h3>
+
+<p>Let’s count the number of paths from \((4, 4) \to (1, 1)\) using only the allowed moves:</p>
+
+<p>We define three types of moves:</p>
+<ul>
+  <li>L (left): \((-1, 0)\)</li>
+  <li>D (down): \((0, -1)\)</li>
+  <li>Diag (diagonal): \((-1, -1)\)</li>
+</ul>
+
+<p>We need to move a total of:</p>
+<ul>
+  <li>3 units left</li>
+  <li>3 units down<br />
+→ But we can also substitute some L+D pairs with diagonal moves.</li>
+</ul>
+
+<p>Let’s enumerate all valid move combinations that result in reaching \((1, 1)\) from \((4, 4)\):</p>
+
+<h4 id="case-1-3-left-3-down--6-moves-total">Case 1: 3 Left, 3 Down → 6 moves total</h4>
+<ul>
+  <li>No diagonals</li>
+  <li>Ways = \(\binom{6}{3} = 20\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^6\)</li>
+</ul>
+
+<h4 id="case-2-2-left-2-down-1-diagonal--5-moves">Case 2: 2 Left, 2 Down, 1 Diagonal → 5 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{5}{1} \cdot \binom{4}{2} = 5 \cdot 6 = 30\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^5\)</li>
+</ul>
+
+<h4 id="case-3-1-left-1-down-2-diagonal--4-moves">Case 3: 1 Left, 1 Down, 2 Diagonal → 4 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{4}{2} = 6\) (choose 2 out of 4 to be Diagonal, rest are L &amp; D)</li>
+  <li>Then multiply by 2 for L and D order → \(6 \cdot 2 = 12\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^4\)</li>
+</ul>
+
+<h4 id="case-4-3-diagonal-moves--3-moves-total">Case 4: 3 Diagonal moves → 3 moves total</h4>
+<ul>
+  <li>Only 1 way</li>
+  <li>Probability = \(\left(\frac{1}{3}\right)^3 = \frac{1}{27}\)</li>
+</ul>
+
+<h3 id="step-2-multiply-with-probability-to-go-from-11--00">Step 2: Multiply with probability to go from (1,1) → (0,0)</h3>
+
+<p>That can only happen if the particle chooses Diagonal again → Probability = \(\frac{1}{3}\)</p>
+
+<h3 id="final-probability">Final Probability</h3>
+
+\[P = \left[ 
+20 \cdot \left(\frac{1}{3}\right)^6 +
+30 \cdot \left(\frac{1}{3}\right)^5 +
+12 \cdot \left(\frac{1}{3}\right)^4 +
+1 \cdot \left(\frac{1}{3}\right)^3
+\right] \cdot \frac{1}{3}\]
+
+\[= \left[
+\frac{20}{729} + \frac{30}{243} + \frac{12}{81} + \frac{1}{27}
+\right] \cdot \frac{1}{3}\]
+
+<p>Converting all to a common denominator (say 729), we get:</p>
+
+\[= \left[
+\frac{20}{729} + \frac{90}{729} + \frac{108}{729} + \frac{27}{729}
+\right] \cdot \frac{1}{3}
+= \frac{245}{729} \cdot \frac{1}{3}
+= \frac{245}{2187}\]
+
+<h3 id="the-required-probability-is">The required probability is:</h3>
+
+\[\boxed{\frac{245}{2187}}\]
+
+<hr />
+
 <p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Fireball Thrower</title><link href="http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower.html" rel="alternate" type="text/html" title="Fireball Thrower" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Fireball-Thrower.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Mario and Luigi are throwing Fireballs. Each one throws a fireball twice.</p>
@@ -303,130 +635,6 @@ We’ll condition on \(L = l\), compute \(\mathbb{P}[M &gt; 2l]\), then integrat
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Hit Or Miss</title><link href="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html" rel="alternate" type="text/html" title="Hit Or Miss" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>A particle starts at \((4, 4)\). Each turn, it moves either:</p>
-
-<ul>
-  <li>1 unit in the \(-x\) direction,</li>
-  <li>1 unit in the \(-y\) direction, or</li>
-  <li>1 unit diagonally in the \(-x\) and \(-y\) directions (i.e. \(-1, -1\)).</li>
-</ul>
-
-<p>Each move has equal probability \(\frac{1}{3}\).<br />
-The particle continues moving until it hits either the x-axis or the y-axis for the first time.</p>
-
-<p>What’s the probability that it hits the origin?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/hit-or-miss">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Let’s try to visualize what’s happening.</p>
-
-<p>At each step, the particle chooses one of 3 directions:<br />
-←, ↓, or ↙ (i.e., move left, down, or diagonally left-down).</p>
-
-<p>Now, we stop the moment we hit either axis. That means:</p>
-
-<ul>
-  <li>The particle can only reach the origin \((0, 0)\) if it never touches the x-axis or y-axis before that.</li>
-  <li>This is a strict constraint: you either go all the way to the origin without hitting any edge, or the game ends.</li>
-</ul>
-
-<h3 id="key-insight">Key Insight</h3>
-
-<p>To reach \((0, 0)\), the last point before that must be \((1, 1)\). Why?</p>
-
-<ul>
-  <li>Because if we ever touch a point like \((1, 0)\) or \((0, 1)\), the process ends.</li>
-  <li>So the only way to reach the origin is by moving from \((1, 1) \to (0, 0)\), which is a diagonal move (only allowed move from \((1, 1)\)).</li>
-</ul>
-
-<p>Thus, we break the problem into two parts:</p>
-
-<ol>
-  <li>What is the probability of reaching \((1, 1)\) from \((4, 4)\)?</li>
-  <li>Then, with a \(\frac{1}{3}\) chance, we go diagonally to \((0, 0)\).</li>
-</ol>
-
-<h3 id="step-1-getting-to-1-1">Step 1: Getting to \((1, 1)\)</h3>
-
-<p>Let’s count the number of paths from \((4, 4) \to (1, 1)\) using only the allowed moves:</p>
-
-<p>We define three types of moves:</p>
-<ul>
-  <li>L (left): \((-1, 0)\)</li>
-  <li>D (down): \((0, -1)\)</li>
-  <li>Diag (diagonal): \((-1, -1)\)</li>
-</ul>
-
-<p>We need to move a total of:</p>
-<ul>
-  <li>3 units left</li>
-  <li>3 units down<br />
-→ But we can also substitute some L+D pairs with diagonal moves.</li>
-</ul>
-
-<p>Let’s enumerate all valid move combinations that result in reaching \((1, 1)\) from \((4, 4)\):</p>
-
-<h4 id="case-1-3-left-3-down--6-moves-total">Case 1: 3 Left, 3 Down → 6 moves total</h4>
-<ul>
-  <li>No diagonals</li>
-  <li>Ways = \(\binom{6}{3} = 20\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^6\)</li>
-</ul>
-
-<h4 id="case-2-2-left-2-down-1-diagonal--5-moves">Case 2: 2 Left, 2 Down, 1 Diagonal → 5 moves</h4>
-<ul>
-  <li>Total ways = \(\binom{5}{1} \cdot \binom{4}{2} = 5 \cdot 6 = 30\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^5\)</li>
-</ul>
-
-<h4 id="case-3-1-left-1-down-2-diagonal--4-moves">Case 3: 1 Left, 1 Down, 2 Diagonal → 4 moves</h4>
-<ul>
-  <li>Total ways = \(\binom{4}{2} = 6\) (choose 2 out of 4 to be Diagonal, rest are L &amp; D)</li>
-  <li>Then multiply by 2 for L and D order → \(6 \cdot 2 = 12\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^4\)</li>
-</ul>
-
-<h4 id="case-4-3-diagonal-moves--3-moves-total">Case 4: 3 Diagonal moves → 3 moves total</h4>
-<ul>
-  <li>Only 1 way</li>
-  <li>Probability = \(\left(\frac{1}{3}\right)^3 = \frac{1}{27}\)</li>
-</ul>
-
-<h3 id="step-2-multiply-with-probability-to-go-from-11--00">Step 2: Multiply with probability to go from (1,1) → (0,0)</h3>
-
-<p>That can only happen if the particle chooses Diagonal again → Probability = \(\frac{1}{3}\)</p>
-
-<h3 id="final-probability">Final Probability</h3>
-
-\[P = \left[ 
-20 \cdot \left(\frac{1}{3}\right)^6 +
-30 \cdot \left(\frac{1}{3}\right)^5 +
-12 \cdot \left(\frac{1}{3}\right)^4 +
-1 \cdot \left(\frac{1}{3}\right)^3
-\right] \cdot \frac{1}{3}\]
-
-\[= \left[
-\frac{20}{729} + \frac{30}{243} + \frac{12}{81} + \frac{1}{27}
-\right] \cdot \frac{1}{3}\]
-
-<p>Converting all to a common denominator (say 729), we get:</p>
-
-\[= \left[
-\frac{20}{729} + \frac{90}{729} + \frac{108}{729} + \frac{27}{729}
-\right] \cdot \frac{1}{3}
-= \frac{245}{729} \cdot \frac{1}{3}
-= \frac{245}{2187}\]
-
-<h3 id="the-required-probability-is">The required probability is:</h3>
-
-\[\boxed{\frac{245}{2187}}\]
-
-<hr />
-
 <p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Exact 5 II</title><link href="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
@@ -549,189 +757,4 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Comparing Flips II</title><link href="http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II.html" rel="alternate" type="text/html" title="Comparing Flips II" /><published>2025-03-31T00:00:00+05:30</published><updated>2025-03-31T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/31/Comparing-Flips-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>You and your friend are playing a game with a fair coin, tossing it and writing down the outcomes. You win if HTH appears before HHT, else your friend wins. What is the probability that your friend wins?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/comparing-flips-ii">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-understanding-the-game">Step 1: Understanding the Game</h3>
-
-<p>The game continues until either HTH or HHT appears first. To analyze this, we consider the probability of winning from the instance the first H appears.</p>
-
-<p>Let \(p\) be the probability that I win from this point onward. We now determine \(p\) using conditional probability.</p>
-
-<h3 id="step-2-breaking-down-possible-sequences">Step 2: Breaking Down Possible Sequences</h3>
-
-<p>After the first H, the next flip can be:</p>
-
-<ol>
-  <li>H → Sequence: HH_</li>
-  <li>T → Sequence: HT_</li>
-</ol>
-
-<p>We analyze both cases separately.</p>
-
-<h4 id="case-1-the-sequence-becomes-hh_">Case 1: The sequence becomes HH_</h4>
-
-<ul>
-  <li>The next flip can be H (forming HHH_) or T (forming HHT).</li>
-  <li>If we get HHT, my friend immediately wins.</li>
-  <li>If we get HHH, the sequence will continue indefinitely, but since the only way to eventually break out is forming HHT, I am guaranteed to lose.</li>
-  <li>Thus, if HH occurs, I cannot win.<br />
-\(P(\text{Winning} \mid HH) = 0\)</li>
-</ul>
-
-<h4 id="case-2-the-sequence-becomes-ht_">Case 2: The sequence becomes HT_</h4>
-
-<ul>
-  <li>If the next flip is H, then HTH forms, and I immediately win.</li>
-  <li>If the next flip is T, then the sequence extends to HTT_ and continues.</li>
-  <li>Now, at some point in the future, an H must eventually appear (since an infinite T sequence has probability 0).</li>
-  <li>When this H appears, the game resets to the same original scenario, meaning my probability of winning from here is still \(p\).</li>
-</ul>
-
-<p>Thus,</p>
-
-\[P(\text{Winning} \mid HTT) = p.\]
-
-<p>and</p>
-
-\[P(\text{Winning} \mid HTH) = 1.\]
-
-<p>Now, consider that I said earlier “consider the case from the first H”. Since the game is an inifinte sequence, a series of TTTTT… is not possible, hence the first H is guarateed to appear. Therefore, I can argue that this probability \(p\) is the same as me winning in any case from the start of the game, and not just from the first H.</p>
-
-<h3 id="step-3-setting-up-the-probability-equation">Step 3: Setting Up the Probability Equation</h3>
-
-<p>Obviously,</p>
-
-\[P(HTT) = P(HTH) = \frac{1}{4}\]
-
-<p>and</p>
-
-\[P(HH) = \frac{1}{2}\]
-
-<p>Using the law of total probability, we can write</p>
-
-\[p = \frac{1}{4} (1) + \frac{1}{4} (p) + \frac{1}{2} (0)\]
-
-\[p = \frac{1}{4} + \frac{1}{4} p\]
-
-\[\frac{3}{4} p = \frac{1}{4}\]
-
-\[p = \frac{1}{3}\]
-
-<p>Thus, the probability that I win is \(\frac{1}{3}\), and the probability that my friend wins is:</p>
-
-\[1 - \frac{1}{3} = \frac{2}{3}.\]
-
-<h3 id="thus-the-probability-my-friend-wins-is-mathbffrac23">Thus the probability my friend wins is \(\mathbf{\frac{2}{3}}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Conditional Probability" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Expansion</title><link href="http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion.html" rel="alternate" type="text/html" title="Multinomial Expansion" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/03/30/Multinomial-Expansion.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>How many terms are there in the expansion of</p>
-
-\[(x_1 + x_2 + x_3 + x_4 + x_5 + x_6)^{18}\]
-
-<p>after all like terms have been combined?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/multinomial-expansion">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-understanding-the-expansion">Step 1: Understanding the Expansion</h3>
-
-<p>When expanding</p>
-
-\[(x_1 + x_2 + x_3 + x_4 + x_5 + x_6)^{18}\]
-
-<p>each term in the expansion will be of the form:</p>
-
-\[c \cdot x_1^{a_1} x_2^{a_2} x_3^{a_3} x_4^{a_4} x_5^{a_5} x_6^{a_6}\]
-
-<p>where \(a_1, a_2, a_3, a_4, a_5, a_6\) are non-negative integers that sum to 18:</p>
-
-\[a_1 + a_2 + a_3 + a_4 + a_5 + a_6 = 18.\]
-
-<p>Each unique term corresponds to a different way of assigning exponents to the six variables, regardless of order.</p>
-
-<h3 id="step-2-reduced-version---the-core-idea">Step 2: Reduced Version - The Core Idea</h3>
-
-<p>Instead of thinking in terms of exponents, simply answer:</p>
-<blockquote>
-  <p>“In how many ways can I divide 18 objects amongst 6 people, if each person can get 0 at min?”</p>
-</blockquote>
-
-<p>This is a direct application of the <a href="https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)">Stars and Bars</a> method, which states that the number of ways to distribute \(n\) identical objects among \(k\) groups is:</p>
-
-\[\binom{n + k - 1}{k - 1}.\]
-
-<p>Setting \(n = 18\) (total power) and \(k = 6\) (number of variables), we get:</p>
-
-\[\binom{18 + 6 - 1}{6 - 1} = \binom{23}{5}.\]
-
-<h3 id="step-3-compute-the-binomial-coefficient">Step 3: Compute the Binomial Coefficient</h3>
-
-<p>Using the formula:</p>
-
-\[\binom{23}{5} = \frac{23!}{5!(23 - 5)!} = \frac{23!}{5! \cdot 18!}.\]
-
-<p>Computing step-by-step:</p>
-
-\[\frac{23 \times 22 \times 21 \times 20 \times 19}{5 \times 4 \times 3 \times 2 \times 1}\]
-
-\[= \frac{5173168}{120} = 33649.\]
-
-<h3 id="thus-the-number-of-terms-in-the-expansion-is-mathbf33649">Thus, the number of terms in the expansion is \(\mathbf{33649}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Multinomial Sum</title><link href="http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum.html" rel="alternate" type="text/html" title="Multinomial Sum" /><published>2025-03-30T00:00:00+05:30</published><updated>2025-03-30T00:00:00+05:30</updated><id>http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum</id><content type="html" xml:base="http://localhost:4000/combinatorics/problems/2025/03/30/Multinomial-Sum.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Find the sum of all multinomial coefficients:</p>
-
-\[\binom{7}{b_1, b_2, b_3, b_4}\]
-
-<p>where \(b_1 + b_2 + b_3 + b_4 = 7\) and each \(b_i \geq 0\) is an integer.</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/multinomial-sum">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-understanding-the-multinomial-coefficients">Step 1: Understanding the Multinomial Coefficients</h3>
-
-<p>Each multinomial coefficient</p>
-
-\[\binom{7}{b_1, b_2, b_3, b_4}\]
-
-<p>represents the number of ways to assign the exponents \(b_1, b_2, b_3,\) and \(b_4\) in the expansion of:</p>
-
-\[(x_1 + x_2 + x_3 + x_4)^7.\]
-
-<p>Thus, the sum of all such coefficients is simply the sum of all terms in this multinomial expansion when each \(x_i = 1\).</p>
-
-<h3 id="step-2-reduced-version---the-core-idea">Step 2: Reduced Version - The Core Idea</h3>
-
-<p>We recognize that the given sum is:</p>
-
-\[\sum_{b_1 + b_2 + b_3 + b_4 = 7} \binom{7}{b_1, b_2, b_3, b_4}.\]
-
-<p>Setting \(x_1 = x_2 = x_3 = x_4 = 1\), the expansion simplifies to:</p>
-
-\[(1 + 1 + 1 + 1)^7 = 4^7.\]
-
-<p>which directly gives us the sum.</p>
-
-<h3 id="step-3-compute-the-final-value">Step 3: Compute the Final Value</h3>
-
-\[4^7 = 16384.\]
-
-<h3 id="thus-the-sum-of-all-multinomial-coefficients-is-mathbf16384">Thus, the sum of all multinomial coefficients is \(\mathbf{16384}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Combinatorics" /><category term="Problems" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

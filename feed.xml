@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-08T01:24:48+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">Fibonacci Limit II</title><link href="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html" rel="alternate" type="text/html" title="Fibonacci Limit II" /><published>2025-06-08T00:00:00+05:30</published><updated>2025-06-08T00:00:00+05:30</updated><id>http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II</id><content type="html" xml:base="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-09T00:21:52+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">All Attainable Values</title><link href="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html" rel="alternate" type="text/html" title="All Attainable Values" /><published>2025-06-09T00:00:00+05:30</published><updated>2025-06-09T00:00:00+05:30</updated><id>http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values</id><content type="html" xml:base="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>How many 6-sided dice with values on each side in the set \(\{1, 2, 3, 4, 5, 6\}\) are there with the property that when rolled twice, for each integer \(2 \leq k \leq 12\), there is positive probability that the sum is exactly \(k\)?</p>
+
+<p>Note:</p>
+<ul>
+  <li>Not every value in the set needs to be used.</li>
+  <li>Two dice are considered indistinguishable if they contain the exact same multiset of face values.</li>
+  <li>Each face appears with equal probability.</li>
+</ul>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/all-attainable-values">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>We’re essentially being asked: do we really need all 6 numbers on a die to ensure that every sum from 2 to 12 can occur when rolling it twice?</p>
+
+<p>We’ll figure this out systematically.</p>
+
+<hr />
+
+<h3 id="step-1-what-is-the-goal">Step 1: What is the Goal?</h3>
+
+<p>We want all values \(k \in \{2, 3, \dots, 12\}\) to be attainable as the sum of two dice rolls (of the same die).<br />
+So we need to ensure that for each \(k\), at least one pair (a, b) with \(a, b \in \text{die faces}\) satisfies \(a + b = k\).</p>
+
+<hr />
+
+<h3 id="step-2-can-we-remove-any-face">Step 2: Can We Remove Any Face?</h3>
+
+<p>Let’s try removing one value at a time from {1, 2, 3, 4, 5, 6}, and check whether every sum from 2 to 12 remains possible:</p>
+
+<h4 id="-remove-1">🔸 Remove 1:</h4>
+<ul>
+  <li>Can’t make 2 = 1+1 → Invalid</li>
+</ul>
+
+<h4 id="-remove-2">🔸 Remove 2:</h4>
+<ul>
+  <li>Can’t make 3 = 1+2 → Invalid</li>
+</ul>
+
+<h4 id="-remove-3">🔸 Remove 3:</h4>
+<p>Let’s check if all sums 2 through 12 are still attainable:</p>
+<ul>
+  <li>2: 1+1</li>
+  <li>3: 1+2</li>
+  <li>4: 2+2</li>
+  <li>5: 1+4</li>
+  <li>6: 2+4</li>
+  <li>7: 2+5</li>
+  <li>8: 4+4</li>
+  <li>9: 4+5</li>
+  <li>10: 5+5</li>
+  <li>11: 5+6</li>
+  <li>12: 6+6 ✅<br />
+→ Valid, even without 3.</li>
+</ul>
+
+<h4 id="-remove-4">🔸 Remove 4:</h4>
+<p>Check again:</p>
+<ul>
+  <li>2: 1+1</li>
+  <li>3: 1+2</li>
+  <li>4: 1+3</li>
+  <li>5: 2+3</li>
+  <li>6: 3+3</li>
+  <li>7: 1+6</li>
+  <li>8: 2+6</li>
+  <li>9: 3+6</li>
+  <li>10: 5+5</li>
+  <li>11: 5+6</li>
+  <li>12: 6+6 ✅<br />
+→ Valid, even without 4.</li>
+</ul>
+
+<h4 id="-remove-5">🔸 Remove 5:</h4>
+<ul>
+  <li>Can’t make 10 = 5+5 → Invalid</li>
+</ul>
+
+<h4 id="-remove-6">🔸 Remove 6:</h4>
+<ul>
+  <li>Can’t make 12 = 6+6 → Invalid</li>
+</ul>
+
+<hr />
+
+<h3 id="step-3-count-the-valid-dice">Step 3: Count the Valid Dice</h3>
+
+<p>We now count how many distinct multisets of dice satisfy the condition:</p>
+
+<h4 id="1-original-die">1. Original Die:</h4>
+<ul>
+  <li>Uses all six values<br />
+→ 1 way</li>
+</ul>
+
+<h4 id="2-dice-without-3">2. Dice without 3:</h4>
+<ul>
+  <li>Replace 3 with any of the other 5 values → still 6 faces<br />
+→ 5 choices</li>
+</ul>
+
+<h4 id="3-dice-without-4">3. Dice without 4:</h4>
+<ul>
+  <li>Replace 4 with any of the other 5 values<br />
+→ 5 choices</li>
+</ul>
+
+<hr />
+
+<h3 id="final-answer">Final Answer:</h3>
+
+\[\text{Total Valid Dice} = 1 + 5 + 5 = \boxed{11}\]
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Counting" /><category term="Problems" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Fibonacci Limit II</title><link href="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html" rel="alternate" type="text/html" title="Fibonacci Limit II" /><published>2025-06-08T00:00:00+05:30</published><updated>2025-06-08T00:00:00+05:30</updated><id>http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II</id><content type="html" xml:base="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Let \(F_n\) be the Fibonacci sequence. Compute:</p>
 
@@ -295,6 +413,43 @@ Here, \(a = 2\) and \(b = 99\), so:</p>
 
 <hr />
 
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Lead Count</title><link href="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html" rel="alternate" type="text/html" title="Lead Count" /><published>2025-04-07T00:00:00+05:30</published><updated>2025-04-07T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/07/Lead-Count</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Suppose you flip a fair coin 10 times. We say a certain outcome (heads or tails) is leading after \(n\) flips if there are strictly more than \(\frac{n}{2}\) flips of that outcome within the first \(n\) flips.</p>
+
+<p>Find the probability that the outcome of the first flip of the coin is leading after 10 flips.</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/lead-count">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s say the outcome of the first flip is \(k\) (could be either heads or tails — doesn’t matter, due to symmetry).</p>
+
+<p>Now, for \(k\) to be leading after 10 flips, the total number of \(k\)’s in the entire 10-flip sequence must be strictly greater than 5, since we’re considering \(n = 10\).</p>
+
+<p>But since the first flip is already \(k\), we just need to count how many additional \(k\)’s show up in the remaining 9 flips so that the total count of \(k\) becomes greater than 5.</p>
+
+<p>So we’re looking for how many ways we can get:</p>
+<ul>
+  <li>\(5\) more \(k\)’s out of 9 → total \(6\)</li>
+  <li>\(6\) more \(k\)’s → total \(7\)</li>
+  <li>\(7\) more \(k\)’s → total \(8\)</li>
+  <li>\(8\) more \(k\)’s → total \(9\)</li>
+  <li>\(9\) more \(k\)’s → total \(10\)</li>
+</ul>
+
+<p>So the total number of favorable outcomes is:
+\(\binom{9}{5} + \binom{9}{6} + \binom{9}{7} + \binom{9}{8} + \binom{9}{9} = 126 + 84 + 36 + 9 + 1 = 256\)</p>
+
+<p>Each of these outcomes has equal probability (since each coin flip is independent and fair), and there are \(2^9 = 512\) total possible outcomes for the remaining 9 flips.</p>
+
+<p>So the final probability is:
+\(\frac{256}{2^9} = \frac{256}{512} = \frac{1}{2}\)</p>
+
+<h3 id="so-the-required-probability-is-boxedfrac12">So the required probability is \(\boxed{\frac{1}{2}}\)</h3>
+
+<hr />
+
 <p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">9 Sum II</title><link href="http://localhost:4000/probability/problems/2025/04/07/9-Sum-II.html" rel="alternate" type="text/html" title="9 Sum II" /><published>2025-04-07T00:00:00+05:30</published><updated>2025-04-07T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/07/9-Sum-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/07/9-Sum-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many integers at most \(100000\) have digits that sum to \(9\)?<br />
@@ -336,167 +491,6 @@ However, we’re interested in actual numbers, so we need to make sure we’re n
 <p>But in this formulation, it’s fine — since leading zeros are just placeholders in the digit count. For example, \(00810\) (digit sum \(9\)) is really just \(810\), which is ≤ \(100000\). So all such digit combinations are valid.</p>
 
 <h3 id="so-the-total-number-of-integers-at-most-100000-whose-digits-sum-to-9-is-boxed715">So the total number of integers at most \(100000\) whose digits sum to \(9\) is \(\boxed{715}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Lead Count</title><link href="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html" rel="alternate" type="text/html" title="Lead Count" /><published>2025-04-07T00:00:00+05:30</published><updated>2025-04-07T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/07/Lead-Count</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/07/Lead-Count.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Suppose you flip a fair coin 10 times. We say a certain outcome (heads or tails) is leading after \(n\) flips if there are strictly more than \(\frac{n}{2}\) flips of that outcome within the first \(n\) flips.</p>
-
-<p>Find the probability that the outcome of the first flip of the coin is leading after 10 flips.</p>
-
-<p>Original Problem Link: <a href="https://www.quantguide.io/questions/lead-count">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Let’s say the outcome of the first flip is \(k\) (could be either heads or tails — doesn’t matter, due to symmetry).</p>
-
-<p>Now, for \(k\) to be leading after 10 flips, the total number of \(k\)’s in the entire 10-flip sequence must be strictly greater than 5, since we’re considering \(n = 10\).</p>
-
-<p>But since the first flip is already \(k\), we just need to count how many additional \(k\)’s show up in the remaining 9 flips so that the total count of \(k\) becomes greater than 5.</p>
-
-<p>So we’re looking for how many ways we can get:</p>
-<ul>
-  <li>\(5\) more \(k\)’s out of 9 → total \(6\)</li>
-  <li>\(6\) more \(k\)’s → total \(7\)</li>
-  <li>\(7\) more \(k\)’s → total \(8\)</li>
-  <li>\(8\) more \(k\)’s → total \(9\)</li>
-  <li>\(9\) more \(k\)’s → total \(10\)</li>
-</ul>
-
-<p>So the total number of favorable outcomes is:
-\(\binom{9}{5} + \binom{9}{6} + \binom{9}{7} + \binom{9}{8} + \binom{9}{9} = 126 + 84 + 36 + 9 + 1 = 256\)</p>
-
-<p>Each of these outcomes has equal probability (since each coin flip is independent and fair), and there are \(2^9 = 512\) total possible outcomes for the remaining 9 flips.</p>
-
-<p>So the final probability is:
-\(\frac{256}{2^9} = \frac{256}{512} = \frac{1}{2}\)</p>
-
-<h3 id="so-the-required-probability-is-boxedfrac12">So the required probability is \(\boxed{\frac{1}{2}}\)</h3>
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Hit Or Miss</title><link href="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html" rel="alternate" type="text/html" title="Hit Or Miss" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>A particle starts at \((4, 4)\). Each turn, it moves either:</p>
-
-<ul>
-  <li>1 unit in the \(-x\) direction,</li>
-  <li>1 unit in the \(-y\) direction, or</li>
-  <li>1 unit diagonally in the \(-x\) and \(-y\) directions (i.e. \(-1, -1\)).</li>
-</ul>
-
-<p>Each move has equal probability \(\frac{1}{3}\).<br />
-The particle continues moving until it hits either the x-axis or the y-axis for the first time.</p>
-
-<p>What’s the probability that it hits the origin?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/hit-or-miss">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Let’s try to visualize what’s happening.</p>
-
-<p>At each step, the particle chooses one of 3 directions:<br />
-←, ↓, or ↙ (i.e., move left, down, or diagonally left-down).</p>
-
-<p>Now, we stop the moment we hit either axis. That means:</p>
-
-<ul>
-  <li>The particle can only reach the origin \((0, 0)\) if it never touches the x-axis or y-axis before that.</li>
-  <li>This is a strict constraint: you either go all the way to the origin without hitting any edge, or the game ends.</li>
-</ul>
-
-<h3 id="key-insight">Key Insight</h3>
-
-<p>To reach \((0, 0)\), the last point before that must be \((1, 1)\). Why?</p>
-
-<ul>
-  <li>Because if we ever touch a point like \((1, 0)\) or \((0, 1)\), the process ends.</li>
-  <li>So the only way to reach the origin is by moving from \((1, 1) \to (0, 0)\), which is a diagonal move (only allowed move from \((1, 1)\)).</li>
-</ul>
-
-<p>Thus, we break the problem into two parts:</p>
-
-<ol>
-  <li>What is the probability of reaching \((1, 1)\) from \((4, 4)\)?</li>
-  <li>Then, with a \(\frac{1}{3}\) chance, we go diagonally to \((0, 0)\).</li>
-</ol>
-
-<h3 id="step-1-getting-to-1-1">Step 1: Getting to \((1, 1)\)</h3>
-
-<p>Let’s count the number of paths from \((4, 4) \to (1, 1)\) using only the allowed moves:</p>
-
-<p>We define three types of moves:</p>
-<ul>
-  <li>L (left): \((-1, 0)\)</li>
-  <li>D (down): \((0, -1)\)</li>
-  <li>Diag (diagonal): \((-1, -1)\)</li>
-</ul>
-
-<p>We need to move a total of:</p>
-<ul>
-  <li>3 units left</li>
-  <li>3 units down<br />
-→ But we can also substitute some L+D pairs with diagonal moves.</li>
-</ul>
-
-<p>Let’s enumerate all valid move combinations that result in reaching \((1, 1)\) from \((4, 4)\):</p>
-
-<h4 id="case-1-3-left-3-down--6-moves-total">Case 1: 3 Left, 3 Down → 6 moves total</h4>
-<ul>
-  <li>No diagonals</li>
-  <li>Ways = \(\binom{6}{3} = 20\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^6\)</li>
-</ul>
-
-<h4 id="case-2-2-left-2-down-1-diagonal--5-moves">Case 2: 2 Left, 2 Down, 1 Diagonal → 5 moves</h4>
-<ul>
-  <li>Total ways = \(\binom{5}{1} \cdot \binom{4}{2} = 5 \cdot 6 = 30\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^5\)</li>
-</ul>
-
-<h4 id="case-3-1-left-1-down-2-diagonal--4-moves">Case 3: 1 Left, 1 Down, 2 Diagonal → 4 moves</h4>
-<ul>
-  <li>Total ways = \(\binom{4}{2} = 6\) (choose 2 out of 4 to be Diagonal, rest are L &amp; D)</li>
-  <li>Then multiply by 2 for L and D order → \(6 \cdot 2 = 12\)</li>
-  <li>Each path has probability \(\left(\frac{1}{3}\right)^4\)</li>
-</ul>
-
-<h4 id="case-4-3-diagonal-moves--3-moves-total">Case 4: 3 Diagonal moves → 3 moves total</h4>
-<ul>
-  <li>Only 1 way</li>
-  <li>Probability = \(\left(\frac{1}{3}\right)^3 = \frac{1}{27}\)</li>
-</ul>
-
-<h3 id="step-2-multiply-with-probability-to-go-from-11--00">Step 2: Multiply with probability to go from (1,1) → (0,0)</h3>
-
-<p>That can only happen if the particle chooses Diagonal again → Probability = \(\frac{1}{3}\)</p>
-
-<h3 id="final-probability">Final Probability</h3>
-
-\[P = \left[ 
-20 \cdot \left(\frac{1}{3}\right)^6 +
-30 \cdot \left(\frac{1}{3}\right)^5 +
-12 \cdot \left(\frac{1}{3}\right)^4 +
-1 \cdot \left(\frac{1}{3}\right)^3
-\right] \cdot \frac{1}{3}\]
-
-\[= \left[
-\frac{20}{729} + \frac{30}{243} + \frac{12}{81} + \frac{1}{27}
-\right] \cdot \frac{1}{3}\]
-
-<p>Converting all to a common denominator (say 729), we get:</p>
-
-\[= \left[
-\frac{20}{729} + \frac{90}{729} + \frac{108}{729} + \frac{27}{729}
-\right] \cdot \frac{1}{3}
-= \frac{245}{729} \cdot \frac{1}{3}
-= \frac{245}{2187}\]
-
-<h3 id="the-required-probability-is">The required probability is:</h3>
-
-\[\boxed{\frac{245}{2187}}\]
 
 <hr />
 
@@ -635,6 +629,130 @@ We’ll condition on \(L = l\), compute \(\mathbb{P}[M &gt; 2l]\), then integrat
 
 <hr />
 
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Hit Or Miss</title><link href="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html" rel="alternate" type="text/html" title="Hit Or Miss" /><published>2025-04-06T00:00:00+05:30</published><updated>2025-04-06T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/06/Hit-Or-Miss.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>A particle starts at \((4, 4)\). Each turn, it moves either:</p>
+
+<ul>
+  <li>1 unit in the \(-x\) direction,</li>
+  <li>1 unit in the \(-y\) direction, or</li>
+  <li>1 unit diagonally in the \(-x\) and \(-y\) directions (i.e. \(-1, -1\)).</li>
+</ul>
+
+<p>Each move has equal probability \(\frac{1}{3}\).<br />
+The particle continues moving until it hits either the x-axis or the y-axis for the first time.</p>
+
+<p>What’s the probability that it hits the origin?</p>
+
+<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/hit-or-miss">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s try to visualize what’s happening.</p>
+
+<p>At each step, the particle chooses one of 3 directions:<br />
+←, ↓, or ↙ (i.e., move left, down, or diagonally left-down).</p>
+
+<p>Now, we stop the moment we hit either axis. That means:</p>
+
+<ul>
+  <li>The particle can only reach the origin \((0, 0)\) if it never touches the x-axis or y-axis before that.</li>
+  <li>This is a strict constraint: you either go all the way to the origin without hitting any edge, or the game ends.</li>
+</ul>
+
+<h3 id="key-insight">Key Insight</h3>
+
+<p>To reach \((0, 0)\), the last point before that must be \((1, 1)\). Why?</p>
+
+<ul>
+  <li>Because if we ever touch a point like \((1, 0)\) or \((0, 1)\), the process ends.</li>
+  <li>So the only way to reach the origin is by moving from \((1, 1) \to (0, 0)\), which is a diagonal move (only allowed move from \((1, 1)\)).</li>
+</ul>
+
+<p>Thus, we break the problem into two parts:</p>
+
+<ol>
+  <li>What is the probability of reaching \((1, 1)\) from \((4, 4)\)?</li>
+  <li>Then, with a \(\frac{1}{3}\) chance, we go diagonally to \((0, 0)\).</li>
+</ol>
+
+<h3 id="step-1-getting-to-1-1">Step 1: Getting to \((1, 1)\)</h3>
+
+<p>Let’s count the number of paths from \((4, 4) \to (1, 1)\) using only the allowed moves:</p>
+
+<p>We define three types of moves:</p>
+<ul>
+  <li>L (left): \((-1, 0)\)</li>
+  <li>D (down): \((0, -1)\)</li>
+  <li>Diag (diagonal): \((-1, -1)\)</li>
+</ul>
+
+<p>We need to move a total of:</p>
+<ul>
+  <li>3 units left</li>
+  <li>3 units down<br />
+→ But we can also substitute some L+D pairs with diagonal moves.</li>
+</ul>
+
+<p>Let’s enumerate all valid move combinations that result in reaching \((1, 1)\) from \((4, 4)\):</p>
+
+<h4 id="case-1-3-left-3-down--6-moves-total">Case 1: 3 Left, 3 Down → 6 moves total</h4>
+<ul>
+  <li>No diagonals</li>
+  <li>Ways = \(\binom{6}{3} = 20\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^6\)</li>
+</ul>
+
+<h4 id="case-2-2-left-2-down-1-diagonal--5-moves">Case 2: 2 Left, 2 Down, 1 Diagonal → 5 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{5}{1} \cdot \binom{4}{2} = 5 \cdot 6 = 30\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^5\)</li>
+</ul>
+
+<h4 id="case-3-1-left-1-down-2-diagonal--4-moves">Case 3: 1 Left, 1 Down, 2 Diagonal → 4 moves</h4>
+<ul>
+  <li>Total ways = \(\binom{4}{2} = 6\) (choose 2 out of 4 to be Diagonal, rest are L &amp; D)</li>
+  <li>Then multiply by 2 for L and D order → \(6 \cdot 2 = 12\)</li>
+  <li>Each path has probability \(\left(\frac{1}{3}\right)^4\)</li>
+</ul>
+
+<h4 id="case-4-3-diagonal-moves--3-moves-total">Case 4: 3 Diagonal moves → 3 moves total</h4>
+<ul>
+  <li>Only 1 way</li>
+  <li>Probability = \(\left(\frac{1}{3}\right)^3 = \frac{1}{27}\)</li>
+</ul>
+
+<h3 id="step-2-multiply-with-probability-to-go-from-11--00">Step 2: Multiply with probability to go from (1,1) → (0,0)</h3>
+
+<p>That can only happen if the particle chooses Diagonal again → Probability = \(\frac{1}{3}\)</p>
+
+<h3 id="final-probability">Final Probability</h3>
+
+\[P = \left[ 
+20 \cdot \left(\frac{1}{3}\right)^6 +
+30 \cdot \left(\frac{1}{3}\right)^5 +
+12 \cdot \left(\frac{1}{3}\right)^4 +
+1 \cdot \left(\frac{1}{3}\right)^3
+\right] \cdot \frac{1}{3}\]
+
+\[= \left[
+\frac{20}{729} + \frac{30}{243} + \frac{12}{81} + \frac{1}{27}
+\right] \cdot \frac{1}{3}\]
+
+<p>Converting all to a common denominator (say 729), we get:</p>
+
+\[= \left[
+\frac{20}{729} + \frac{90}{729} + \frac{108}{729} + \frac{27}{729}
+\right] \cdot \frac{1}{3}
+= \frac{245}{729} \cdot \frac{1}{3}
+= \frac{245}{2187}\]
+
+<h3 id="the-required-probability-is">The required probability is:</h3>
+
+\[\boxed{\frac{245}{2187}}\]
+
+<hr />
+
 <p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Exact 5 II</title><link href="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
@@ -684,76 +802,6 @@ From any given state, every die roll gives us 6 possible outcomes:</p>
 <h3 id="so-the-expected-number-of-times-abd-rolls-a-5-before-his-first-6-is">So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</h3>
 
 \[\boxed{1}\]
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Optimal Bidders I</title><link href="http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I.html" rel="alternate" type="text/html" title="Optimal Bidders I" /><published>2025-04-01T00:00:00+05:30</published><updated>2025-04-01T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/01/Optimal-Bidders-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Carter has come into contact with a bounty of gold. He takes it to an auction shop. The shop tells him that every bidder will place a bid uniformly between $500 and $1000. They also say they can recruit bidders for $5 per person.</p>
-
-<p>Carter needs to figure out the optimal number of bidders to maximize his expected payout. What is this maximum payout?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/optimal-bidders-i">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<h3 id="step-1-modeling-the-maximum-bid">Step 1: Modeling the Maximum Bid</h3>
-
-<p>Each bidder bids randomly between 500 and 1000. Now, if there are \(n\) bidders, we can assume that the bids will be evenly spaced between 500 and 1000 on average.</p>
-
-<p>The expected spacing between bids is:</p>
-
-\[\frac{500}{n+1}\]
-
-<p>Thus, the expected maximum bid will be:</p>
-
-\[M(n) = 1000 - \frac{500}{n+1}\]
-
-<h3 id="step-2-writing-the-expected-payout">Step 2: Writing the Expected Payout</h3>
-
-<p>Now, Carter’s expected earnings are simply:</p>
-
-\[\text{Max bid} - \text{Cost of bidders}\]
-
-<p>Which gives us:</p>
-
-\[E(n) = M(n) - 5n\]
-
-<p>Substituting \(M(n)\):</p>
-
-\[E(n) = 1000 - \frac{500}{n+1} - 5n\]
-
-<p>Now, we need to maximize this function.</p>
-
-<h3 id="step-3-finding-the-optimal-n">Step 3: Finding the Optimal \(n\)</h3>
-
-<p>We differentiate \(E(n)\) and set it to 0:</p>
-
-\[\frac{d}{dn} \left( 1000 - \frac{500}{n+1} - 5n \right) = 0\]
-
-\[\frac{500}{(n+1)^2} = 5\]
-
-<p>Solving:</p>
-
-\[500 = 5(n+1)^2\]
-
-\[100 = (n+1)^2\]
-
-\[n+1 = 10 \Rightarrow n = 9\]
-
-<p>Thus, the optimal number of bidders is \(n = 9\).</p>
-
-<h3 id="step-4-calculating-the-maximum-expected-payout">Step 4: Calculating the Maximum Expected Payout</h3>
-
-<p>Substituting \(n = 9\):</p>
-
-\[E(9) = 1000 - \frac{500}{10} - 5(9)\]
-
-\[= 1000 - 50 - 45\]
-
-\[= 905\]
-
-<h3 id="thus-the-maximum-expected-payout-carter-can-get-is-905">Thus, the maximum expected payout Carter can get is $905.</h3>
 
 <hr />
 

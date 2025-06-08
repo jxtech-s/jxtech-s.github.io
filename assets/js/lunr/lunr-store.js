@@ -178,4 +178,10 @@ var store = [{
         "tags": ["Limits"],
         "url": "/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html",
         "teaser": null
+      },{
+        "title": "All Attainable Values",
+        "excerpt":"Problem Statement How many 6-sided dice with values on each side in the set \\(\\{1, 2, 3, 4, 5, 6\\}\\) are there with the property that when rolled twice, for each integer \\(2 \\leq k \\leq 12\\), there is positive probability that the sum is exactly \\(k\\)? Note: Not every...","categories": ["Counting","Problems"],
+        "tags": ["Counting"],
+        "url": "/counting/problems/2025/06/09/All-Attainable-Values.html",
+        "teaser": null
       }]

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-09T00:21:52+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">All Attainable Values</title><link href="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html" rel="alternate" type="text/html" title="All Attainable Values" /><published>2025-06-09T00:00:00+05:30</published><updated>2025-06-09T00:00:00+05:30</updated><id>http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values</id><content type="html" xml:base="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-09T19:54:46+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">JXTech</title><subtitle>Advanced probability problems and detailed solutions</subtitle><author><name>JXTech</name></author><entry><title type="html">All Attainable Values</title><link href="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html" rel="alternate" type="text/html" title="All Attainable Values" /><published>2025-06-09T00:00:00+05:30</published><updated>2025-06-09T00:00:00+05:30</updated><id>http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values</id><content type="html" xml:base="http://localhost:4000/counting/problems/2025/06/09/All-Attainable-Values.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>How many 6-sided dice with values on each side in the set \(\{1, 2, 3, 4, 5, 6\}\) are there with the property that when rolled twice, for each integer \(2 \leq k \leq 12\), there is positive probability that the sum is exactly \(k\)?</p>
 
@@ -110,13 +110,175 @@ So we need to ensure that for each \(k\), at least one pair (a, b) with \(a, b \
 
 <hr />
 
-<h3 id="final-answer">Final Answer:</h3>
-
-\[\text{Total Valid Dice} = 1 + 5 + 5 = \boxed{11}\]
+<h3 id="final-answer-texttotal-valid-dice--1--5--5--boxed11">Final Answer: \(\text{Total Valid Dice} = 1 + 5 + 5 = \boxed{11}\)</h3>
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Counting" /><category term="Problems" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Fibonacci Limit II</title><link href="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html" rel="alternate" type="text/html" title="Fibonacci Limit II" /><published>2025-06-08T00:00:00+05:30</published><updated>2025-06-08T00:00:00+05:30</updated><id>http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II</id><content type="html" xml:base="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Counting" /><category term="Problems" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Unlucky Seven I</title><link href="http://localhost:4000/probability/counting/problems/2025/06/09/All-Unlucky-Seven-I.html" rel="alternate" type="text/html" title="Unlucky Seven I" /><published>2025-06-09T00:00:00+05:30</published><updated>2025-06-09T00:00:00+05:30</updated><id>http://localhost:4000/probability/counting/problems/2025/06/09/All-Unlucky-Seven-I</id><content type="html" xml:base="http://localhost:4000/probability/counting/problems/2025/06/09/All-Unlucky-Seven-I.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
+
+<p>You are given a fair 6-sided die and you roll it. You can either:</p>
+
+<ul>
+  <li>Stop and receive the observed value (in dollars), or</li>
+  <li>Roll again. But if the sum of both rolls is at least 7, you pay the value of your first roll.<br />
+If the sum is less than 7, you receive the second roll’s value.</li>
+</ul>
+
+<p>Assuming optimal play, what is your expected payout?</p>
+
+<p>Original Problem Link: <a href="https://www.quantguide.io/questions/unlucky-seven-i">Click here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Let’s denote the value of the first roll as \(x \in \{1, 2, 3, 4, 5, 6\}\).<br />
+For each \(x\), we’ll compute:</p>
+
+<ul>
+  <li>The expected payout if we stop: \(= x\)</li>
+  <li>The expected payout if we roll again, based on the outcome of the second roll.</li>
+</ul>
+
+<p>We will then compare the two and decide whether to stop or roll again.</p>
+
+<hr />
+
+<h3 id="step-1-compute-expected-payout-on-re-roll">Step 1: Compute Expected Payout on Re-Roll</h3>
+
+<p>Suppose your first roll is \(x\). Now, depending on the second roll \(y\), we have:</p>
+
+<ul>
+  <li>If \(x + y \geq 7\), you pay \(x\) → Payout = \(-x\)</li>
+  <li>If \(x + y &lt; 7\), you receive \(y\) → Payout = \(y\)</li>
+</ul>
+
+<p>Let’s go case by case.</p>
+
+<hr />
+
+<h3 id="-case-1-x--1">🔸 Case 1: \(x = 1\)</h3>
+
+<p>Here are the second roll outcomes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>\(y\)</th>
+      <th>\(x + y\)</th>
+      <th>Result</th>
+      <th>Payout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>\(&lt; 7\)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>\(&lt; 7\)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+      <td>\(&lt; 7\)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>\(&lt; 7\)</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>\(&lt; 7\)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>7</td>
+      <td>\(\geq 7\)</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Expected payout if re-rolling:</p>
+
+\[\mathbb{E}_{x=1} = \frac{1 + 2 + 3 + 4 + 5 + (-1)}{6} = \frac{14}{6} = \frac{7}{3} &gt; 1\]
+
+<p>So, rolling again is better than stopping (which gives only 1).</p>
+
+<hr />
+
+<h3 id="-cases-x--2-to-x--6">🔸 Cases \(x = 2\) to \(x = 6\)</h3>
+
+<p>We’ll briefly summarize results:</p>
+
+<h4 id="x--2">\(x = 2\):</h4>
+
+<ul>
+  <li>Bad (lose \(x\)) if \(y \geq 5\) (i.e. 2 values)</li>
+  <li>Good if \(y \leq 4\)</li>
+</ul>
+
+<p>Expected payout:</p>
+
+\[\mathbb{E}_{x=2} = \frac{1 + 2 + 3 + 4 -2 -2}{6} = \frac{6}{6} = 1 &lt; 2\]
+
+<h4 id="x--3">\(x = 3\):</h4>
+
+\[\mathbb{E}_{x=3} = \frac{1 + 2 + 3 -3 -3 -3}{6} = \frac{-3}{6} = -0.5 &lt; 3\]
+
+<h4 id="x--4">\(x = 4\):</h4>
+
+<p>Only 2 values (1 and 2) will give positive outcome</p>
+
+\[\mathbb{E}_{x=4} = \frac{1 + 2 -4 -4 -4 -4}{6} = \frac{-13}{6} \ll 4\]
+
+<h4 id="x--5-6-even-worse">\(x = 5, 6\): even worse.</h4>
+
+<hr />
+
+<h3 id="step-2-apply-optimal-strategy">Step 2: Apply Optimal Strategy</h3>
+
+<p>From the above:</p>
+
+<ul>
+  <li>If \(x = 1\): roll again</li>
+  <li>If \(x \geq 2\): stop</li>
+</ul>
+
+<hr />
+
+<h3 id="step-3-compute-final-expected-value">Step 3: Compute Final Expected Value</h3>
+
+\[\mathbb{E} = \sum_{x=1}^{6} \mathbb{P}(x) \cdot \text{Expected Payout for } x\]
+
+<p>Using optimal decisions:</p>
+
+<ul>
+  <li>\(x = 1\): expected = \(\frac{7}{3}\)</li>
+  <li>\(x = 2\) to \(6\): expected = just \(x\)</li>
+</ul>
+
+\[\mathbb{E} = \frac{1}{6} \left( \frac{7}{3} + 2 + 3 + 4 + 5 + 6 \right)
+= \frac{1}{6} \left( \frac{7}{3} + 20 \right)
+= \frac{1}{6} \cdot \frac{67}{3}
+= \frac{67}{18}\]
+
+<hr />
+
+<h3 id="thus-the-expected-payoff-assuming-optimal-play-is-boxedfrac6718">Thus the expected payoff assuming optimal play is \(\boxed{\frac{67}{18}}\)</h3>
+
+<hr />
+
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Counting" /><category term="Problems" /><category term="Probability" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Fibonacci Limit II</title><link href="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html" rel="alternate" type="text/html" title="Fibonacci Limit II" /><published>2025-06-08T00:00:00+05:30</published><updated>2025-06-08T00:00:00+05:30</updated><id>http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II</id><content type="html" xml:base="http://localhost:4000/limits/series/problems/2025/06/08/Fibonacci-Limit-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
 
 <p>Let \(F_n\) be the Fibonacci sequence. Compute:</p>
 
@@ -178,12 +340,9 @@ So we need to ensure that for each \(k\), at least one pair (a, b) with \(a, b \
 
 \[\frac{a + \sqrt{b}}{c} = \frac{3 + \sqrt{5}}{2}\]
 
-<p>Thus, \(a = 3, b = 5, c = 2 \Rightarrow abc = 3 \times 5 \times 2 = \boxed{30}\)</p>
-
 <hr />
 
-<h3 id="final-answer">Final Answer:</h3>
-<p>\(\boxed{30}\)</p>
+<h3 id="final-answer-a--3-b--5-c--2-rightarrow-abc--3-times-5-times-2--boxed30">Final Answer: \(a = 3, b = 5, c = 2 \Rightarrow abc = 3 \times 5 \times 2 = \boxed{30}\)</h3>
 
 <hr />
 
@@ -248,7 +407,7 @@ So, \(n = 50\), \(k = 5\), and:</p>
 
 <hr />
 
-<h3 id="final-answer-boxed250">Final Answer \(\boxed{250}\)</h3>
+<h3 id="final-answer-the-number-of-required-solutions-are-boxed250">Final Answer: The number of required solutions are \(\boxed{250}\)</h3>
 
 <hr />
 
@@ -319,8 +478,7 @@ Now sum this over all values of \(x\) from 1 to 1000:</p>
 
 <hr />
 
-<h3 id="final-answer">Final Answer:</h3>
-<p>\(\boxed{\frac{4999}{6000}}\)</p>
+<h3 id="final-answer-thus-the-required-probability-is-boxedfrac49996000">Final Answer: Thus the required probability is \(\boxed{\frac{4999}{6000}}\)</h3>
 
 <hr />
 
@@ -408,8 +566,7 @@ Here, \(a = 2\) and \(b = 99\), so:</p>
 
 \[ab = 2 \times 99 = \boxed{198}\]
 
-<h3 id="final-answer">Final Answer:</h3>
-<p>\(\boxed{198}\)</p>
+<h3 id="final-answer-the-required-value-is-boxed198">Final Answer: The required value is \(\boxed{198}\)</h3>
 
 <hr />
 
@@ -753,56 +910,4 @@ The particle continues moving until it hits either the x-axis or the y-axis for 
 
 <hr />
 
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry><entry><title type="html">Exact 5 II</title><link href="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html" rel="alternate" type="text/html" title="Exact 5 II" /><published>2025-04-05T00:00:00+05:30</published><updated>2025-04-05T00:00:00+05:30</updated><id>http://localhost:4000/probability/problems/2025/04/05/Exact-5-II</id><content type="html" xml:base="http://localhost:4000/probability/problems/2025/04/05/Exact-5-II.html"><![CDATA[<h2 id="problem-statement">Problem Statement</h2>
-
-<p>Abd continually rolls a fair \(6\)-sided die until he obtains his first \(6\).<br />
-What’s the expected number of times Abd rolls a \(5\) before he stops?</p>
-
-<p><strong>Original Problem Link</strong>: <a href="https://www.quantguide.io/questions/exact-5-ii">Click here</a></p>
-
-<h2 id="solution">Solution</h2>
-
-<p>Let \(X\) be the event representing number of times we get a \(5\) before hitting our first \(6\).</p>
-
-<p>Let’s try to break this down using conditional expectation.<br />
-From any given state, every die roll gives us 6 possible outcomes:</p>
-
-<ul>
-  <li>With probability \(\frac{1}{6}\), we get a \(5\).</li>
-  <li>With probability \(\frac{1}{6}\), we get a \(6\) → game stops.</li>
-  <li>With probability \(\frac{4}{6}\), we get something else (\(1\), \(2\), \(3\), or \(4\)).</li>
-</ul>
-
-<p>Let’s write the expected value in terms of these outcomes:</p>
-
-\[E[X] = \frac{1}{6} \cdot E[X \mid \text{5}] + \frac{1}{6} \cdot E[X \mid \text{6}] + \frac{4}{6} \cdot E[X \mid \text{Other}]\]
-
-<p>Now, analyze each term:</p>
-
-<ul>
-  <li>\(E[X \mid \text{6}] = 0\) → because we stop immediately, no more \(5\)s possible.</li>
-  <li>\(E[X \mid \text{5}] = 1 + E[X]\) → we got one \(5\), and then we’re back to square one, since the process restarts.</li>
-  <li>\(E[X \mid \text{Other}] = E[X]\) → getting \(1\), \(2\), \(3\), or \(4\) doesn’t change the structure. We’re still in the exact same state with same probabilities.</li>
-</ul>
-
-<h3 id="substituting-all-this-in">Substituting all this in:</h3>
-
-\[E[X] = \frac{1}{6}(1 + E[X]) + \frac{1}{6}(0) + \frac{4}{6}(E[X])\]
-
-\[E[X] = \frac{1}{6} + \frac{1}{6}E[X] + \frac{4}{6}E[X]\]
-
-\[E[X] = \frac{1}{6} + \frac{5}{6}E[X]\]
-
-<p>Bring terms together:</p>
-
-\[E[X] - \frac{5}{6}E[X] = \frac{1}{6}
-\Rightarrow \frac{1}{6}E[X] = \frac{1}{6}
-\Rightarrow E[X] = 1\]
-
-<h3 id="so-the-expected-number-of-times-abd-rolls-a-5-before-his-first-6-is">So the expected number of times Abd rolls a \(5\) before his first \(6\) is:</h3>
-
-\[\boxed{1}\]
-
-<hr />
-
-<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Statistics" /><category term="Expectations" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>
+<p>💡 Did you enjoy this problem? Check out more puzzles in the <a href="https://jxtech-s.github.io/problems/">Problems</a> section!</p>]]></content><author><name>JXTech</name></author><category term="Probability" /><category term="Problems" /><category term="Probability" /><category term="Combinatorics" /><category term="Counting" /><summary type="html"><![CDATA[Problem Statement]]></summary></entry></feed>

@@ -184,4 +184,10 @@ var store = [{
         "tags": ["Counting"],
         "url": "/counting/problems/2025/06/09/All-Attainable-Values.html",
         "teaser": null
+      },{
+        "title": "Unlucky Seven I",
+        "excerpt":"Problem Statement You are given a fair 6-sided die and you roll it. You can either: Stop and receive the observed value (in dollars), or Roll again. But if the sum of both rolls is at least 7, you pay the value of your first roll. If the sum is...","categories": ["Probability","Counting","Problems"],
+        "tags": ["Probability","Counting"],
+        "url": "/probability/counting/problems/2025/06/09/All-Unlucky-Seven-I.html",
+        "teaser": null
       }]

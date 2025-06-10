@@ -190,4 +190,10 @@ var store = [{
         "tags": ["Probability","Counting"],
         "url": "/probability/counting/problems/2025/06/09/All-Unlucky-Seven-I.html",
         "teaser": null
+      },{
+        "title": "Close Dice I",
+        "excerpt":"Problem Statement On average, how many times does a fair 6-sided die need to be rolled to obtain two consecutive rolls that differ by exactly 1? Original Problem Link: Click here Solution We start by analyzing the process after the first roll, which sets the “current” number. Let: \\(E_i\\) be...","categories": ["Probability","Counting","Problems"],
+        "tags": ["Probability","Counting"],
+        "url": "/probability/counting/problems/2025/06/10/Close-Dice-I.html",
+        "teaser": null
       }]
